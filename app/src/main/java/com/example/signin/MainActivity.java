@@ -53,13 +53,7 @@ public class MainActivity extends AppCompatActivity {
 		FirebaseUser currentuser = mAuth.getCurrentUser();
 		if (currentuser!=null){
 
-			personName = currentuser.getDisplayName();
-			personEmail = currentuser.getEmail();
-			try {
-				personPhoto = currentuser.getPhotoUrl().toString();
-			}catch (Exception e){
-				e.printStackTrace();
-			}
+
 			Toast.makeText(this,"User already signed in !",Toast.LENGTH_SHORT).show();
 			startActivity(new Intent(MainActivity.this, SecondActivity.class));
 		}

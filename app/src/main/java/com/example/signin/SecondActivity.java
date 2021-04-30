@@ -35,8 +35,9 @@ public class SecondActivity extends AppCompatActivity {
 		pN.setText(MainActivity.mAuth.getCurrentUser().getDisplayName());
 		pE.setText(MainActivity.mAuth.getCurrentUser().getEmail());
 
-		String photoUrl = MainActivity.personPhoto;
+
 		try {
+			String photoUrl = MainActivity.mAuth.getCurrentUser().getPhotoUrl().toString();
 			Glide.with(this).load(photoUrl).into(img);
 		} catch (Exception e) {
 			e.printStackTrace();
