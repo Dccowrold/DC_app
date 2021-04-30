@@ -32,8 +32,8 @@ public class SecondActivity extends AppCompatActivity {
 		pN = findViewById(R.id.pN);
 		pE = findViewById(R.id.pE);
 		img = findViewById(R.id.img);
-		pN.setText(MainActivity.personName);
-		pE.setText(MainActivity.personEmail);
+		pN.setText(MainActivity.mAuth.getCurrentUser().getDisplayName());
+		pE.setText(MainActivity.mAuth.getCurrentUser().getEmail());
 
 		String photoUrl = MainActivity.personPhoto;
 		try {
