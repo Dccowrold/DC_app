@@ -1,42 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:gravity="center"
-    android:background="@drawable/greensquare">
+    android:background="@drawable/greensquare"
+    tools:context=".SignUp.Otp_verify">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/montserrat"
-        android:text="OTP VERIFICATION"
+        android:text="@string/otp_verification"
         android:textColor="@color/white"
         android:textSize="22sp"
         android:textStyle="bold"
-        android:layout_centerHorizontal="true"
         android:layout_marginBottom="20dp" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/montserrat"
-        android:text="Enter the code send to"
+        android:text="@string/enter_the_code"
         android:textColor="@color/white"
         android:textSize="16sp"
         android:textStyle="bold"
-        android:layout_centerHorizontal="true"
         android:layout_marginBottom="10dp" />
 
     <TextView
+        android:id="@+id/phoneNumber"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/montserrat"
-        android:hint="1234567890"
+        android:hint="@string/number"
         android:textColor="@color/white"
         android:textSize="18sp"
         android:textStyle="bold"
-        android:layout_centerHorizontal="true"
         android:layout_marginBottom="5dp"
         android:textColorHint="@android:color/darker_gray"
         />
@@ -61,7 +61,8 @@
             android:maxLength="1"
             android:textSize="22sp"
             android:background="@color/white"
-            android:layout_margin="3dp"/>
+            android:layout_margin="3dp"
+            tools:ignore="LabelFor" />
 
         <EditText
             android:id="@+id/inputCode2"
@@ -74,7 +75,8 @@
             android:maxLength="1"
             android:textSize="22sp"
             android:background="@color/white"
-            android:layout_margin="3dp"/>
+            android:layout_margin="3dp"
+            tools:ignore="LabelFor" />
 
         <EditText
             android:id="@+id/inputCode3"
@@ -87,7 +89,8 @@
             android:maxLength="1"
             android:textSize="22sp"
             android:background="@color/white"
-            android:layout_margin="3dp"/>
+            android:layout_margin="3dp"
+            tools:ignore="LabelFor" />
 
         <EditText
             android:id="@+id/inputCode4"
@@ -100,7 +103,8 @@
             android:maxLength="1"
             android:textSize="22sp"
             android:background="@color/white"
-            android:layout_margin="3dp"/>
+            android:layout_margin="3dp"
+            tools:ignore="LabelFor" />
 
         <EditText
             android:id="@+id/inputCode5"
@@ -113,7 +117,8 @@
             android:maxLength="1"
             android:textSize="22sp"
             android:background="@color/white"
-            android:layout_margin="3dp"/>
+            android:layout_margin="3dp"
+            tools:ignore="LabelFor" />
 
         <EditText
             android:id="@+id/inputCode6"
@@ -126,7 +131,8 @@
             android:maxLength="1"
             android:textSize="22sp"
             android:background="@color/white"
-            android:layout_margin="3dp"/>
+            android:layout_margin="3dp"
+            tools:ignore="LabelFor" />
 
     </LinearLayout>
 
@@ -141,7 +147,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Didn't receive the OTP?"
+            android:text="@string/did_not_receive_code"
             android:textSize="17sp"
             android:textColor="@color/white"
             android:layout_margin="3dp"
@@ -152,7 +158,7 @@
             android:id="@+id/ResendOTP"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Resend OTP"
+            android:text="@string/resend_otp"
             android:textSize="17sp"
             android:textColor="@color/white"
             android:textStyle="bold"
@@ -164,17 +170,29 @@
 
 
 
-    <Button
-        android:id="@+id/btn_verify"
-        android:layout_width="250dp"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/montserrat"
-        android:text="verify"
-        android:textColor="@color/white"
-        android:textStyle="bold"
-        android:layout_centerHorizontal="true"
-        android:background="@drawable/round"
-        />
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/btn_verify"
+            android:layout_width="250dp"
+            android:layout_height="40dp"
+            android:background="@drawable/round"
+            android:textAlignment="center"
+            android:text="@string/verify"
+            android:textSize="18sp"
+            android:textColor="@color/white"
+            />
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:visibility="gone"/>
+
+    </FrameLayout>
 
 
 
