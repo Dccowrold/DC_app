@@ -27,4 +27,26 @@
     <string name="verify">Verify</string>
 
 
+                                       // wealth activity
+    <string name="link_account">Link Accounts</string>
+    <string name="wealth">Wealth</string>
+    <string name="mutual_fund">Mutual Fund</string>
+    <string name="stocks">Stocks</string>
+    <string name="fixed">Fixed</string>
+    <string name="deposit">Deposit</string>
+    <string name="ppf">PPF</string>
+    <string name="epf">EPF</string>
+    <string name="nps">NPS</string>
+    <string name="real_estate">Real Estate</string>
+    <string name="gold">Gold</string>
+    <string name="bonds">Bonds</string>
+    <string name="bank_accounts">Bank Accounts/Cash</string>
+    <string name="bank">Bank</string>
+    <string name="account">Account</string>
+    <string name="cash">Cash</string>
+    <string name="borrow">Borrow</string>
+    <string name="credit_card">Credit Card</string>
+    <string name="loans">Loans</string>
+
+
 </resources>
