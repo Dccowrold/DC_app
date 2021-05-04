@@ -1,3 +1,28 @@
 <resources>
-    <string name="app_name">Splash Screen</string>
+    <string name="app_name">Derive Capital</string>
+
+
+    // sign up activity
+    <string name="Lets_get_you_signed_up">Lets get you signed up</string>
+    <string name="country_code">+91</string>
+    <string name="mobile_no">Mobile No</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="password_must_contain">Password must contain at least 8 characters.</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="reference">Reference (Optional)</string>
+    <string name="term_and_conditions">By signing up, you are agreeing to our Terms, Conditions and Privacy Policy.</string>
+    <string name="or">----------OR----------</string>
+    <string name="sign_up_with">SIGN UP WITH</string>
+    <string name="already_have_account">Already have an account?</string>
+    <string name="sign_in">Sign In</string>
+
+
+    // Otp verification activity
+    <string name="otp_verification">OTP VERIFICATION</string>
+    <string name="enter_the_code">Enter the code send to</string>
+    <string name="number">1234567890</string>
+    <string name="did_not_receive_code">Didn\'t receive the OTP?</string>
+    <string name="resend_otp">Resend Otp</string>
+    <string name="verify">Verify</string>
 </resources>
