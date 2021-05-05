@@ -2,7 +2,7 @@
     <string name="app_name">Splash Screen</string>
 
 
-                              // sign up activity
+    // sign up activity
     <string name="Lets_get_you_signed_up">Lets get you signed up</string>
     <string name="country_code">+91</string>
     <string name="mobile_no">Mobile No</string>
@@ -18,7 +18,7 @@
     <string name="sign_in">Sign In</string>
 
 
-                                  // Otp verification activity
+    // Otp verification activity
     <string name="otp_verification">OTP VERIFICATION</string>
     <string name="enter_the_code">Enter the code send to</string>
     <string name="number">1234567890</string>
@@ -27,7 +27,7 @@
     <string name="verify">Verify</string>
 
 
-                                       // wealth activity
+    // wealth activity
     <string name="link_account">Link Accounts</string>
     <string name="wealth">Wealth</string>
     <string name="mutual_fund">Mutual Fund</string>
@@ -51,6 +51,15 @@
     //facebook
     <string name="facebook_app_id">1363845314015894</string>
     <string name="fb_login_protocol_scheme">fb1363845314015894</string>
+
+
+    //dash board activity
+    <string name="good_morning">Good Morning,</string>
+    <string name="name">Vaishnavi</string>
+    <string name="your_net_worth">Your Net Worth</string>
+    <string name="glad_to">Glad to have you onboard the Starship rocket</string>
+
+    <string name="we_are_on">We are one a journey to start, manage and clean up your personal finance. It is slightly a long ride, but we promise you will love every step of it.</string>
 
 
 </resources>

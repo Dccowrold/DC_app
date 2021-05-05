@@ -26,4 +26,11 @@
     <color name="green">#5CD183</color>
 
 
+    <color name="lightgreen">#7fffd4</color>
+    <color name="lightgray">#cdc9c9</color>
+    <color name="lightblack">#696969</color>
+
+
+
+
 </resources>

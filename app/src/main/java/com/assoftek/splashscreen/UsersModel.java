@@ -2,7 +2,18 @@ package com.assoftek.splashscreen;
 
 public class UsersModel {
 
+
     String userName;
+    String email;
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
     String phoneNumber;
     String countryCode;
     String password;
@@ -78,8 +89,9 @@ public class UsersModel {
 
     public UsersModel(){}
 
-    public UsersModel(String userName, String phoneNumber, String countryCode, String password, String state, String homeTown, String gender, String dob) {
+    public UsersModel(String userName, String email, String phoneNumber, String countryCode, String password, String state, String homeTown, String gender, String dob) {
         this.userName = userName;
+        this.email = email;
         this.phoneNumber = phoneNumber;
         this.countryCode = countryCode;
         this.password = password;

@@ -23,6 +23,14 @@
           }
         },
         {
+          "client_id": "664947537180-n9hai47olhhgknlp1eqe30lqb180rsmf.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.assoftek.splashscreen",
+            "certificate_hash": "efe1abac2ca14e539974d8826898698babf61441"
+          }
+        },
+        {
           "client_id": "664947537180-qrc12v1btc6q5jmicqrg3qumrl81p33f.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {

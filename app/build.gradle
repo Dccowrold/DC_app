@@ -57,6 +57,7 @@ dependencies {
     implementation 'com.google.firebase:firebase-messaging'
     implementation 'com.scottyab:aescrypt:0.0.1'
     implementation 'androidx.browser:browser:1.0.0'
+    implementation 'com.airbnb.android:lottie:3.7.0'
 
 
 }
