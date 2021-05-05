@@ -9,12 +9,20 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.facebook.AccessToken;
+import com.facebook.CallbackManager;
+import com.facebook.FacebookCallback;
+import com.facebook.FacebookException;
+import com.facebook.FacebookSdk;
+import com.facebook.appevents.AppEventsLogger;
+
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.assoftek.splashscreen.R;
 import com.assoftek.splashscreen.databinding.ActivitySignupBinding;
+import com.facebook.login.LoginResult;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
@@ -25,6 +33,8 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.FirebaseException;
 import com.google.firebase.auth.AuthCredential;
 import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FacebookAuthCredential;
+import com.google.firebase.auth.FacebookAuthProvider;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
@@ -38,8 +48,8 @@ public class SignUp extends AppCompatActivity {
     ActivitySignupBinding binding;
     GoogleSignInClient googleSignInClient;
     FirebaseAuth mAuth;
-    private int RC_SIGN_IN=1;
-
+    CallbackManager mCallbackManager;
+    private int RC_SIGN_IN = 1;
 
 
     Button signup;
@@ -47,17 +57,19 @@ public class SignUp extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        binding=ActivitySignupBinding.inflate(getLayoutInflater());
+        binding = ActivitySignupBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        mAuth=FirebaseAuth.getInstance();
+        mAuth = FirebaseAuth.getInstance();
+        FacebookSdk.sdkInitialize(getApplicationContext());
+
         GoogleSignInOptions googleSignInOptions = new GoogleSignInOptions
                 .Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestIdToken(getString(R.string.default_web_client_id))
                 .requestEmail()
                 .build();
 
-        googleSignInClient = GoogleSignIn.getClient(this,googleSignInOptions);
+        googleSignInClient = GoogleSignIn.getClient(this, googleSignInOptions);
 
         binding.google.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -67,50 +79,72 @@ public class SignUp extends AppCompatActivity {
                 signupwithgoogle();
             }
         });
+        mCallbackManager = CallbackManager.Factory.create();
+        binding.facebook.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (view.getId() == R.id.facebook)
+                    binding.fb.performClick();
+
+            }
+        });
+        binding.fb.registerCallback(mCallbackManager, new FacebookCallback<LoginResult>() {
+            @Override
+            public void onSuccess(LoginResult loginResult) {
+                binding.progressBar.setVisibility(View.VISIBLE);
+                binding.signUpButton.setVisibility(View.GONE);
+                handleFacebookToken(loginResult.getAccessToken());
+            }
+
+            @Override
+            public void onCancel() {
+
+            }
+
+            @Override
+            public void onError(FacebookException error) {
+                Toast.makeText(getApplicationContext(), "SignUp was unsuccessful", Toast.LENGTH_SHORT).show();
+
+            }
+        });
 
         binding.signUpButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(binding.phoneNumber.getText().toString().isEmpty())
-                {
+                if (binding.phoneNumber.getText().toString().isEmpty()) {
                     binding.phoneNumber.setError("Enter mobile number!!");
                     return;
                 }
-                if(binding.countryCode.getText().toString().isEmpty())
-                {
+                if (binding.countryCode.getText().toString().isEmpty()) {
                     binding.countryCode.setError("Enter your country code!!");
                     return;
                 }
-                if(binding.email.getText().toString().isEmpty())
-                {
+                if (binding.email.getText().toString().isEmpty()) {
                     binding.email.setError("Enter your email!!");
                     return;
                 }
 
-                if(binding.password.getText().toString().isEmpty() )
-                {
+                if (binding.password.getText().toString().isEmpty()) {
                     binding.password.setError("Enter your password!!");
                     return;
                 }
 
 
-                if(binding.password.getText().toString().length()<8)
-                {
+                if (binding.password.getText().toString().length() < 8) {
                     binding.password.setError("Enter password of minimum 8 characters.");
                     return;
                 }
 
 
-                final EditText inputMobile= findViewById(R.id.phoneNumber);
-                final EditText code= findViewById(R.id.countryCode);
+                final EditText inputMobile = findViewById(R.id.phoneNumber);
+                final EditText code = findViewById(R.id.countryCode);
 
                 binding.progressBar.setVisibility(View.VISIBLE);
                 binding.signUpButton.setVisibility(View.INVISIBLE);
                 PhoneAuthProvider.getInstance().verifyPhoneNumber(    // number verification with country code
-                        code.getText().toString()+inputMobile.getText().toString(),60,
+                        code.getText().toString() + inputMobile.getText().toString(), 60,
                         TimeUnit.SECONDS, SignUp.this,
-                        new PhoneAuthProvider.OnVerificationStateChangedCallbacks()
-                        {
+                        new PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
                             @Override
                             public void onVerificationCompleted(@NonNull PhoneAuthCredential phoneAuthCredential) {
                                 binding.progressBar.setVisibility(View.GONE);
@@ -121,14 +155,14 @@ public class SignUp extends AppCompatActivity {
                             public void onVerificationFailed(@NonNull FirebaseException e) {
                                 binding.progressBar.setVisibility(View.GONE);
                                 binding.signUpButton.setVisibility(View.VISIBLE);
-                                Toast.makeText(SignUp.this, e.getMessage(),Toast.LENGTH_SHORT).show();
+                                Toast.makeText(SignUp.this, e.getMessage(), Toast.LENGTH_SHORT).show();
                             }
 
                             @Override
                             public void onCodeSent(@NonNull String verificationId, @NonNull PhoneAuthProvider.ForceResendingToken forceResendingToken) {
                                 binding.progressBar.setVisibility(View.GONE);
                                 binding.signUpButton.setVisibility(View.VISIBLE);
-                                Intent i=new Intent(SignUp.this,Otp_verify.class);
+                                Intent i = new Intent(SignUp.this, Otp_verify.class);
                                 i.putExtra("verificationId", verificationId);
                                 i.putExtra("number", binding.phoneNumber.getText().toString());
                                 i.putExtra("email", binding.email.getText().toString());
@@ -143,15 +177,35 @@ public class SignUp extends AppCompatActivity {
         });
     }
 
+    private void handleFacebookToken(AccessToken accessToken) {
+        AuthCredential credential = FacebookAuthProvider.getCredential(accessToken.getToken());
+        mAuth.signInWithCredential(credential).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+            @Override
+            public void onComplete(@NonNull Task<AuthResult> task) {
+                if (task.isSuccessful()) {
+                    Toast.makeText(SignUp.this, "SuccessFull", Toast.LENGTH_SHORT).show();
+                    FirebaseUser user = mAuth.getCurrentUser();
+                    updateuser(user);
+                    binding.progressBar.setVisibility(View.GONE);
+                    binding.signUpButton.setVisibility(View.VISIBLE);
+                } else {
+                    binding.progressBar.setVisibility(View.GONE);
+                    binding.signUpButton.setVisibility(View.VISIBLE);
+                    Toast.makeText(SignUp.this, "Failed", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+    }
+
     private void signupwithgoogle() {
         Intent signInIntent = googleSignInClient.getSignInIntent();
-        startActivityForResult(signInIntent,RC_SIGN_IN);
+        startActivityForResult(signInIntent, RC_SIGN_IN);
     }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == RC_SIGN_IN){
+        if (requestCode == RC_SIGN_IN) {
             Task<GoogleSignInAccount> task = GoogleSignIn.getSignedInAccountFromIntent(data);
             handlesignInResult(task);
         }
@@ -163,7 +217,7 @@ public class SignUp extends AppCompatActivity {
             GoogleSignInAccount acc = completedtask.getResult(ApiException.class);
             Toast.makeText(this, "Signned In Successfully", Toast.LENGTH_SHORT).show();
             FirebaseGoogleAuth(acc);
-        }catch (ApiException e){
+        } catch (ApiException e) {
             Toast.makeText(this, "Signned In Failed", Toast.LENGTH_SHORT).show();
         }
 
@@ -171,20 +225,17 @@ public class SignUp extends AppCompatActivity {
 
     private void FirebaseGoogleAuth(GoogleSignInAccount acc) {
 
-        AuthCredential authCredential = GoogleAuthProvider.getCredential(acc.getIdToken(),null);
+        AuthCredential authCredential = GoogleAuthProvider.getCredential(acc.getIdToken(), null);
         mAuth.signInWithCredential(authCredential).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
-                if (task.isSuccessful()){
-
-
-
+                if (task.isSuccessful()) {
                     Toast.makeText(SignUp.this, "SuccessFull", Toast.LENGTH_SHORT).show();
                     FirebaseUser user = mAuth.getCurrentUser();
                     updateuser(user);
                     binding.progressBar.setVisibility(View.GONE);
                     binding.signUpButton.setVisibility(View.VISIBLE);
-                }else {
+                } else {
                     binding.progressBar.setVisibility(View.GONE);
                     binding.signUpButton.setVisibility(View.VISIBLE);
                     Toast.makeText(SignUp.this, "Failed", Toast.LENGTH_SHORT).show();
@@ -196,8 +247,7 @@ public class SignUp extends AppCompatActivity {
     private void updateuser(FirebaseUser fuser) {
 
         GoogleSignInAccount account = GoogleSignIn.getLastSignedInAccount(getApplicationContext());
-        if (account!=null)
-        {
+        if (account != null) {
 
             String person_email = account.getEmail();
 
@@ -206,4 +256,5 @@ public class SignUp extends AppCompatActivity {
         }
 
     }
+
 }

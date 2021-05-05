@@ -48,5 +48,9 @@
     <string name="credit_card">Credit Card</string>
     <string name="loans">Loans</string>
 
+    //facebook
+    <string name="facebook_app_id">1363845314015894</string>
+    <string name="fb_login_protocol_scheme">fb1363845314015894</string>
+
 
 </resources>

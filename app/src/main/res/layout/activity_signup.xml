@@ -1,51 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
+    android:background="@drawable/greensquare"
     android:gravity="center"
-    android:background="@drawable/greensquare">
+    android:orientation="vertical">
 
     <LinearLayout
         android:id="@+id/n"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center"
+        android:layout_marginTop="10dp"
         android:layout_marginBottom="20dp"
-        android:layout_marginTop="10dp">
+        android:gravity="center"
+        android:orientation="horizontal">
 
         <EditText
             android:id="@+id/countryCode"
             android:layout_width="50dp"
             android:layout_height="35dp"
-            android:textColor="@color/white"
-            android:hint="@string/country_code"
             android:layout_marginStart="10dp"
-            android:fontFamily="@font/montserrat"
-            android:textStyle="bold"
             android:background="@drawable/square"
-            android:textAlignment="center"
+            android:fontFamily="@font/montserrat"
+            android:hint="@string/country_code"
             android:padding="5dp"
-            android:textColorHint="@android:color/darker_gray"/>
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textColorHint="@android:color/darker_gray"
+            android:textStyle="bold" />
 
 
         <EditText
             android:id="@+id/phoneNumber"
             android:layout_width="180dp"
             android:layout_height="35dp"
-            android:fontFamily="@font/montserrat"
-            android:textColor="@color/white"
-            android:hint="@string/mobile_no"
             android:layout_marginLeft="20dp"
             android:background="@drawable/square"
-            android:textAlignment="center"
+            android:fontFamily="@font/montserrat"
+            android:hint="@string/mobile_no"
             android:inputType="number"
-            android:textStyle="bold"
             android:padding="5dp"
+            android:textAlignment="center"
+            android:textColor="@color/white"
             android:textColorHint="@android:color/darker_gray"
+            android:textStyle="bold"
             tools:ignore="LabelFor" />
 
     </LinearLayout>
@@ -54,82 +53,78 @@
         android:id="@+id/email"
         android:layout_width="wrap_content"
         android:layout_height="35dp"
-        android:hint="Email Address"
-        android:fontFamily="@font/montserrat"
-        android:background="@drawable/square"
-        android:textAlignment="center"
         android:layout_marginBottom="20dp"
-        android:textStyle="bold"
+        android:background="@drawable/square"
+        android:fontFamily="@font/montserrat"
+        android:hint="Email Address"
         android:inputType="textEmailAddress"
-        android:padding="5dp"
-        android:textColorHint="@android:color/darker_gray"
-        android:minWidth="250dp"
         android:maxWidth="350dp"
+        android:minWidth="250dp"
+        android:padding="5dp"
+        android:textAlignment="center"
         android:textColor="@color/white"
-        />
+        android:textColorHint="@android:color/darker_gray"
+        android:textStyle="bold" />
 
     <EditText
-    android:id="@+id/password"
-    android:layout_width="wrap_content"
-    android:layout_height="35dp"
-    android:hint="@string/password"
-    android:fontFamily="@font/montserrat"
-    android:background="@drawable/square"
-    android:textAlignment="center"
-    android:layout_marginBottom="5dp"
-    android:textStyle="bold"
-    android:padding="5dp"
-    android:inputType="textPassword"
-    android:textColorHint="@android:color/darker_gray"
-    android:minWidth="250dp"
-    android:maxWidth="350dp"
-    android:textColor="@color/white"
-    />
+        android:id="@+id/password"
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:layout_marginBottom="5dp"
+        android:background="@drawable/square"
+        android:fontFamily="@font/montserrat"
+        android:hint="@string/password"
+        android:inputType="textPassword"
+        android:maxWidth="350dp"
+        android:minWidth="250dp"
+        android:padding="5dp"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textColorHint="@android:color/darker_gray"
+        android:textStyle="bold" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
         android:fontFamily="@font/montserrat"
         android:text="@string/password_must_contain"
         android:textColor="@color/white"
-        android:textStyle="bold"
-        android:layout_marginBottom="20dp"
         android:textSize="11sp"
+        android:textStyle="bold"
         tools:ignore="SmallSp" />
 
     <EditText
         android:id="@+id/confirmPassword"
         android:layout_width="wrap_content"
         android:layout_height="35dp"
-        android:hint="@string/confirm_password"
-        android:fontFamily="@font/montserrat"
-        android:background="@drawable/square"
-        android:textAlignment="center"
         android:layout_marginBottom="20dp"
-        android:textStyle="bold"
-        android:padding="5dp"
+        android:background="@drawable/square"
+        android:fontFamily="@font/montserrat"
+        android:hint="@string/confirm_password"
         android:inputType="textPassword"
-        android:textColorHint="@android:color/darker_gray"
-        android:minWidth="250dp"
         android:maxWidth="350dp"
+        android:minWidth="250dp"
+        android:padding="5dp"
+        android:textAlignment="center"
         android:textColor="@color/white"
-        />
+        android:textColorHint="@android:color/darker_gray"
+        android:textStyle="bold" />
 
     <EditText
-        android:layout_below="@+id/email"
         android:id="@+id/reference"
         android:layout_width="250dp"
         android:layout_height="35dp"
-        android:hint="@string/reference"
-        android:fontFamily="@font/montserrat"
-        android:background="@drawable/square"
-        android:textAlignment="center"
-        android:textStyle="bold"
+        android:layout_below="@+id/email"
         android:layout_marginBottom="40dp"
+        android:background="@drawable/square"
+        android:fontFamily="@font/montserrat"
+        android:hint="@string/reference"
         android:padding="5dp"
-        android:textColorHint="@android:color/darker_gray"
+        android:textAlignment="center"
         android:textColor="@color/white"
-        />
+        android:textColorHint="@android:color/darker_gray"
+        android:textStyle="bold" />
 
 
     <FrameLayout
@@ -137,139 +132,142 @@
         android:layout_height="wrap_content">
 
         <Button
-            android:layout_below="@+id/signup"
             android:id="@+id/signUpButton"
             android:layout_width="250dp"
             android:layout_height="40dp"
-            android:text="Sign Up"
-            android:textStyle="bold"
-            android:textColor="@color/white"
+            android:layout_below="@+id/signup"
+            android:layout_marginBottom="10dp"
             android:background="@drawable/round"
-            android:textSize="16sp"
             android:fontFamily="@font/montserrat"
-            android:layout_marginBottom="10dp"/>
+            android:text="Sign Up"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:textStyle="bold" />
 
         <ProgressBar
             android:id="@+id/progressBar"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_gravity="center"
-            android:visibility="gone"/>
+            android:visibility="gone" />
 
     </FrameLayout>
 
 
-
     <TextView
         android:id="@+id/text2"
-        android:layout_below="@+id/reference"
         android:layout_width="350dp"
-        android:textColor="@color/white"
-        android:fontFamily="@font/montserrat"
-        android:textSize="15sp"
-        android:text="@string/term_and_conditions"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/reference"
         android:layout_centerHorizontal="true"
+        android:layout_marginBottom="30dp"
+        android:fontFamily="@font/montserrat"
+        android:text="@string/term_and_conditions"
         android:textAlignment="center"
-        android:layout_marginBottom="30dp"/>
+        android:textColor="@color/white"
+        android:textSize="15sp" />
 
     <TextView
         android:id="@+id/text6"
-        android:layout_below="@+id/text5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/sign_up_with"
+        android:layout_below="@+id/text5"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="5dp"
         android:fontFamily="@font/montserrat"
-        android:textStyle="bold"
+        android:text="@string/sign_up_with"
         android:textColor="@color/white"
         android:textSize="14sp"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="5dp"/>
+        android:textStyle="bold" />
 
     <LinearLayout
         android:id="@+id/all"
-        android:layout_below="@+id/text6"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
+        android:layout_below="@+id/text6"
+        android:layout_marginBottom="40dp"
         android:gravity="center"
-        android:layout_marginBottom="40dp">
+        android:orientation="horizontal">
 
         <ImageView
             android:id="@+id/google"
             android:layout_width="35dp"
             android:layout_height="35dp"
-            android:background="@drawable/google"
             android:layout_margin="10dp"
-            />
+            android:background="@drawable/google" />
 
         <ImageView
             android:id="@+id/linkedin"
             android:layout_width="35dp"
             android:layout_height="35dp"
-            android:background="@drawable/linkedin"
             android:layout_margin="10dp"
-            />
+            android:background="@drawable/linkedin" />
 
         <ImageView
             android:id="@+id/instagram"
             android:layout_width="35dp"
             android:layout_height="35dp"
-            android:background="@drawable/instagram"
             android:layout_margin="10dp"
-            />
+            android:background="@drawable/instagram" />
 
-        <ImageView
-            android:id="@+id/facebook"
-            android:layout_width="35dp"
-            android:layout_height="35dp"
-            android:background="@drawable/facebook"
-            android:layout_margin="10dp"
-            />
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <com.facebook.login.widget.LoginButton
+                android:id="@+id/fb"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:visibility="invisible" />
+
+            <ImageButton
+                android:id="@+id/facebook"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:background="@drawable/facebook" />
+        </FrameLayout>
+
 
         <ImageView
             android:id="@+id/twitter"
             android:layout_width="35dp"
             android:layout_height="35dp"
-            android:background="@drawable/twitter"
             android:layout_margin="10dp"
-            />
+            android:background="@drawable/twitter" />
 
 
     </LinearLayout>
 
 
     <LinearLayout
-        android:layout_below="@+id/all"
         android:id="@+id/signInButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center">
+        android:layout_below="@+id/all"
+        android:gravity="center"
+        android:orientation="horizontal">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/already_have_account"
             android:fontFamily="@font/montserrat"
-            android:textStyle="bold"
+            android:text="@string/already_have_account"
             android:textColor="@color/white"
             android:textSize="15sp"
-            />
+            android:textStyle="bold" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/sign_in"
+            android:layout_marginLeft="10dp"
             android:fontFamily="@font/montserrat"
-            android:textStyle="bold"
+            android:text="@string/sign_in"
             android:textColor="@color/green"
             android:textSize="15sp"
-            android:layout_marginLeft="10dp"
-            />
+            android:textStyle="bold" />
 
     </LinearLayout>
-
 
 
 </LinearLayout>
