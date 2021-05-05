@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.assoftek.splashscreen.DashboardActivity;
 import com.assoftek.splashscreen.Login.login;
 import com.assoftek.splashscreen.R;
 import com.assoftek.splashscreen.UsersModel;
@@ -141,11 +142,11 @@ public class User_Detail extends AppCompatActivity {
 
                         if(task.isSuccessful())
                         {
-                            UsersModel user= new UsersModel(name, number,countryCode, password,state, hometown, gender,dob);         // taking username, email, password in database.
+                            UsersModel user= new UsersModel(name,email, number,countryCode, password,state, hometown, gender,dob);         // taking username, email, password in database.
                             String id=task.getResult().getUser().getUid();
 
                             database.getReference().child("Users").child(id).setValue(user);   // it will create a user node in firebase containing userId / mail , password, username
-                            Intent intent=new Intent(User_Detail.this, login.class);
+                            Intent intent=new Intent(User_Detail.this, DashboardActivity.class);
                             startActivity(intent);
                             Toast.makeText(User_Detail.this,"User Created Successfully", Toast.LENGTH_SHORT).show();
                         }
@@ -160,6 +161,7 @@ public class User_Detail extends AppCompatActivity {
             }
         });
 
+       
 
     }
 }

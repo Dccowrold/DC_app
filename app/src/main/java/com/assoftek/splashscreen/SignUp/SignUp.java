@@ -13,6 +13,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.assoftek.splashscreen.Login.login;
 import com.assoftek.splashscreen.R;
 import com.assoftek.splashscreen.databinding.ActivitySignupBinding;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
@@ -204,6 +205,14 @@ public class SignUp extends AppCompatActivity {
             binding.email.setText(person_email);
 
         }
+
+        binding.signInButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(getApplicationContext(), login.class);
+                startActivity(intent);
+            }
+        });
 
     }
 }
