@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:gravity="center"
-    android:background="@gradients/greensquare"
+    android:background="@drawable/greensquare"
     tools:context=".SignUp.Otp_verify">
 
     <TextView

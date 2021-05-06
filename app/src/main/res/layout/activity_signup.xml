@@ -29,7 +29,8 @@
             android:background="@drawable/square"
             android:textAlignment="center"
             android:padding="5dp"
-            android:textColorHint="@android:color/darker_gray"/>
+            android:textColorHint="@android:color/darker_gray"
+            android:autofillHints="" />
 
 
         <EditText
@@ -68,6 +69,17 @@
         android:textColor="@color/white"
         />
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:fontFamily="@font/montserrat"
+        android:text="@string/password_must_contain"
+        android:textColor="@color/white"
+        android:textSize="11sp"
+        android:textStyle="bold"
+        tools:ignore="SmallSp" />
+
     <EditText
     android:id="@+id/password"
     android:layout_width="wrap_content"
@@ -83,19 +95,7 @@
     android:textColorHint="@android:color/darker_gray"
     android:minWidth="250dp"
     android:maxWidth="350dp"
-    android:textColor="@color/white"
-    />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/montserrat"
-        android:text="@string/password_must_contain"
-        android:textColor="@color/white"
-        android:textStyle="bold"
-        android:layout_marginBottom="20dp"
-        android:textSize="11sp"
-        tools:ignore="SmallSp" />
+    android:textColor="@color/white" />
 
     <EditText
         android:id="@+id/confirmPassword"
@@ -129,7 +129,7 @@
         android:padding="5dp"
         android:textColorHint="@android:color/darker_gray"
         android:textColor="@color/white"
-        />
+        android:autofillHints="" />
 
 
     <FrameLayout
