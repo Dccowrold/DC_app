@@ -9,15 +9,20 @@ import android.os.Handler;
 import android.view.WindowManager;
 
 
+import com.assoftek.splashscreen.DashboardActivity;
 import com.assoftek.splashscreen.Login.login;
 import com.assoftek.splashscreen.SignUp.Otp_verify;
 import com.assoftek.splashscreen.SignUp.SignUp;
 import com.assoftek.splashscreen.Onboarding.Screen_1;
 import com.assoftek.splashscreen.R;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 import static java.lang.Thread.sleep;
 
 public class MainActivity extends AppCompatActivity {
+
+    private FirebaseAuth firebaseAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +37,11 @@ public class MainActivity extends AppCompatActivity {
         String Firsttime = sharedPreferences.getString("FirstTimeInstall", "");
 
 
+        firebaseAuth = FirebaseAuth.getInstance();
+        final FirebaseUser firebaseUser = firebaseAuth.getCurrentUser();
+
+
+
         if (Firsttime.equals("Yes")) {
             //creating thread
            Runnable runnable = new Runnable() {
@@ -43,9 +53,17 @@ public class MainActivity extends AppCompatActivity {
                    } catch (Exception e) {
                        e.printStackTrace();
                    } finally {
-                       Intent intent = new Intent(MainActivity.this, SignUp.class);
-                       startActivity(intent);
-                       finish();
+
+                       if (firebaseUser!=null) {
+                            Intent intent = new Intent(MainActivity.this, DashboardActivity.class);
+                            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+                            startActivity(intent);
+
+                       } else {
+                           Intent intent = new Intent(MainActivity.this, SignUp.class);
+                           startActivity(intent);
+                           finish();
+                       }
                    }
                }
                };
@@ -70,4 +88,5 @@ public class MainActivity extends AppCompatActivity {
 
        }
         }
+
     }

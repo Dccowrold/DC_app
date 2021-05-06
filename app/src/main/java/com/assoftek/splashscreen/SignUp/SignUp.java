@@ -24,6 +24,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.assoftek.splashscreen.Login.login;
 import com.assoftek.splashscreen.R;
 import com.assoftek.splashscreen.databinding.ActivitySignupBinding;
+import com.facebook.login.Login;
 import com.facebook.login.LoginResult;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
@@ -83,6 +84,17 @@ public class SignUp extends AppCompatActivity {
                 signupwithgoogle();
             }
         });
+
+
+        binding.movetosignin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent movetoSignin = new Intent(getApplicationContext(), login.class);
+                startActivity(movetoSignin);
+
+            }
+        });
+
         mCallbackManager = CallbackManager.Factory.create();
         binding.fb.setReadPermissions(Arrays.asList("user_friends","email","public_profile"));
         binding.facebook.setOnClickListener(new View.OnClickListener() {
@@ -259,7 +271,11 @@ public class SignUp extends AppCompatActivity {
 
             String person_email = account.getEmail();
 
-            binding.email.setText(person_email);
+            Toast.makeText(this, "Logged in as "+person_email, Toast.LENGTH_SHORT).show();
+            Intent intentmovetouser = new Intent(SignUp.this,User_Detail.class);
+            intentmovetouser.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP|Intent.FLAG_ACTIVITY_NEW_TASK);
+            startActivity(intentmovetouser);
+
 
         }
 

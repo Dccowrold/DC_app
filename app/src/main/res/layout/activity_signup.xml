@@ -270,15 +270,15 @@
             />
 
         <TextView
+            android:id="@+id/movetosignin"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/sign_in"
+            android:layout_marginLeft="10dp"
             android:fontFamily="@font/montserrat"
-            android:textStyle="bold"
+            android:text="@string/sign_in"
             android:textColor="@color/green"
             android:textSize="15sp"
-            android:layout_marginLeft="10dp"
-            />
+            android:textStyle="bold" />
 
     </LinearLayout>
 
