@@ -4,6 +4,7 @@ package com.assoftek.splashscreen.SignUp;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -42,6 +43,8 @@ import com.google.firebase.auth.GoogleAuthProvider;
 import com.google.firebase.auth.PhoneAuthCredential;
 import com.google.firebase.auth.PhoneAuthProvider;
 
+import java.lang.reflect.Array;
+import java.util.Arrays;
 import java.util.concurrent.TimeUnit;
 
 public class SignUp extends AppCompatActivity {
@@ -81,6 +84,7 @@ public class SignUp extends AppCompatActivity {
             }
         });
         mCallbackManager = CallbackManager.Factory.create();
+        binding.fb.setReadPermissions(Arrays.asList("user_friends","email","public_profile"));
         binding.facebook.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -105,6 +109,7 @@ public class SignUp extends AppCompatActivity {
             @Override
             public void onError(FacebookException error) {
                 Toast.makeText(getApplicationContext(), "SignUp was unsuccessful", Toast.LENGTH_SHORT).show();
+                Log.d("error fb",error.toString());
 
             }
         });
@@ -189,6 +194,8 @@ public class SignUp extends AppCompatActivity {
                     updateuser(user);
                     binding.progressBar.setVisibility(View.GONE);
                     binding.signUpButton.setVisibility(View.VISIBLE);
+                    Intent intent= new Intent(getApplicationContext(),User_Detail.class);
+                    startActivity(intent);
                 } else {
                     binding.progressBar.setVisibility(View.GONE);
                     binding.signUpButton.setVisibility(View.VISIBLE);
@@ -197,7 +204,6 @@ public class SignUp extends AppCompatActivity {
             }
         });
     }
-
     private void signupwithgoogle() {
         Intent signInIntent = googleSignInClient.getSignInIntent();
         startActivityForResult(signInIntent, RC_SIGN_IN);
@@ -210,6 +216,7 @@ public class SignUp extends AppCompatActivity {
             Task<GoogleSignInAccount> task = GoogleSignIn.getSignedInAccountFromIntent(data);
             handlesignInResult(task);
         }
+        mCallbackManager.onActivityResult(requestCode, resultCode, data);
     }
 
     private void handlesignInResult(Task<GoogleSignInAccount> completedtask) {
