@@ -61,7 +61,7 @@ public class PaymentsActivity extends AppCompatActivity implements PaymentResult
             checkout.open(activity, options);
 
         } catch(Exception e) {
-            Toast.makeText(activity, "Error in payment: " + e.getMessage(), Toast.LENGTH_SHORT)
+            Toast.makeText(activity, "Error in payments: " + e.getMessage(), Toast.LENGTH_SHORT)
                     .show();
             e.printStackTrace();
         }
