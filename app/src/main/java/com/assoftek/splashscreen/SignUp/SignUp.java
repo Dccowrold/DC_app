@@ -10,6 +10,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.assoftek.splashscreen.PaymentsActivity;
 import com.facebook.AccessToken;
 import com.facebook.CallbackManager;
 import com.facebook.FacebookCallback;
@@ -82,6 +83,13 @@ public class SignUp extends AppCompatActivity {
                 binding.progressBar.setVisibility(View.VISIBLE);
                 binding.signUpButton.setVisibility(View.GONE);
                 signupwithgoogle();
+            }
+        });
+        binding.instagram.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent movetoPayments = new Intent(getApplicationContext(), PaymentsActivity.class);
+                startActivity(movetoPayments);
             }
         });
 
@@ -206,7 +214,7 @@ public class SignUp extends AppCompatActivity {
                     updateuser(user);
                     binding.progressBar.setVisibility(View.GONE);
                     binding.signUpButton.setVisibility(View.VISIBLE);
-                    Intent intent= new Intent(getApplicationContext(),User_Detail.class);
+                    Intent intent= new Intent(getApplicationContext(), User_Detail.class);
                     startActivity(intent);
                 } else {
                     binding.progressBar.setVisibility(View.GONE);

@@ -11,7 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".WealthActivity"></activity>
+        <activity android:name=".PaymentsActivity"></activity>
+        <activity android:name=".WealthActivity" />
         <activity android:name=".DashboardActivity" />
         <activity android:name=".HomeActivity.HomeActivity" />
         <activity android:name=".Login.login" />
@@ -36,6 +37,9 @@
         <meta-data
             android:name="com.facebook.sdk.ApplicationId"
             android:value="@string/facebook_app_id" />
+        <meta-data
+            android:name="com.razorpay.Apikey"
+            android:value="rzp_test_EntPO95sG7KvMb" />
     </application>
 
 </manifest>

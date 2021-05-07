@@ -58,6 +58,7 @@ dependencies {
     implementation 'com.scottyab:aescrypt:0.0.1'
     implementation 'androidx.browser:browser:1.0.0'
     implementation 'com.airbnb.android:lottie:3.7.0'
+    implementation 'com.razorpay:checkout:1.6.6'
 
 
 }
