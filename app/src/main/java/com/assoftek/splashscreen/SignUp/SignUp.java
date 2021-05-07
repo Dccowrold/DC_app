@@ -33,6 +33,8 @@ import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.FirebaseException;
 import com.google.firebase.auth.AuthCredential;
@@ -44,6 +46,14 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
 import com.google.firebase.auth.PhoneAuthCredential;
 import com.google.firebase.auth.PhoneAuthProvider;
+import com.google.firebase.auth.TwitterAuthProvider;
+import com.twitter.sdk.android.core.Callback;
+import com.twitter.sdk.android.core.Result;
+import com.twitter.sdk.android.core.Twitter;
+import com.twitter.sdk.android.core.TwitterAuthConfig;
+import com.twitter.sdk.android.core.TwitterConfig;
+import com.twitter.sdk.android.core.TwitterException;
+import com.twitter.sdk.android.core.TwitterSession;
 
 import java.lang.reflect.Array;
 import java.util.Arrays;
@@ -58,7 +68,6 @@ public class SignUp extends AppCompatActivity {
     private int RC_SIGN_IN = 1;
 
 
-    Button signup;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -77,6 +86,47 @@ public class SignUp extends AppCompatActivity {
 
         googleSignInClient = GoogleSignIn.getClient(this, googleSignInOptions);
 
+
+        //twitter code
+        TwitterAuthConfig config = new TwitterAuthConfig(getString(R.string.Api_key),getString(R.string.Api_Secret));
+        TwitterConfig twitterConfig = new TwitterConfig.Builder(this)
+                .twitterAuthConfig(config)
+                .build();
+        Twitter.initialize(twitterConfig);
+
+
+        binding.twTwitterLogo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (view.getId() == R.id.twitter)
+                    binding.twTwitterLogo.performClick();
+                Log.i("Button","Twitter pressed");
+
+            }
+        });
+
+                binding.twitter.setCallback(new Callback<TwitterSession>() {
+                    @Override
+                    public void success(Result<TwitterSession> result) {
+                        Log.i("callback","Came into callback");
+                        Toast.makeText(SignUp.this, "Signed in using twitter", Toast.LENGTH_SHORT).show();
+                        MainProcess(result.data);
+                    }
+
+                    @Override
+                    public void failure(TwitterException exception) {
+
+                        Toast.makeText(SignUp.this, exception.getMessage(), Toast.LENGTH_SHORT).show();
+
+
+            }
+        });
+
+
+
+
+
+
         binding.google.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -85,6 +135,8 @@ public class SignUp extends AppCompatActivity {
                 signupwithgoogle();
             }
         });
+
+
         binding.instagram.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -94,14 +146,6 @@ public class SignUp extends AppCompatActivity {
         });
 
 
-        binding.movetosignin.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent movetoSignin = new Intent(getApplicationContext(), login.class);
-                startActivity(movetoSignin);
-
-            }
-        });
 
         mCallbackManager = CallbackManager.Factory.create();
         binding.fb.setReadPermissions(Arrays.asList("user_friends","email","public_profile"));
@@ -203,6 +247,23 @@ public class SignUp extends AppCompatActivity {
         });
     }
 
+    private void MainProcess(TwitterSession data) {
+
+        AuthCredential credential= TwitterAuthProvider.getCredential(data.getAuthToken().token,data.getAuthToken().secret);
+        mAuth.signInWithCredential(credential).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+            @Override
+            public void onComplete(@NonNull Task<AuthResult> task) {
+                Toast.makeText(SignUp.this, "Signed in twitter successfull", Toast.LENGTH_SHORT).show();
+
+                if (!task.isSuccessful()){
+                    Toast.makeText(SignUp.this, "Firebase Auth Failed", Toast.LENGTH_SHORT).show();
+                }
+
+            }
+        });
+
+    }
+
     private void handleFacebookToken(AccessToken accessToken) {
         AuthCredential credential = FacebookAuthProvider.getCredential(accessToken.getToken());
         mAuth.signInWithCredential(credential).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
@@ -237,6 +298,9 @@ public class SignUp extends AppCompatActivity {
             handlesignInResult(task);
         }
         mCallbackManager.onActivityResult(requestCode, resultCode, data);
+
+        binding.twitter.onActivityResult(requestCode,resultCode,data);
+
     }
 
     private void handlesignInResult(Task<GoogleSignInAccount> completedtask) {
@@ -246,6 +310,8 @@ public class SignUp extends AppCompatActivity {
             Toast.makeText(this, "Signned In Successfully", Toast.LENGTH_SHORT).show();
             FirebaseGoogleAuth(acc);
         } catch (ApiException e) {
+            binding.progressBar.setVisibility(View.GONE);
+            binding.signUpButton.setVisibility(View.VISIBLE);
             Toast.makeText(this, "Signned In Failed", Toast.LENGTH_SHORT).show();
         }
 
@@ -287,13 +353,6 @@ public class SignUp extends AppCompatActivity {
 
         }
 
-        binding.signInButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent=new Intent(getApplicationContext(), login.class);
-                startActivity(intent);
-            }
-        });
 
     }
 
