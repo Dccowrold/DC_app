@@ -13,6 +13,7 @@
         android:theme="@style/AppTheme">
         <activity android:name=".WealthActivity"></activity>
         <activity android:name=".DashboardActivity" />
+        <activity android:name=".CashScreenActivity"/>
         <activity android:name=".HomeActivity.HomeActivity" />
         <activity android:name=".Login.login" />
         <activity android:name=".SignUp.Otp_verify" />

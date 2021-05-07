@@ -145,7 +145,8 @@ public class User_Detail extends AppCompatActivity {
                             UsersModel user= new UsersModel(name,email, number,countryCode, password,state, hometown, gender,dob);         // taking username, email, password in database.
                             String id=task.getResult().getUser().getUid();
 
-                            database.getReference().child("Users").child(id).setValue(user);   // it will create a user node in firebase containing userId / mail , password, username
+                            database.getReference().child("Users").child(id).setValue(user);
+                            // it will create a user node in firebase containing userId / mail , password, username
                             Intent intent=new Intent(User_Detail.this, DashboardActivity.class);
                             startActivity(intent);
                             Toast.makeText(User_Detail.this,"User Created Successfully", Toast.LENGTH_SHORT).show();
