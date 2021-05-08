@@ -73,6 +73,19 @@ public class SignUp extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = ActivitySignupBinding.inflate(getLayoutInflater());
+
+
+
+        //twitter code
+        TwitterAuthConfig config = new TwitterAuthConfig(getString(R.string.Api_key),getString(R.string.Api_Secret));
+        TwitterConfig twitterConfig = new TwitterConfig.Builder(this)
+                .twitterAuthConfig(config)
+                .build();
+        Twitter.initialize(twitterConfig);
+
+
+
+
         setContentView(binding.getRoot());
 
         mAuth = FirebaseAuth.getInstance();
@@ -85,14 +98,6 @@ public class SignUp extends AppCompatActivity {
                 .build();
 
         googleSignInClient = GoogleSignIn.getClient(this, googleSignInOptions);
-
-
-        //twitter code
-        TwitterAuthConfig config = new TwitterAuthConfig(getString(R.string.Api_key),getString(R.string.Api_Secret));
-        TwitterConfig twitterConfig = new TwitterConfig.Builder(this)
-                .twitterAuthConfig(config)
-                .build();
-        Twitter.initialize(twitterConfig);
 
 
         binding.twTwitterLogo.setOnClickListener(new View.OnClickListener() {
