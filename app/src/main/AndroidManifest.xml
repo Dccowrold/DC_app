@@ -11,11 +11,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".WealthActivity"></activity>
+        <activity android:name=".Login.LoginOtp"></activity>
+        <activity android:name=".Login.LoginNumber" />
+        <activity android:name=".SignUp.PhoneActivity" />
+        <activity android:name=".WealthActivity" />
         <activity android:name=".DashboardActivity" />
-        <activity android:name=".CashScreenActivity"/>
+        <activity android:name=".CashScreenActivity" />
         <activity android:name=".HomeActivity.HomeActivity" />
-        <activity android:name=".Login.login" />
+        <activity android:name=".Login.Login" />
         <activity android:name=".SignUp.Otp_verify" />
         <activity android:name=".SignUp.User_Detail" />
         <activity android:name=".Onboarding.Screen_4" />

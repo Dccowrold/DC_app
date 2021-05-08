@@ -10,9 +10,7 @@ import android.view.WindowManager;
 
 
 import com.assoftek.splashscreen.DashboardActivity;
-import com.assoftek.splashscreen.Login.login;
-import com.assoftek.splashscreen.SignUp.Otp_verify;
-import com.assoftek.splashscreen.SignUp.SignUp;
+import com.assoftek.splashscreen.Login.Login;
 import com.assoftek.splashscreen.Onboarding.Screen_1;
 import com.assoftek.splashscreen.R;
 import com.google.firebase.auth.FirebaseAuth;
@@ -60,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
                             startActivity(intent);
 
                        } else {
-                           Intent intent = new Intent(MainActivity.this, SignUp.class);
+                           Intent intent = new Intent(MainActivity.this, Login.class);
                            startActivity(intent);
                            finish();
                        }

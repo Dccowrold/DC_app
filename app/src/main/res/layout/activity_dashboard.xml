@@ -5,11 +5,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".DashboardActivity"
-    android:background="@drawable/greensquare">
+    android:background="@color/black">
 
     <ImageView
         android:id="@+id/visibility"
-        android:layout_width="35dp"
+        android:layout_width="30dp"
         android:layout_height="25dp"
         android:layout_alignParentLeft="true"
         android:background="@drawable/visibility"
@@ -19,20 +19,20 @@
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/profile_image"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
+        android:layout_width="65dp"
+        android:layout_height="65dp"
         app:civ_border_width="2dp"
-        app:civ_border_color="@color/white"
+        app:civ_border_color="@color/blue"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="30dp"
         android:src="@drawable/user9"/>
 
     <ImageView
-        android:id="@+id/notifications"
-        android:layout_width="35dp"
-        android:layout_height="25dp"
+        android:id="@+id/logout"
+        android:layout_width="32dp"
+        android:layout_height="30dp"
         android:layout_alignParentRight="true"
-        android:background="@drawable/bell"
+        android:background="@drawable/logout"
         android:layout_marginTop="30dp"
         android:layout_marginRight="10dp"/>
 
@@ -54,13 +54,13 @@
             >
 
             <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/good_morning"
-            android:textColor="@color/white"
-            android:fontFamily="@font/montserrat"
-            android:textSize="20sp"
-            />
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/good_morning"
+                android:textColor="@color/white"
+                android:fontFamily="@font/montserrat"
+                android:textSize="20sp"
+                />
 
 
             <TextView
@@ -84,7 +84,7 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:gravity="center_horizontal"
-            android:background="@drawable/greysquare"
+            android:background="@drawable/squareblue"
             android:layout_marginTop="10dp"
             >
 
@@ -159,8 +159,8 @@
         android:id="@+id/layout3"
         android:layout_alignParentBottom="true"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/round"
+        android:layout_height="80dp"
+        android:background="@drawable/squareblue"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="40dp">
 
@@ -170,14 +170,14 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:gravity="center"
-            android:layout_marginLeft="40dp"
-            android:layout_marginTop="5dp">
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="7dp">
 
             <de.hdodenhof.circleimageview.CircleImageView
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 app:civ_border_width="2dp"
-                app:civ_border_color="@color/white"
+                app:civ_border_color="@color/blue"
                 android:src="@drawable/wealth"
                 />
 
@@ -185,10 +185,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/wealth"
-                android:layout_marginTop="5dp"
-                android:textColor="@color/black"
-                android:fontFamily="@font/montserrat"
-                android:layout_marginBottom="5dp"/>
+                android:textColor="@color/white"
+                android:fontFamily="@font/montserrat"/>
         </LinearLayout>
 
 
@@ -202,10 +200,10 @@
             android:layout_toRightOf="@+id/wealth">
 
             <de.hdodenhof.circleimageview.CircleImageView
-                android:layout_width="70dp"
-                android:layout_height="70dp"
+                android:layout_width="66dp"
+                android:layout_height="66dp"
                 app:civ_border_width="2dp"
-                app:civ_border_color="@color/white"
+                app:civ_border_color="@color/blue"
                 android:src="@drawable/dc"/>
 
         </LinearLayout>
@@ -218,25 +216,23 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:gravity="center"
-            android:layout_marginRight="40dp"
-            android:layout_marginTop="5dp">
+            android:layout_marginRight="30dp"
+            android:layout_marginTop="7dp">
 
             <de.hdodenhof.circleimageview.CircleImageView
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 app:civ_border_width="2dp"
-                app:civ_border_color="@color/white"
+                app:civ_border_color="@color/blue"
                 android:src="@drawable/money"
-               />
+                />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/cash"
-                android:layout_marginTop="5dp"
-                android:textColor="@color/black"
-                android:fontFamily="@font/montserrat"
-                android:layout_marginBottom="5dp"/>
+                android:textColor="@color/white"
+                android:fontFamily="@font/montserrat" />
         </LinearLayout>
 
 

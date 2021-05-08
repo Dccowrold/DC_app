@@ -1,5 +1,13 @@
 <resources>
-    <string name="app_name">Splash Screen</string>
+    <string name="app_name">Derive Capital</string>
+
+    <string name="derive">Derive Capital</string>
+
+    // splash activities
+    <string name="we_are">We\'re so glad you\'re here!</string>
+    <string name="your_data">Your data is encrypted and SSL secured</string>
+    <string name="a_budget">A budget is telling your money where to go instead of wondering where it went</string>
+    <string name="click_here">Click here to be onboarded!</string>
 
 
     // sign up activity
@@ -51,7 +59,6 @@
     //facebook
     <string name="facebook_app_id">1363845314015894</string>
     <string name="fb_login_protocol_scheme">fb1363845314015894</string>
-
 
 
     //twitter
