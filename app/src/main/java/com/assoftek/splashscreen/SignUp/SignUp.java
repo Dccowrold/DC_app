@@ -8,7 +8,6 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.assoftek.splashscreen.Login.Login;
 import com.assoftek.splashscreen.databinding.ActivitySignupBinding;
 
 
@@ -26,7 +25,7 @@ public class SignUp extends AppCompatActivity {
         binding.back.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        Intent i=new Intent(SignUp.this, Login.class);
+                        Intent i=new Intent(SignUp.this, login.class);
                         startActivity(i);
                     }
                 });

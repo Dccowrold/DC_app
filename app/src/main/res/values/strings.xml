@@ -62,8 +62,8 @@
 
 
     //twitter
-    <string name="Api_key">k3G1JrGxcNut5XVQ6A9OfcpoK</string>
-    <string name="Api_Secret">oMIJGpt1FzRnh70M8Txc6kLAdZrRs9EoSqeQjoVWZ5PpDWDoPm</string>
+    <string name="Api_key">OCpOGTmGoPIaC860j8iHD02BC</string>
+    <string name="Api_Secret">b37B06p3RrVEgEhzj04fw4raycr4uxCgwfV7AbKTmGst1lk8vw</string>
 
     //dash board activity
     <string name="good_morning">Good Morning,</string>

@@ -6,7 +6,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-import com.assoftek.splashscreen.Login.Login;
 import com.assoftek.splashscreen.R;
 import com.assoftek.splashscreen.databinding.ActivityScreen4Binding;
 import com.bumptech.glide.Glide;
@@ -28,7 +27,7 @@ public class Screen_4 extends AppCompatActivity {
          binding.tv4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Screen_4.this, Login.class);
+                Intent intent = new Intent(Screen_4.this, login.class);
                 startActivity(intent);
                 finish();
                 callH=false;

@@ -5,7 +5,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:background="@color/black"
     android:orientation="vertical"
-    android:gravity="center">
+    android:gravity="center"
+    tools:context=".login">
 
 
     <ImageView

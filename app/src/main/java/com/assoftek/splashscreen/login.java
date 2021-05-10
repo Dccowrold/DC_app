@@ -1,16 +1,16 @@
-package com.assoftek.splashscreen.Login;
+package com.assoftek.splashscreen;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
-
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
-import com.assoftek.splashscreen.R;
-import com.assoftek.splashscreen.SignUp.PhoneActivity;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+
+import com.assoftek.splashscreen.Login.LoginNumber;
 import com.assoftek.splashscreen.SignUp.SignUp;
 import com.assoftek.splashscreen.databinding.ActivityLoginBinding;
 import com.facebook.AccessToken;
@@ -43,7 +43,8 @@ import com.twitter.sdk.android.core.TwitterSession;
 
 import java.util.Arrays;
 
-public class Login extends AppCompatActivity {
+public class login extends Activity {
+
 
     ActivityLoginBinding binding;
     GoogleSignInClient googleSignInClient;
@@ -54,8 +55,20 @@ public class Login extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         binding = ActivityLoginBinding.inflate(getLayoutInflater());
+
         setContentView(binding.getRoot());
+
+
+        //twitter code
+        TwitterAuthConfig config = new TwitterAuthConfig(getString(R.string.Api_key),getString(R.string.Api_Secret));
+        TwitterConfig twitterConfig = new TwitterConfig.Builder(this)
+                .twitterAuthConfig(config)
+                .build();
+        Twitter.initialize(twitterConfig);
+
+
 
         mAuth = FirebaseAuth.getInstance();
         FacebookSdk.sdkInitialize(getApplicationContext());
@@ -73,18 +86,11 @@ public class Login extends AppCompatActivity {
         binding.signup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(Login.this, SignUp.class);
+                Intent intent=new Intent(login.this, SignUp.class);
                 startActivity(intent);
             }
         });
 
-
-        //twitter code
-        TwitterAuthConfig config = new TwitterAuthConfig(getString(R.string.Api_key),getString(R.string.Api_Secret));
-        TwitterConfig twitterConfig = new TwitterConfig.Builder(this)
-                .twitterAuthConfig(config)
-                .build();
-        Twitter.initialize(twitterConfig);
 
 
         binding.twTwitterLogo.setOnClickListener(new View.OnClickListener() {
@@ -101,14 +107,14 @@ public class Login extends AppCompatActivity {
             @Override
             public void success(Result<TwitterSession> result) {
                 Log.i("callback","Came into callback");
-                Toast.makeText(Login.this, "Signed in using twitter", Toast.LENGTH_SHORT).show();
+                Toast.makeText(login.this, "Signed in using twitter", Toast.LENGTH_SHORT).show();
                 MainProcess(result.data);
             }
 
             @Override
             public void failure(TwitterException exception) {
 
-                Toast.makeText(Login.this, exception.getMessage(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(login.this, exception.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -161,10 +167,10 @@ public class Login extends AppCompatActivity {
         mAuth.signInWithCredential(credential).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
-                Toast.makeText(Login.this, "Signed in twitter successfull", Toast.LENGTH_SHORT).show();
+                Toast.makeText(login.this, "Signed in twitter successfull", Toast.LENGTH_SHORT).show();
 
                 if (!task.isSuccessful()){
-                    Toast.makeText(Login.this, "Firebase Auth Failed", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(login.this, "Firebase Auth Failed", Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -177,7 +183,7 @@ public class Login extends AppCompatActivity {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()) {
-                    Toast.makeText(Login.this, "SuccessFull", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(login.this, "SuccessFull", Toast.LENGTH_SHORT).show();
                     FirebaseUser user = mAuth.getCurrentUser();
                     updateuser(user);
                     binding.progress.setVisibility(View.GONE);
@@ -187,7 +193,7 @@ public class Login extends AppCompatActivity {
                 } else {
                     binding.progress.setVisibility(View.GONE);
                     binding.loginButton.setVisibility(View.VISIBLE);
-                    Toast.makeText(Login.this, "Failed", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(login.this, "Failed", Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -232,7 +238,7 @@ public class Login extends AppCompatActivity {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()) {
-                    Toast.makeText(Login.this, "SuccessFull", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(login.this, "SuccessFull", Toast.LENGTH_SHORT).show();
                     FirebaseUser user = mAuth.getCurrentUser();
                     updateuser(user);
                     binding.progress.setVisibility(View.GONE);
@@ -240,7 +246,7 @@ public class Login extends AppCompatActivity {
                 } else {
                     binding.progress.setVisibility(View.GONE);
                     binding.loginButton.setVisibility(View.VISIBLE);
-                    Toast.makeText(Login.this, "Failed", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(login.this, "Failed", Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -254,7 +260,7 @@ public class Login extends AppCompatActivity {
             String person_email = account.getEmail();
 
             Toast.makeText(this, "Logged in as "+person_email, Toast.LENGTH_SHORT).show();
-            Intent intentmovetouser = new Intent(Login.this, LoginNumber.class);
+            Intent intentmovetouser = new Intent(login.this, LoginNumber.class);
             intentmovetouser.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP|Intent.FLAG_ACTIVITY_NEW_TASK);
             startActivity(intentmovetouser);
         }

@@ -11,7 +11,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
-import com.assoftek.splashscreen.Login.Login;
 import com.assoftek.splashscreen.databinding.ActivityDashboardBinding;
 import com.google.firebase.auth.FirebaseAuth;
 
@@ -78,7 +77,7 @@ public class DashboardActivity extends AppCompatActivity {
 
             case R.id.logout:
                 auth.signOut();                                                                  // user logout
-                Intent intent=new Intent(DashboardActivity.this, Login.class);        // going back to sign in
+                Intent intent=new Intent(DashboardActivity.this, login.class);        // going back to sign in
                 startActivity(intent);
                 break;
         }

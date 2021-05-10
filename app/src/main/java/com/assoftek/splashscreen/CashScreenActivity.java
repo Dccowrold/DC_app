@@ -25,5 +25,13 @@ public class CashScreenActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        binding.linkAccount.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
     }
 }
