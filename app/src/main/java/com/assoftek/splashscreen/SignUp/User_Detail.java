@@ -41,6 +41,7 @@ public class User_Detail extends AppCompatActivity {
         binding= ActivityUserDetailBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         getSupportActionBar().hide();
+
         final Calendar calendar=Calendar.getInstance();
 
         final String number=getIntent().getStringExtra("number");
@@ -126,14 +127,6 @@ public class User_Detail extends AppCompatActivity {
             public void onClick(View view) {
 
                 progressDialog.show();
-                if(male)
-                {
-                  gender+="male";
-                }
-                if(female)
-                {
-                  gender+="female";
-                }
 
                 if(male==false && female==false)
                 {
@@ -157,6 +150,15 @@ public class User_Detail extends AppCompatActivity {
                 {
                     binding.dateOfBirth.setError("Enter your Birth date!!");
                     return;
+                }
+
+                if(male)
+                {
+                    gender+="male";
+                }
+                if(female)
+                {
+                    gender+="female";
                 }
 
 

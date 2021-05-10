@@ -42,6 +42,12 @@ public class SignUp extends AppCompatActivity {
                     return;
                 }
 
+                if(binding.password.getText().toString().length()<8)
+                {
+                    binding.password.setError("Enter your password in more than 8 characters!");
+                    return;
+                }
+
                 if(binding.email.getText().toString().isEmpty())
                 {
                     binding.password.setError("Enter your email!");
