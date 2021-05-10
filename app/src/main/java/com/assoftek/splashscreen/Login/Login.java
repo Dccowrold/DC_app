@@ -123,15 +123,6 @@ public class Login extends AppCompatActivity {
         });
 
 
-   //     loginBinding.linkedin.setOnClickListener(new View.OnClickListener() {
-   //         @Override
-     //       public void onClick(View view) {
-      //          Intent movetoPayments = new Intent(getApplicationContext(), PaymentsActivity.class);
-     //           startActivity(movetoPayments);
-     //       }
-     //   });
-
-
         mCallbackManager = CallbackManager.Factory.create();
         binding.fb.setReadPermissions(Arrays.asList("user_friends","email","public_profile"));
         binding.facebook.setOnClickListener(new View.OnClickListener() {

@@ -7,15 +7,6 @@
     tools:context=".DashboardActivity"
     android:background="@color/black">
 
-    <ImageView
-        android:id="@+id/visibility"
-        android:layout_width="30dp"
-        android:layout_height="25dp"
-        android:layout_alignParentLeft="true"
-        android:background="@drawable/visibility"
-        android:layout_marginTop="30dp"
-        android:layout_marginLeft="10dp"/>
-
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/profile_image"
@@ -27,14 +18,8 @@
         android:layout_marginTop="30dp"
         android:src="@drawable/user9"/>
 
-    <ImageView
-        android:id="@+id/logout"
-        android:layout_width="32dp"
-        android:layout_height="30dp"
-        android:layout_alignParentRight="true"
-        android:background="@drawable/logout"
-        android:layout_marginTop="30dp"
-        android:layout_marginRight="10dp"/>
+
+
 
     <LinearLayout
         android:layout_above="@+id/text1"

@@ -73,5 +73,9 @@
 
     <string name="we_are_on">We are one a journey to start, manage and clean up your personal finance. It is slightly a long ride, but we promise you will love every step of it.</string>
 
+    <string-array name="month">
+
+        
+    </string-array>
 
 </resources>
