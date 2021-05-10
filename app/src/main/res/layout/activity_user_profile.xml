@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="@color/black"
+    tools:context=".UserProfile">
+
+
+    <TextView
+        android:layout_width="310dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/montserrat"
+        android:text="Graduation Details"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="10dp"
+        android:drawableRight="@drawable/bottomarrow"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/course_name"
+            android:layout_width="320dp"
+            android:layout_height="40dp"
+            android:hint="Course Name"
+            android:background="@drawable/squareblue"
+            android:ems="10"
+            android:layout_centerHorizontal="true"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:inputType="text"
+            android:layout_marginBottom="10dp"
+            android:fontFamily="@font/montserrat"
+            android:textColorHint="@color/white"
+            android:textColor="@color/white"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:paddingLeft="10dp"
+            />
+
+        <EditText
+            android:id="@+id/university_name"
+            android:layout_width="320dp"
+            android:layout_height="40dp"
+            android:hint="University Name"
+            android:background="@drawable/squareblue"
+            android:ems="10"
+            android:layout_centerHorizontal="true"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:inputType="text"
+            android:layout_marginBottom="10dp"
+            android:fontFamily="@font/montserrat"
+            android:textColorHint="@color/white"
+            android:textColor="@color/white"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:paddingLeft="10dp"
+            />
+
+        <EditText
+            android:id="@+id/majors"
+            android:layout_width="320dp"
+            android:layout_height="40dp"
+            android:hint="Majors"
+            android:background="@drawable/squareblue"
+            android:ems="10"
+            android:layout_centerHorizontal="true"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:inputType="text"
+            android:layout_marginBottom="15dp"
+            android:fontFamily="@font/montserrat"
+            android:textColorHint="@color/white"
+            android:textColor="@color/white"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:paddingLeft="10dp"
+            />
+
+        <TextView
+            android:layout_width="310dp"
+            android:layout_height="wrap_content"
+            android:text="Completion Month and Year"
+            android:fontFamily="@font/montserrat"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:textColor="@color/white"/>
+
+
+
+
+    </LinearLayout>
+
+
+
+    <Button
+        android:id="@+id/submit"
+        android:layout_width="320dp"
+        android:layout_height="40dp"
+        android:fontFamily="@font/montserrat"
+        android:text="Submit"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/roundgbluebutton"
+        />
+
+
+</LinearLayout>
