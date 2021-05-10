@@ -10,6 +10,7 @@ import android.view.View;
 import com.assoftek.splashscreen.R;
 import com.assoftek.splashscreen.databinding.ActivityScreen3Binding;
 import com.bumptech.glide.Glide;
+import com.facebook.login.Login;
 
 public class Screen_3 extends AppCompatActivity {
 
@@ -22,14 +23,14 @@ public class Screen_3 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding=ActivityScreen3Binding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-
+        getSupportActionBar().hide();
 
         Glide.with(this).load(R.drawable.two).into(binding.image);
 
         binding.tv3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Screen_3.this, login.class);
+                Intent intent = new Intent(Screen_3.this, Login.class);
                 startActivity(intent);
                 finish();
                 callH=false;

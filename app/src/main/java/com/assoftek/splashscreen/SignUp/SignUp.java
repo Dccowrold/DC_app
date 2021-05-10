@@ -9,6 +9,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.assoftek.splashscreen.databinding.ActivitySignupBinding;
+import com.facebook.login.Login;
 
 
 public class SignUp extends AppCompatActivity {
@@ -20,12 +21,12 @@ public class SignUp extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = ActivitySignupBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-
-
+        getSupportActionBar().hide();
+        getSupportActionBar().hide();
         binding.back.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        Intent i=new Intent(SignUp.this, login.class);
+                        Intent i=new Intent(SignUp.this, Login.class);
                         startActivity(i);
                     }
                 });

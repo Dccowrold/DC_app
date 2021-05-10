@@ -18,7 +18,7 @@ public class WealthActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding=ActivityWealth2Binding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-
+        getSupportActionBar().hide();
         binding.back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

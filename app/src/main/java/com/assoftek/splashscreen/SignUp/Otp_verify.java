@@ -35,7 +35,7 @@ public class Otp_verify extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding= ActivityOtpVerifyBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-
+        getSupportActionBar().hide();
 
         final String number=getIntent().getStringExtra("number");
         final String countryCode= getIntent().getStringExtra("countryCode");

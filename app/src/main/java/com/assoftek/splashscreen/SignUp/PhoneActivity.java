@@ -27,7 +27,7 @@ public class PhoneActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding=ActivityPhoneBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-
+        getSupportActionBar().hide();
 
         final String email= getIntent().getStringExtra("email");
         final String password= getIntent().getStringExtra("password");

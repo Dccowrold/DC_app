@@ -40,6 +40,7 @@ public class User_Detail extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding= ActivityUserDetailBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+        getSupportActionBar().hide();
         final Calendar calendar=Calendar.getInstance();
 
         final String number=getIntent().getStringExtra("number");

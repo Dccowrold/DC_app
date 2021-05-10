@@ -17,7 +17,7 @@ public class CashScreenActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding=ActivityCashScreenBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-
+        getSupportActionBar().hide();
         binding.back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
