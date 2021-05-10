@@ -10,9 +10,9 @@ import android.view.WindowManager;
 
 
 import com.assoftek.splashscreen.DashboardActivity;
-import com.assoftek.splashscreen.Login.Login;
 import com.assoftek.splashscreen.Onboarding.Screen_1;
 import com.assoftek.splashscreen.R;
+import com.assoftek.splashscreen.login;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
@@ -56,8 +56,8 @@ public class MainActivity extends AppCompatActivity {
                             startActivity(intent);
 
                        } else {
-                           Intent intent = new Intent(MainActivity.this, Login.class);
-                           startActivity(intent);
+                           Intent in = new Intent(MainActivity.this, login.class);
+                           startActivity(in);
                            finish();
                        }
                        if(firebaseAuth.getUid()==null)
