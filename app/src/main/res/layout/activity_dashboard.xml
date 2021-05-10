@@ -7,7 +7,6 @@
     tools:context=".DashboardActivity"
     android:background="@color/black">
 
-
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/profile_image"
         android:layout_width="65dp"
@@ -17,8 +16,6 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="30dp"
         android:src="@drawable/user9"/>
-
-
 
 
     <LinearLayout

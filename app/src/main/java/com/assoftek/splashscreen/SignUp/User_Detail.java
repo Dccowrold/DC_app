@@ -32,7 +32,7 @@ public class User_Detail extends AppCompatActivity {
     ProgressDialog progressDialog;
     static boolean male=false, female=false;
     static String gender="";
-    int date, month, year;
+    int day, month, year;
 
 
     @Override
@@ -51,26 +51,28 @@ public class User_Detail extends AppCompatActivity {
         final String name= binding.reference.getText().toString();
         final String  state= binding.state.getText().toString();
         final String  pincode= binding.pincode.getText().toString();
-        final String  dob="";
 
 
+        year=calendar.get(Calendar.YEAR);
+        month=calendar.get(Calendar.MONTH);
+        day=calendar.get(Calendar.DAY_OF_MONTH);
         binding.dateOfBirth.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                year=calendar.get(Calendar.YEAR);
-                month=calendar.get(Calendar.MONTH);
-                date=calendar.get(Calendar.DATE);
-                DatePickerDialog datePickerDialog=new DatePickerDialog(User_Detail.this,android.R.style.Theme_Black, new DatePickerDialog.OnDateSetListener() {
-                    @Override
-                    public void onDateSet(DatePicker datePicker, int year, int month, int date) {
-                        binding.dateOfBirth.setText(date+"-"+month+"-"+year);
 
-                      //  dob=date+"-"+month+"-"+year;
+                DatePickerDialog datePickerDialog=new DatePickerDialog(User_Detail.this, new DatePickerDialog.OnDateSetListener() {
+                    @Override
+                    public void onDateSet(DatePicker datePicker, int year, int month, int day) {
+                        month=month+1;
+                        String date=day+" / "+month+" / "+year;
+                        binding.dateOfBirth.setText(date);
                     }
-                }, year, month,date);
+                }, year, month,day);
                 datePickerDialog.show();
             }
         });
+
+        final String  dob="day+\" / \"+month+\" / \"+year";
 
         binding.male.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -147,6 +149,12 @@ public class User_Detail extends AppCompatActivity {
                 if(binding.pincode.getText().toString().isEmpty())
                 {
                     binding.pincode.setError("Enter your hometown!!");
+                    return;
+                }
+
+                if(binding.dateOfBirth.getText().toString().isEmpty())
+                {
+                    binding.dateOfBirth.setError("Enter your Birth date!!");
                     return;
                 }
 

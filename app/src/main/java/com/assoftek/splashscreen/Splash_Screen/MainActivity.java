@@ -38,8 +38,6 @@ public class MainActivity extends AppCompatActivity {
         firebaseAuth = FirebaseAuth.getInstance();
         final FirebaseUser firebaseUser = firebaseAuth.getCurrentUser();
 
-
-
         if (Firsttime.equals("Yes")) {
             //creating thread
            Runnable runnable = new Runnable() {
@@ -58,6 +56,12 @@ public class MainActivity extends AppCompatActivity {
                             startActivity(intent);
 
                        } else {
+                           Intent intent = new Intent(MainActivity.this, Login.class);
+                           startActivity(intent);
+                           finish();
+                       }
+                       if(firebaseAuth.getUid()==null)
+                       {
                            Intent intent = new Intent(MainActivity.this, Login.class);
                            startActivity(intent);
                            finish();
@@ -85,6 +89,7 @@ public class MainActivity extends AppCompatActivity {
             },4000);
 
        }
+
         }
 
     }
