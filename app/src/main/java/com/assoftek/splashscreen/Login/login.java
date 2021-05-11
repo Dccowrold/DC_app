@@ -1,4 +1,4 @@
-package com.assoftek.splashscreen;
+package com.assoftek.splashscreen.Login;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -10,7 +10,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-import com.assoftek.splashscreen.Login.LoginNumber;
+import com.assoftek.splashscreen.R;
 import com.assoftek.splashscreen.SignUp.SignUp;
 import com.assoftek.splashscreen.databinding.ActivityLoginBinding;
 import com.facebook.AccessToken;

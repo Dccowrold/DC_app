@@ -6,7 +6,7 @@
     android:background="@color/black"
     android:orientation="vertical"
     android:gravity="center"
-    tools:context=".login">
+    tools:context=".Login.login">
 
 
     <ImageView
