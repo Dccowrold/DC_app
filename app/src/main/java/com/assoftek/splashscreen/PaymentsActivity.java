@@ -26,6 +26,7 @@ public class PaymentsActivity extends AppCompatActivity implements PaymentResult
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_payments);
+        getSupportActionBar().hide();
         Checkout.preload(getApplicationContext());
         PayButton=(Button)findViewById(R.id.PayButton);
         PayButton.setOnClickListener(new View.OnClickListener() {

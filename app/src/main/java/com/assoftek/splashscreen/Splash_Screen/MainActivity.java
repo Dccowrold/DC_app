@@ -10,11 +10,10 @@ import android.view.WindowManager;
 
 
 import com.assoftek.splashscreen.DashboardActivity;
-import com.assoftek.splashscreen.Login.login;
-import com.assoftek.splashscreen.SignUp.Otp_verify;
-import com.assoftek.splashscreen.SignUp.SignUp;
 import com.assoftek.splashscreen.Onboarding.Screen_1;
 import com.assoftek.splashscreen.R;
+import com.assoftek.splashscreen.login;
+import com.facebook.login.Login;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
@@ -28,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        getSupportActionBar().hide();
         //hide actionbar
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
@@ -39,8 +38,6 @@ public class MainActivity extends AppCompatActivity {
 
         firebaseAuth = FirebaseAuth.getInstance();
         final FirebaseUser firebaseUser = firebaseAuth.getCurrentUser();
-
-
 
         if (Firsttime.equals("Yes")) {
             //creating thread
@@ -60,7 +57,13 @@ public class MainActivity extends AppCompatActivity {
                             startActivity(intent);
 
                        } else {
-                           Intent intent = new Intent(MainActivity.this, SignUp.class);
+                           Intent in = new Intent(MainActivity.this, Login.class);
+                           startActivity(in);
+                           finish();
+                       }
+                       if(firebaseAuth.getUid()==null)
+                       {
+                           Intent intent = new Intent(MainActivity.this, Login.class);
                            startActivity(intent);
                            finish();
                        }
@@ -87,6 +90,7 @@ public class MainActivity extends AppCompatActivity {
             },4000);
 
        }
+
         }
 
     }

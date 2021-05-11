@@ -6,31 +6,29 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
-import android.widget.ImageView;
-import android.widget.TextView;
 
-import com.assoftek.splashscreen.SignUp.SignUp;
 import com.assoftek.splashscreen.R;
+import com.assoftek.splashscreen.databinding.ActivityScreen2Binding;
 import com.bumptech.glide.Glide;
+import com.facebook.login.Login;
 
 public class Screen_2 extends AppCompatActivity {
 
-    private TextView textView;
+    ActivityScreen2Binding binding;
     boolean callH = true;
-    ImageView imageView1;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_screen_2);
-        imageView1 = findViewById(R.id.image);
-        textView=findViewById(R.id.tv2);
+        binding=ActivityScreen2Binding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
+        getSupportActionBar().hide();
+        Glide.with(this).load(R.drawable.one).into(binding.image);
 
-        Glide.with(this).load(R.drawable.four).into(imageView1);
-
-        textView.setOnClickListener(new View.OnClickListener() {
+        binding.tv2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Screen_2.this, SignUp.class);
+                Intent intent = new Intent(Screen_2.this, Login.class);
                 startActivity(intent);
                 finish();
                 callH=false;
@@ -45,8 +43,7 @@ public class Screen_2 extends AppCompatActivity {
 
                 }
             }
-        },4000);
-
+        },6000);
 
     }
 }

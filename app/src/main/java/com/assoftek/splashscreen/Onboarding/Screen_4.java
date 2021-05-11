@@ -5,30 +5,30 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
-import android.widget.ImageView;
 
-import com.assoftek.splashscreen.SignUp.SignUp;
 import com.assoftek.splashscreen.R;
+import com.assoftek.splashscreen.databinding.ActivityScreen4Binding;
 import com.bumptech.glide.Glide;
+import com.facebook.login.Login;
 
 public class Screen_4 extends AppCompatActivity {
 
-    Button button;
+    ActivityScreen4Binding binding;
     Boolean callH=true;
-    ImageView view2;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_screen_4);
-        view2 = findViewById(R.id.imageView5);
-        button=findViewById(R.id.btn);
+        binding=ActivityScreen4Binding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
+        getSupportActionBar().hide();
 
-        Glide.with(this).load(R.drawable.three).into(view2);
-        button.setOnClickListener(new View.OnClickListener() {
+        Glide.with(this).load(R.drawable.three).into(binding.image);
+
+         binding.tv4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Screen_4.this, SignUp.class);
+                Intent intent = new Intent(Screen_4.this, Login.class);
                 startActivity(intent);
                 finish();
                 callH=false;

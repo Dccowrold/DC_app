@@ -1,4 +1,4 @@
-package com.assoftek.splashscreen.SignUp;
+package com.assoftek.splashscreen.Login;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -15,7 +15,10 @@ import android.widget.Toast;
 
 import com.assoftek.splashscreen.DashboardActivity;
 import com.assoftek.splashscreen.R;
-import com.assoftek.splashscreen.databinding.ActivityOtpVerifyBinding;
+import com.assoftek.splashscreen.SignUp.Otp_verify;
+import com.assoftek.splashscreen.SignUp.PhoneActivity;
+import com.assoftek.splashscreen.SignUp.User_Detail;
+import com.assoftek.splashscreen.databinding.ActivityLoginOtpBinding;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -23,9 +26,9 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.PhoneAuthCredential;
 import com.google.firebase.auth.PhoneAuthProvider;
 
-public class Otp_verify extends AppCompatActivity {
+public class LoginOtp extends AppCompatActivity {
 
-    ActivityOtpVerifyBinding binding;
+    ActivityLoginOtpBinding binding;
     private EditText inputCode1, inputCode2, inputCode3, inputCode4, inputCode5, inputCode6;
 
     private String verificationId;
@@ -33,14 +36,11 @@ public class Otp_verify extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        binding= ActivityOtpVerifyBinding.inflate(getLayoutInflater());
+        binding=ActivityLoginOtpBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-        getSupportActionBar().hide();
 
         final String number=getIntent().getStringExtra("number");
         final String countryCode= getIntent().getStringExtra("countryCode");
-        final String email= getIntent().getStringExtra("email");
-        final String password= getIntent().getStringExtra("password");
 
         binding.number.setText(String.format("+91-%s", getIntent()   // showing number on textview
                 .getStringExtra("number")));
@@ -68,7 +68,7 @@ public class Otp_verify extends AppCompatActivity {
                         || inputCode5.getText().toString().trim().isEmpty()
                         || inputCode6.getText().toString().trim().isEmpty())
                 {
-                    Toast.makeText(Otp_verify.this, "Please enter valid code",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(LoginOtp.this, "Please enter valid code",Toast.LENGTH_SHORT).show();
                     return;
                 }
 
@@ -87,22 +87,20 @@ public class Otp_verify extends AppCompatActivity {
                                 public void onComplete(@NonNull Task<AuthResult> task) {
                                     if(task.isSuccessful())
                                     {
-                                        Toast.makeText(Otp_verify.this, "OTP Verified Successfully",Toast.LENGTH_SHORT).show();
+                                        Toast.makeText(LoginOtp.this, "OTP Verified Successfully",Toast.LENGTH_SHORT).show();
                                         finishAffinity();
 
-                                            Intent intent= new Intent(getApplicationContext(),User_Detail.class);
-                                            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                                            intent.putExtra("mobile",number);
-                                            intent.putExtra("countryCode",countryCode);
-                                            intent.putExtra("email",email);
-                                            intent.putExtra("password",password);
-                                            startActivity(intent);
+                                        Intent intent= new Intent(getApplicationContext(), DashboardActivity.class);
+                                        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                                       // intent.putExtra("mobile",number);
+                                       // intent.putExtra("countryCode",countryCode);
+                                        startActivity(intent);
                                     }
                                     else
                                     {
-                                        Toast.makeText(Otp_verify.this, "Invalid verification code entered",Toast.LENGTH_SHORT).show();
+                                        Toast.makeText(LoginOtp.this, "Invalid verification code entered",Toast.LENGTH_SHORT).show();
                                         finishAffinity();
-                                        Intent i=new Intent(Otp_verify.this, PhoneActivity.class);
+                                        Intent i=new Intent(LoginOtp.this, LoginNumber.class);
                                         startActivity(i);
                                     }
                                 }
@@ -116,7 +114,7 @@ public class Otp_verify extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 finishAffinity();
-                Intent i=new Intent(Otp_verify.this, PhoneActivity.class);
+                Intent i=new Intent(LoginOtp.this, LoginNumber.class);
                 startActivity(i);
             }
         });

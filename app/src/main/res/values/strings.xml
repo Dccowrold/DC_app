@@ -1,5 +1,13 @@
 <resources>
-    <string name="app_name">Splash Screen</string>
+    <string name="app_name">Derive Capital</string>
+
+    <string name="derive">Derive Capital</string>
+
+    // splash activities
+    <string name="we_are">We\'re so glad you\'re here!</string>
+    <string name="your_data">Your data is encrypted and SSL secured</string>
+    <string name="a_budget">A budget is telling your money where to go instead of wondering where it went</string>
+    <string name="click_here">Click here to be onboarded!</string>
 
 
     // sign up activity
@@ -53,10 +61,9 @@
     <string name="fb_login_protocol_scheme">fb1363845314015894</string>
 
 
-
     //twitter
-    <string name="Api_key">k3G1JrGxcNut5XVQ6A9OfcpoK</string>
-    <string name="Api_Secret">oMIJGpt1FzRnh70M8Txc6kLAdZrRs9EoSqeQjoVWZ5PpDWDoPm</string>
+    <string name="Api_key">OCpOGTmGoPIaC860j8iHD02BC</string>
+    <string name="Api_Secret">b37B06p3RrVEgEhzj04fw4raycr4uxCgwfV7AbKTmGst1lk8vw</string>
 
     //dash board activity
     <string name="good_morning">Good Morning,</string>
@@ -66,5 +73,34 @@
 
     <string name="we_are_on">We are one a journey to start, manage and clean up your personal finance. It is slightly a long ride, but we promise you will love every step of it.</string>
 
+    <string-array name="month">
+        <item>January</item>
+        <item>February</item>
+        <item>March</item>
+        <item>April</item>
+        <item>May</item>
+        <item>June</item>
+        <item>July</item>
+        <item>August</item>
+        <item>September</item>
+        <item>October</item>
+        <item>November</item>
+        <item>December</item>
+    </string-array>
 
+    <string-array name="year">
+        <item>2000</item>
+        <item>2001</item>
+        <item>2002</item>
+        <item>2003</item>
+        <item>2004</item>
+        <item>2005</item>
+        <item>2006</item>
+        <item>2007</item>
+        <item>2007</item>
+        <item>2008</item>
+        <item>2009</item>
+        <item>2010</item>
+    </string-array>
+    
 </resources>

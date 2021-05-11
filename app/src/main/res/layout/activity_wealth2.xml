@@ -1,27 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center_horizontal"
-    android:background="@drawable/lightgreensquare">
+    android:background="@color/black"
+    tools:context=".WealthActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_marginTop="20dp"
-        android:layout_marginBottom="10dp">
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="15dp">
 
         <ImageView
-            android:layout_width="20dp"
+            android:id="@+id/back"
+            android:layout_width="15dp"
             android:layout_height="18dp"
-            android:background="@drawable/arrow"
-            android:layout_marginLeft="10dp"
+            android:layout_marginLeft="15dp"
             android:layout_marginTop="5dp"
-            />
+            android:background="@drawable/arrow"
+            android:contentDescription="TODO" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -44,7 +45,7 @@
         android:gravity="center_horizontal"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
-        android:background="@drawable/greysquare"
+        android:background="@drawable/squareblue"
         >
 
         <LinearLayout
@@ -84,6 +85,7 @@
 
 
             <LinearLayout
+                android:id="@+id/mutual_fund"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
@@ -94,7 +96,7 @@
                     android:layout_width="50dp"
                     android:layout_height="50dp"
                     android:layout_marginTop="20dp"
-                    android:background="@drawable/greenroundsquare"
+                    android:background="@drawable/roundgbluebutton"
                     android:gravity="center"
                     android:orientation="vertical"
                     android:layout_margin="5dp">
@@ -120,6 +122,7 @@
 
 
             <LinearLayout
+                android:id="@+id/stocks"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
@@ -129,7 +132,7 @@
                     android:layout_width="50dp"
                     android:layout_height="50dp"
                     android:layout_marginTop="20dp"
-                    android:background="@drawable/greenroundsquare"
+                    android:background="@drawable/roundgbluebutton"
                     android:gravity="center"
                     android:orientation="vertical"
                     android:layout_margin="5dp">
@@ -154,6 +157,7 @@
 
 
             <LinearLayout
+                android:id="@+id/fixed_deposit"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
@@ -163,7 +167,7 @@
                     android:layout_width="50dp"
                     android:layout_height="50dp"
                     android:layout_marginTop="20dp"
-                    android:background="@drawable/greenroundsquare"
+                    android:background="@drawable/roundgbluebutton"
                     android:gravity="center"
                     android:orientation="vertical"
                     android:layout_margin="5dp">
@@ -196,6 +200,7 @@
 
 
             <LinearLayout
+                android:id="@+id/ppf"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
@@ -205,7 +210,7 @@
                     android:layout_width="50dp"
                     android:layout_height="50dp"
                     android:layout_marginTop="20dp"
-                    android:background="@drawable/greenroundsquare"
+                    android:background="@drawable/roundgbluebutton"
                     android:gravity="center"
                     android:orientation="vertical"
                     android:layout_margin="10dp">
@@ -239,6 +244,7 @@
 
 
             <LinearLayout
+                android:id="@+id/epf"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
@@ -249,7 +255,7 @@
                     android:layout_width="50dp"
                     android:layout_height="50dp"
                     android:layout_marginTop="20dp"
-                    android:background="@drawable/greenroundsquare"
+                    android:background="@drawable/roundgbluebutton"
                     android:gravity="center"
                     android:orientation="vertical"
                     android:layout_margin="5dp">
@@ -275,6 +281,7 @@
 
 
             <LinearLayout
+                android:id="@+id/nps"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
@@ -284,7 +291,7 @@
                     android:layout_width="50dp"
                     android:layout_height="50dp"
                     android:layout_marginTop="20dp"
-                    android:background="@drawable/greenroundsquare"
+                    android:background="@drawable/roundgbluebutton"
                     android:gravity="center"
                     android:orientation="vertical"
                     android:layout_margin="5dp">
@@ -309,6 +316,7 @@
 
 
             <LinearLayout
+                android:id="@+id/real_estate"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
@@ -318,7 +326,7 @@
                     android:layout_width="50dp"
                     android:layout_height="50dp"
                     android:layout_marginTop="20dp"
-                    android:background="@drawable/greenroundsquare"
+                    android:background="@drawable/roundgbluebutton"
                     android:gravity="center"
                     android:orientation="vertical"
                     android:layout_margin="5dp">
@@ -344,6 +352,7 @@
 
 
             <LinearLayout
+                android:id="@+id/gold"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
@@ -353,7 +362,7 @@
                     android:layout_width="50dp"
                     android:layout_height="50dp"
                     android:layout_marginTop="20dp"
-                    android:background="@drawable/greenroundsquare"
+                    android:background="@drawable/roundgbluebutton"
                     android:gravity="center"
                     android:orientation="vertical"
                     android:layout_margin="10dp">
@@ -382,25 +391,25 @@
             android:gravity="left"
             android:layout_height="wrap_content"
             android:layout_marginTop="-15dp"
-            android:layout_marginLeft="20dp"
-            >
+            android:layout_marginLeft="20dp">
 
             <LinearLayout
+                android:id="@+id/bonds"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:gravity="center"
-                android:layout_margin="5dp">
+                android:layout_margin="10dp">
 
 
                 <LinearLayout
                     android:layout_width="50dp"
                     android:layout_height="50dp"
                     android:layout_marginTop="20dp"
-                    android:background="@drawable/greenroundsquare"
+                    android:background="@drawable/roundgbluebutton"
                     android:gravity="center"
                     android:orientation="vertical"
-                    android:layout_margin="10dp">
+                    android:layout_margin="5dp">
 
                     <ImageView
                         android:layout_width="25dp"
@@ -435,7 +444,7 @@
         android:gravity="center"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
-        android:background="@drawable/greysquare"
+        android:background="@drawable/squareblue"
         android:layout_marginTop="10dp"
         >
 
@@ -478,6 +487,7 @@
 
 
             <LinearLayout
+                android:id="@+id/bank_account"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
@@ -488,7 +498,7 @@
                     android:layout_width="50dp"
                     android:layout_height="50dp"
                     android:layout_marginTop="20dp"
-                    android:background="@drawable/greenroundsquare"
+                    android:background="@drawable/roundgbluebutton"
                     android:gravity="center"
                     android:orientation="vertical"
                     android:layout_margin="5dp">
@@ -523,6 +533,7 @@
 
 
             <LinearLayout
+                android:id="@+id/cash"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
@@ -532,7 +543,7 @@
                     android:layout_width="50dp"
                     android:layout_height="50dp"
                     android:layout_marginTop="20dp"
-                    android:background="@drawable/greenroundsquare"
+                    android:background="@drawable/roundgbluebutton"
                     android:gravity="center"
                     android:orientation="vertical"
                     android:layout_margin="5dp">
@@ -569,7 +580,7 @@
         android:gravity="center"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
-        android:background="@drawable/greysquare"
+        android:background="@drawable/squareblue"
         android:layout_marginTop="10dp"
         >
 
@@ -611,6 +622,7 @@
 
 
             <LinearLayout
+                android:id="@+id/credit_card"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
@@ -621,7 +633,7 @@
                     android:layout_width="50dp"
                     android:layout_height="50dp"
                     android:layout_marginTop="20dp"
-                    android:background="@drawable/greenroundsquare"
+                    android:background="@drawable/roundgbluebutton"
                     android:gravity="center"
                     android:orientation="vertical"
                     android:layout_margin="5dp">
@@ -648,6 +660,7 @@
 
 
             <LinearLayout
+                android:id="@+id/loans"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
@@ -657,7 +670,7 @@
                     android:layout_width="50dp"
                     android:layout_height="50dp"
                     android:layout_marginTop="20dp"
-                    android:background="@drawable/greenroundsquare"
+                    android:background="@drawable/roundgbluebutton"
                     android:gravity="center"
                     android:orientation="vertical"
                     android:layout_margin="5dp">
@@ -685,10 +698,6 @@
 
 
     </LinearLayout>
-
-
-
-
 
 
 </LinearLayout>
