@@ -12,7 +12,6 @@ import android.view.WindowManager;
 import com.assoftek.splashscreen.DashboardActivity;
 import com.assoftek.splashscreen.Onboarding.Screen_1;
 import com.assoftek.splashscreen.R;
-import com.assoftek.splashscreen.login;
 import com.facebook.login.Login;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
