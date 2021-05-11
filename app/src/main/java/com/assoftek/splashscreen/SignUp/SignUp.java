@@ -24,12 +24,12 @@ public class SignUp extends AppCompatActivity {
         getSupportActionBar().hide();
         getSupportActionBar().hide();
         binding.back.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        Intent i=new Intent(SignUp.this, Login.class);
-                        startActivity(i);
-                    }
-                });
+            @Override
+            public void onClick(View view) {
+                Intent i=new Intent(SignUp.this, Login.class);
+                startActivity(i);
+            }
+        });
 
 
         binding.signUp.setOnClickListener(new View.OnClickListener() {

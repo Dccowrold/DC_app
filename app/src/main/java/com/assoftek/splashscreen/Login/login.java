@@ -166,6 +166,7 @@ public class login extends Activity {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 Toast.makeText(login.this, "Signed in twitter successfull", Toast.LENGTH_SHORT).show();
+                updateuser(mAuth.getCurrentUser());
 
                 if (!task.isSuccessful()){
                     Toast.makeText(login.this, "Firebase Auth Failed", Toast.LENGTH_SHORT).show();
@@ -186,8 +187,6 @@ public class login extends Activity {
                     updateuser(user);
                     binding.progress.setVisibility(View.GONE);
                     binding.loginButton.setVisibility(View.VISIBLE);
-                    Intent intent= new Intent(getApplicationContext(), LoginNumber.class);
-                    startActivity(intent);
                 } else {
                     binding.progress.setVisibility(View.GONE);
                     binding.loginButton.setVisibility(View.VISIBLE);
@@ -259,6 +258,7 @@ public class login extends Activity {
 
             Toast.makeText(this, "Logged in as "+person_email, Toast.LENGTH_SHORT).show();
             Intent intentmovetouser = new Intent(login.this, LoginNumber.class);
+            intentmovetouser.putExtra("uuid",fuser.getUid());
             intentmovetouser.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP|Intent.FLAG_ACTIVITY_NEW_TASK);
             startActivity(intentmovetouser);
         }

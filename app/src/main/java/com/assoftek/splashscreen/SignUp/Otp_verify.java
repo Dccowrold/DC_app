@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -92,6 +93,8 @@ public class Otp_verify extends AppCompatActivity {
 
                                             Intent intent= new Intent(getApplicationContext(),User_Detail.class);
                                             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                                            intent.putExtra("uuid",FirebaseAuth.getInstance().getUid());
+                                            Log.d("theotp",FirebaseAuth.getInstance().getUid());
                                             intent.putExtra("mobile",number);
                                             intent.putExtra("countryCode",countryCode);
                                             intent.putExtra("email",email);

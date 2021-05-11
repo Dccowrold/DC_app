@@ -90,9 +90,9 @@ public class LoginOtp extends AppCompatActivity {
                                         Toast.makeText(LoginOtp.this, "OTP Verified Successfully",Toast.LENGTH_SHORT).show();
                                         finishAffinity();
 
-                                        Intent intent= new Intent(getApplicationContext(), DashboardActivity.class);
+                                        Intent intent= new Intent(getApplicationContext(), User_Detail.class);
                                         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                                       // intent.putExtra("mobile",number);
+                                        intent.putExtra("uuid",getIntent().getStringExtra("uuid"));
                                        // intent.putExtra("countryCode",countryCode);
                                         startActivity(intent);
                                     }

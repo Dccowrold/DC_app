@@ -70,6 +70,7 @@ public class LoginNumber extends AppCompatActivity {
                                 binding.buttonGetOTP.setVisibility(View.VISIBLE);
 
                                 Intent i = new Intent(LoginNumber.this, LoginOtp.class);
+                                i.putExtra("uuid",getIntent().getStringExtra("uuid"));
                                 i.putExtra("verificationId", verificationId);
                                 i.putExtra("number", binding.phoneNumber.getText().toString());
                                 i.putExtra("countryCode", binding.countryCode.getText().toString());

@@ -101,7 +101,7 @@ public class UserProfile extends AppCompatActivity {
                 obj.put("panCard",binding.panCard);
 
                 database.getReference().child("Users").child(FirebaseAuth.getInstance().getUid())
-                        .updateChildren(obj);
+                        .setValue(obj);
 
                 Toast.makeText(UserProfile.this, "Profile Details Submitted",
                         Toast.LENGTH_SHORT).show();
