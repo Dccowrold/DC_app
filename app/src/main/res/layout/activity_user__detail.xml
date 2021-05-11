@@ -45,7 +45,7 @@
             android:inputType="text"
             android:layout_marginBottom="20dp"
             android:fontFamily="@font/montserrat"
-            android:textColorHint="@color/white"
+            android:textColorHint="@color/gray"
             android:textColor="@color/white"
             android:paddingTop="10dp"
             android:paddingBottom="10dp"
@@ -77,7 +77,7 @@
                 android:paddingBottom="10dp"
                 android:paddingLeft="10dp"
                 android:fontFamily="@font/montserrat"
-                android:textColorHint="@color/white"
+                android:textColorHint="@color/gray"
                 android:textColor="@color/white"
                 android:layout_marginRight="20dp"
                 />
@@ -98,7 +98,7 @@
                 android:paddingBottom="10dp"
                 android:paddingLeft="10dp"
                 android:fontFamily="@font/montserrat"
-                android:textColorHint="@color/white"
+                android:textColorHint="@color/gray"
                 android:textColor="@color/white"
                 />
 
