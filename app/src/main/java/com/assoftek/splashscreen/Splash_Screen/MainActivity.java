@@ -51,12 +51,12 @@ public class MainActivity extends AppCompatActivity {
                        e.printStackTrace();
                    } finally {
 
-                       if (firebaseUser!=null) {
+                       if (firebaseAuth.getUid()!=null) {
                             Intent intent = new Intent(MainActivity.this, DashboardActivity.class);
                             intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
                             startActivity(intent);
 
-                       } else {
+                       }  if (firebaseAuth.getUid()==null) {
                            Intent in = new Intent(MainActivity.this, login.class);
                            startActivity(in);
                            finish();
