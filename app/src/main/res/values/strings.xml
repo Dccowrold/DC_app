@@ -70,37 +70,19 @@
     <string name="name">Vaishnavi</string>
     <string name="your_net_worth">Your Net Worth</string>
     <string name="glad_to">Glad to have you onboard the Starship rocket</string>
+    <string name="pay">Pay</string>
 
     <string name="we_are_on">We are one a journey to start, manage and clean up your personal finance. It is slightly a long ride, but we promise you will love every step of it.</string>
 
-    <string-array name="month">
-        <item>January</item>
-        <item>February</item>
-        <item>March</item>
-        <item>April</item>
-        <item>May</item>
-        <item>June</item>
-        <item>July</item>
-        <item>August</item>
-        <item>September</item>
-        <item>October</item>
-        <item>November</item>
-        <item>December</item>
-    </string-array>
-
-    <string-array name="year">
-        <item>2000</item>
-        <item>2001</item>
-        <item>2002</item>
-        <item>2003</item>
-        <item>2004</item>
-        <item>2005</item>
-        <item>2006</item>
-        <item>2007</item>
-        <item>2007</item>
-        <item>2008</item>
-        <item>2009</item>
-        <item>2010</item>
-    </string-array>
+    // payment activity
+    <string name="payments">Payments</string>
+    <string name="payment_history">Payment History</string>
+    <string name="no_payment_history">No Payment History</string>
+    <string name="payment_methods">Payment Methods</string>
+    <string name="to_protect">To protect your security, we do not store your UPI PIN or full bank account number.</string>
+    <string name="learn_more">Learn More</string>
+    <string name="add_payment_method">Add Payment Method</string>
+    <string name="help">Help</string>
+    <string name="new_payment">New Payment</string>
     
 </resources>
