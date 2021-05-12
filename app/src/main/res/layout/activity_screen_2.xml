@@ -7,8 +7,6 @@
     android:background="@color/black"
     tools:context=".Onboarding.Screen_2">
 
-
-
     <TextView
         android:id="@+id/tv2"
         android:layout_margin="30dp"
