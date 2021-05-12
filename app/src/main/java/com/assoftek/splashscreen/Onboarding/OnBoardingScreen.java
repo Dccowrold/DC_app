@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
 import android.widget.ImageView;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.res.ResourcesCompat;
@@ -13,23 +12,23 @@ import androidx.viewpager.widget.ViewPager;
 
 import com.assoftek.splashscreen.Login.login;
 import com.assoftek.splashscreen.R;
-import com.assoftek.splashscreen.databinding.ActivityScreen1Binding;
+import com.assoftek.splashscreen.databinding.ActivityOnBoardingScreenBinding;
 
 import java.util.Objects;
 
-public class Screen_1 extends AppCompatActivity {
+public class OnBoardingScreen extends AppCompatActivity {
 
     private static final String TAG = "mTAG";
 
     ImageView[] imageViews;
     ViewPagerAdapter adapter;
-    ActivityScreen1Binding binding;
+    ActivityOnBoardingScreenBinding binding;
     boolean isHandlerRunning = true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        binding = ActivityScreen1Binding.inflate(getLayoutInflater());
+        binding = ActivityOnBoardingScreenBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
         Objects.requireNonNull(getSupportActionBar()).hide();
@@ -109,7 +108,7 @@ public class Screen_1 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 isHandlerRunning = false;
-                Intent intent = new Intent(Screen_1.this, login.class);
+                Intent intent = new Intent(OnBoardingScreen.this, login.class);
                 startActivity(intent);
                 finish();
             }

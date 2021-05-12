@@ -6,7 +6,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-import com.assoftek.splashscreen.databinding.ActivityScreen1Binding;
 import com.assoftek.splashscreen.databinding.ActivityWealth2Binding;
 
 public class WealthActivity extends AppCompatActivity {

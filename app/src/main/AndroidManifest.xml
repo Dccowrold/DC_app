@@ -11,7 +11,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".UserProfile"></activity>
+        <activity android:name=".UserProfile"/>
         <activity android:name=".Login.LoginOtp" />
         <activity android:name=".Login.LoginNumber" />
         <activity android:name=".SignUp.PhoneActivity" />
@@ -22,10 +22,7 @@
         <activity android:name=".Login.login" />
         <activity android:name=".SignUp.Otp_verify" />
         <activity android:name=".SignUp.User_Detail" />
-        <activity android:name=".Onboarding.Screen_4" />
-        <activity android:name=".Onboarding.Screen_3" />
-        <activity android:name=".Onboarding.Screen_2" />
-        <activity android:name=".Onboarding.Screen_1" />
+        <activity android:name=".Onboarding.OnBoardingScreen" />
         <activity android:name=".SignUp.SignUp" />
         <activity android:name=".Splash_Screen.MainActivity">
             <intent-filter>

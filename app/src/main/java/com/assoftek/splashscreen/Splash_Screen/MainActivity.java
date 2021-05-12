@@ -10,7 +10,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.assoftek.splashscreen.DashboardActivity;
 import com.assoftek.splashscreen.Login.login;
-import com.assoftek.splashscreen.Onboarding.Screen_1;
+import com.assoftek.splashscreen.Onboarding.OnBoardingScreen;
 import com.assoftek.splashscreen.R;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -73,7 +73,7 @@ public class MainActivity extends AppCompatActivity {
             new Handler(getMainLooper()).postDelayed(new Runnable() {
                 @Override
                 public void run() {
-                    Intent intent = new Intent(MainActivity.this, Screen_1.class);
+                    Intent intent = new Intent(MainActivity.this, OnBoardingScreen.class);
                     startActivity(intent);
                     finish();
                 }
