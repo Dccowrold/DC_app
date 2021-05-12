@@ -46,7 +46,7 @@ public class DashboardActivity extends AppCompatActivity {
         });
 
 
-             binding.dc.setOnClickListener(new View.OnClickListener() {
+             binding.pay.setOnClickListener(new View.OnClickListener() {
                @Override
              public void onClick(View view) {
                 Intent movetoPayments = new Intent(getApplicationContext(), PaymentsActivity.class);
