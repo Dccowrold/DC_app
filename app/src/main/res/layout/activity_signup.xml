@@ -161,7 +161,8 @@
             android:layout_marginRight="20dp"
             android:layout_marginLeft="20dp"
             android:layout_height="wrap_content"
-            android:layout_margin="40dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginBottom="30dp"
             android:background="@drawable/roundgbluebutton"
             android:fontFamily="@font/montserrat"
             android:text="Continue"
@@ -170,7 +171,6 @@
             android:textSize="16sp"
             android:textStyle="bold"
             android:padding="10dp"
-            android:layout_centerHorizontal="true"
             />
 
     </LinearLayout>

@@ -133,7 +133,12 @@ public class User_Detail extends AppCompatActivity {
                 }
 
                 if (binding.pincode.getText().toString().isEmpty()) {
-                    binding.pincode.setError("Enter your hometown!!");
+                    binding.pincode.setError("Enter your Pincode!!");
+                    return;
+                }
+
+                if (binding.pincode.getText().toString().length()>6) {
+                    binding.pincode.setError("Enter your Pincode in 6 characters only!!");
                     return;
                 }
 
