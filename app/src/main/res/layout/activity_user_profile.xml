@@ -9,29 +9,52 @@
     tools:context=".UserProfile">
 
 
-    <TextView
-        android:id="@+id/graduation"
-        android:layout_width="320dp"
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/montserrat"
-        android:text="Graduation Details"
-        android:textColor="@color/white"
-        android:textSize="17sp"
-        android:textStyle="bold"
-        android:layout_centerHorizontal="true"
-        android:padding="10dp"
-        />
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/back"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:background="@drawable/arrow"
+            android:contentDescription="TODO"
+            android:layout_marginTop="15dp"/>
+
+
+        <TextView
+            android:id="@+id/graduation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/montserrat"
+            android:text="Graduation Details"
+            android:textColor="@color/white"
+            android:textSize="17sp"
+            android:textStyle="bold"
+            android:layout_centerHorizontal="true"
+            android:padding="10dp"
+            />
+
+    </LinearLayout>
+
+
+
 
 
     <LinearLayout
         android:id="@+id/graduationlayout"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
         <EditText
             android:id="@+id/course_name1"
-            android:layout_width="320dp"
+            android:layout_width="match_parent"
             android:layout_height="40dp"
             android:hint="Course Name"
             android:background="@drawable/squareblue"
@@ -44,15 +67,14 @@
             android:fontFamily="@font/montserrat"
             android:textColorHint="@color/gray"
             android:textColor="@color/white"
-            android:paddingTop="10dp"
-            android:paddingBottom="10dp"
-            android:paddingLeft="10dp"
+            android:padding="10dp"
             />
 
         <EditText
             android:id="@+id/university_name1"
-            android:layout_width="320dp"
-            android:layout_height="40dp"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
             android:hint="University Name"
             android:background="@drawable/squareblue"
             android:ems="10"
@@ -64,15 +86,14 @@
             android:fontFamily="@font/montserrat"
             android:textColorHint="@color/gray"
             android:textColor="@color/white"
-            android:paddingTop="10dp"
-            android:paddingBottom="10dp"
-            android:paddingLeft="10dp"
+            android:padding="10dp"
             />
 
         <EditText
             android:id="@+id/majors1"
-            android:layout_width="320dp"
-            android:layout_height="40dp"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
             android:hint="Majors"
             android:background="@drawable/squareblue"
             android:ems="10"
@@ -84,14 +105,12 @@
             android:fontFamily="@font/montserrat"
             android:textColorHint="@color/gray"
             android:textColor="@color/white"
-            android:paddingTop="10dp"
-            android:paddingBottom="10dp"
-            android:paddingLeft="10dp"
+            android:padding="10dp"
             />
 
         <EditText
             android:id="@+id/completion1"
-            android:layout_width="320dp"
+            android:layout_width="match_parent"
             android:layout_height="40dp"
             android:hint="Completion Date"
             android:background="@drawable/squareblue"
@@ -104,17 +123,34 @@
             android:fontFamily="@font/montserrat"
             android:textColorHint="@color/gray"
             android:textColor="@color/white"
-            android:paddingTop="10dp"
-            android:paddingBottom="10dp"
-            android:paddingLeft="10dp"
+            android:padding="10dp"
             />
+
+        <EditText
+            android:id="@+id/course_name2"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="5dp"
+            android:background="@drawable/squareblue"
+            android:ems="10"
+            android:fontFamily="@font/montserrat"
+            android:hint="Course Name"
+            android:inputType="text"
+            android:padding="10dp"
+            android:textColor="@color/white"
+            android:textColorHint="@color/gray"
+            android:textSize="14sp"
+            android:textStyle="bold" />
 
     </LinearLayout>
 
 
     <TextView
         android:id="@+id/post_graduation"
-        android:layout_width="320dp"
+        android:layout_width="match_parent"
+        android:layout_marginLeft="35dp"
+        android:layout_marginRight="20dp"
         android:layout_height="wrap_content"
         android:fontFamily="@font/montserrat"
         android:text="Post Graduation Details"
@@ -127,33 +163,15 @@
 
     <LinearLayout
         android:id="@+id/post_graduation_layout"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
         <EditText
-            android:id="@+id/course_name2"
-            android:layout_width="320dp"
-            android:layout_height="40dp"
-            android:hint="Course Name"
-            android:background="@drawable/squareblue"
-            android:ems="10"
-            android:layout_centerHorizontal="true"
-            android:textSize="14sp"
-            android:textStyle="bold"
-            android:inputType="text"
-            android:layout_marginBottom="5dp"
-            android:fontFamily="@font/montserrat"
-            android:textColorHint="@color/gray"
-            android:textColor="@color/white"
-            android:paddingTop="10dp"
-            android:paddingBottom="10dp"
-            android:paddingLeft="10dp"
-            />
-
-        <EditText
             android:id="@+id/university_name2"
-            android:layout_width="320dp"
+            android:layout_width="match_parent"
             android:layout_height="40dp"
             android:hint="University Name"
             android:background="@drawable/squareblue"
@@ -166,14 +184,12 @@
             android:fontFamily="@font/montserrat"
             android:textColorHint="@color/gray"
             android:textColor="@color/white"
-            android:paddingTop="10dp"
-            android:paddingBottom="10dp"
-            android:paddingLeft="10dp"
+            android:padding="10dp"
             />
 
         <EditText
             android:id="@+id/majors2"
-            android:layout_width="320dp"
+            android:layout_width="match_parent"
             android:layout_height="40dp"
             android:hint="Majors"
             android:background="@drawable/squareblue"
@@ -186,14 +202,12 @@
             android:fontFamily="@font/montserrat"
             android:textColorHint="@color/gray"
             android:textColor="@color/white"
-            android:paddingTop="10dp"
-            android:paddingBottom="10dp"
-            android:paddingLeft="10dp"
+            android:padding="10dp"
             />
 
         <EditText
             android:id="@+id/completion2"
-            android:layout_width="320dp"
+            android:layout_width="match_parent"
             android:layout_height="40dp"
             android:hint="Completion Date"
             android:background="@drawable/squareblue"
@@ -206,9 +220,7 @@
             android:fontFamily="@font/montserrat"
             android:textColorHint="@color/gray"
             android:textColor="@color/white"
-            android:paddingTop="10dp"
-            android:paddingBottom="10dp"
-            android:paddingLeft="10dp"
+            android:padding="10dp"
             />
 
     </LinearLayout>
@@ -216,49 +228,51 @@
 
     <EditText
         android:id="@+id/pan_card"
-        android:layout_width="320dp"
+        android:layout_width="match_parent"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
         android:layout_height="40dp"
         android:hint="Pan Card Number"
         android:background="@drawable/squareblue"
         android:ems="10"
         android:layout_centerHorizontal="true"
-        android:textSize="16sp"
+        android:textSize="14sp"
         android:textStyle="bold"
         android:inputType="text"
-        android:layout_marginBottom="10dp"
+        android:layout_marginBottom="5dp"
         android:fontFamily="@font/montserrat"
         android:textColorHint="@color/gray"
         android:textColor="@color/white"
         android:padding="10dp"
-        android:paddingLeft="10dp"
-        android:drawablePadding="10dp"
         />
 
 
     <EditText
         android:id="@+id/aadhar_card"
-        android:layout_width="320dp"
+        android:layout_width="match_parent"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
         android:layout_height="40dp"
         android:hint="Aadhar Card Number"
         android:background="@drawable/squareblue"
         android:ems="10"
         android:layout_centerHorizontal="true"
-        android:textSize="16sp"
+        android:textSize="14sp"
         android:textStyle="bold"
         android:inputType="text"
-        android:layout_marginBottom="40dp"
+        android:layout_marginBottom="30dp"
         android:fontFamily="@font/montserrat"
         android:textColorHint="@color/gray"
         android:textColor="@color/white"
         android:padding="10dp"
-        android:paddingLeft="10dp"
-        android:drawablePadding="10dp"
         />
 
 
     <Button
         android:id="@+id/submit"
-        android:layout_width="320dp"
+        android:layout_width="match_parent"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
         android:layout_height="40dp"
         android:fontFamily="@font/montserrat"
         android:text="Submit"

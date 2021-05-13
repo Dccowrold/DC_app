@@ -54,14 +54,14 @@
             android:layout_width="70dp"
             android:layout_height="wrap_content"
             android:background="@drawable/squareblue"
-            android:hint="+91"
+            android:hint="91"
             android:paddingTop="10dp"
             android:paddingBottom="10dp"
             android:paddingLeft="20dp"
             android:fontFamily="@font/montserrat"
             android:textStyle="bold"
             android:textColor="@color/white"
-            android:textColorHint="@color/white"
+            android:textColorHint="@color/gray"
             android:textSize="16sp"/>
 
         <EditText
@@ -77,7 +77,7 @@
             android:fontFamily="@font/montserrat"
             android:layout_marginLeft="20dp"
             android:textColor="@color/white"
-            android:textColorHint="@color/white"
+            android:textColorHint="@color/gray"
             android:textSize="16sp"/>
 
     </LinearLayout>
