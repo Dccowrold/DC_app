@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.provider.ContactsContract;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -70,8 +71,8 @@ public class PhoneActivity extends AppCompatActivity {
                             public void onCodeSent(@NonNull String verificationId, @NonNull PhoneAuthProvider.ForceResendingToken forceResendingToken) {
                                 binding.progressBar.setVisibility(View.GONE);
                                 binding.buttonGetOTP.setVisibility(View.VISIBLE);
-
-                                    Intent i = new Intent(PhoneActivity.this, Otp_verify.class);
+                                Log.d("Oncode", "onCodeSent:" + verificationId);
+                                Intent i = new Intent(PhoneActivity.this, Otp_verify.class);
                                     i.putExtra("verificationId", verificationId);
                                     i.putExtra("number", binding.phoneNumber.getText().toString());
                                     i.putExtra("countryCode", binding.countryCode.getText().toString());
