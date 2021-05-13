@@ -10,6 +10,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
+import com.assoftek.splashscreen.DashboardActivity;
 import com.assoftek.splashscreen.R;
 import com.assoftek.splashscreen.SignUp.SignUp;
 import com.assoftek.splashscreen.databinding.ActivityLoginBinding;
@@ -18,6 +19,7 @@ import com.facebook.CallbackManager;
 import com.facebook.FacebookCallback;
 import com.facebook.FacebookException;
 import com.facebook.FacebookSdk;
+import com.facebook.login.Login;
 import com.facebook.login.LoginResult;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
@@ -57,6 +59,32 @@ public class login extends Activity {
         super.onCreate(savedInstanceState);
         binding = ActivityLoginBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+        binding.loginButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                final String email=binding.email.getText().toString();
+                final String password=binding.password.getText().toString();
+                Log.d("Email",email+" "+password);
+                mAuth.signInWithEmailAndPassword(email, password)
+                        .addOnCompleteListener(login.this, new OnCompleteListener<AuthResult>() {
+                            @Override
+                            public void onComplete(@NonNull Task<AuthResult> task) {
+                                if (task.isSuccessful()) {
+
+                                    FirebaseUser user = mAuth.getCurrentUser();
+                                    Log.d("erir","Successful");
+                                    Log.d("name",user.getDisplayName());
+                                    updateUIPhone(user);
+                                } else {
+                                    Log.d("erir",task.getException().toString());
+                                    Toast.makeText(login.this, "Authentication failed.",
+                                            Toast.LENGTH_SHORT).show();
+                                    updateUIPhone(null);
+                                }
+                            }
+                        });
+            }
+        });
 
 
         //twitter code
@@ -159,6 +187,14 @@ public class login extends Activity {
         });
     }
 
+    private void updateUIPhone(FirebaseUser user) {
+        Intent intentmovetouser = new Intent(login.this, DashboardActivity.class);
+        intentmovetouser.putExtra("uuid",user.getUid());
+        intentmovetouser.putExtra("user_name",user.getDisplayName());
+        intentmovetouser.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP|Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(intentmovetouser);
+    }
+
     private void MainProcess(TwitterSession data) {
 
         AuthCredential credential= TwitterAuthProvider.getCredential(data.getAuthToken().token,data.getAuthToken().secret);
@@ -166,7 +202,7 @@ public class login extends Activity {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 Toast.makeText(login.this, "Signed in twitter successfull", Toast.LENGTH_SHORT).show();
-                updateuser(mAuth.getCurrentUser());
+                updateUI(mAuth.getCurrentUser());
 
                 if (!task.isSuccessful()){
                     Toast.makeText(login.this, "Firebase Auth Failed", Toast.LENGTH_SHORT).show();
@@ -184,7 +220,7 @@ public class login extends Activity {
                 if (task.isSuccessful()) {
                     Toast.makeText(login.this, "SuccessFull", Toast.LENGTH_SHORT).show();
                     FirebaseUser user = mAuth.getCurrentUser();
-                    updateuser(user);
+                    updateUI(user);
                     binding.progress.setVisibility(View.GONE);
                     binding.loginButton.setVisibility(View.VISIBLE);
                 } else {
@@ -237,7 +273,7 @@ public class login extends Activity {
                 if (task.isSuccessful()) {
                     Toast.makeText(login.this, "SuccessFull", Toast.LENGTH_SHORT).show();
                     FirebaseUser user = mAuth.getCurrentUser();
-                    updateuser(user);
+                    updateUI(user);
                     binding.progress.setVisibility(View.GONE);
                     binding.loginButton.setVisibility(View.VISIBLE);
                 } else {
@@ -249,7 +285,7 @@ public class login extends Activity {
         });
     }
 
-    private void updateuser(FirebaseUser fuser) {
+    private void updateUI(FirebaseUser fuser) {
 
         GoogleSignInAccount account = GoogleSignIn.getLastSignedInAccount(getApplicationContext());
         if (account != null) {

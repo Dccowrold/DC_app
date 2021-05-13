@@ -20,14 +20,12 @@ public class DashboardActivity extends AppCompatActivity {
     ActivityDashboardBinding binding;
 
 
-
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding=ActivityDashboardBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+        binding.profileName.setText(getIntent().getStringExtra("username"));
 
         binding.wealth.setOnClickListener(new View.OnClickListener() {
             @Override
