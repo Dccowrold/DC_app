@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.provider.ContactsContract;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
@@ -19,7 +20,10 @@ import com.assoftek.splashscreen.R;
 import com.assoftek.splashscreen.databinding.ActivityOtpVerifyBinding;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthCredential;
 import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.EmailAuthCredential;
+import com.google.firebase.auth.EmailAuthProvider;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.PhoneAuthCredential;
 import com.google.firebase.auth.PhoneAuthProvider;
@@ -88,6 +92,11 @@ public class Otp_verify extends AppCompatActivity {
                                 public void onComplete(@NonNull Task<AuthResult> task) {
                                     if(task.isSuccessful())
                                     {
+                                        String email=getIntent().getStringExtra("email");
+                                        String password=getIntent().getStringExtra("password");
+                                        AuthCredential authCredential= EmailAuthProvider.getCredential(email,password);
+
+                                        FirebaseAuth.getInstance().getCurrentUser().linkWithCredential(authCredential);
                                         Toast.makeText(Otp_verify.this, "OTP Verified Successfully",Toast.LENGTH_SHORT).show();
                                         finishAffinity();
 
