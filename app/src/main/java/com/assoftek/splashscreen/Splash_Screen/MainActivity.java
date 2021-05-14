@@ -1,5 +1,6 @@
 package com.assoftek.splashscreen.Splash_Screen;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -20,56 +21,26 @@ import static java.lang.Thread.sleep;
 public class MainActivity extends AppCompatActivity {
 
     private FirebaseAuth firebaseAuth;
+    private SharedPreferences sharedPref ;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         getSupportActionBar().hide();
+        sharedPref=getSharedPreferences("PREFERENCE", MODE_PRIVATE);
         //hide actionbar
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
         //check if application is opened for the first time
-        SharedPreferences sharedPreferences = getSharedPreferences("PERFERNCE", MODE_PRIVATE);
-        String Firsttime = sharedPreferences.getString("FirstTimeInstall", "");
+        boolean isLogin = sharedPref.getBoolean(getString(R.string.isLoggedIn), false);
+        if (isLogin) {
+            Intent in = new Intent(MainActivity.this, DashboardActivity.class);
+            startActivity(in);
+            finish();
 
-
-        firebaseAuth = FirebaseAuth.getInstance();
-        final FirebaseUser firebaseUser = firebaseAuth.getCurrentUser();
-
-        if (Firsttime.equals("Yes")) {
-            //creating thread
-            Runnable runnable = new Runnable() {
-                @Override
-                public synchronized void run() {
-                    try {
-                        sleep(3000);
-
-                    } catch (Exception e) {
-                        e.printStackTrace();
-                    } finally {
-
-                        if (firebaseAuth.getUid() != null) {
-                            Intent intent = new Intent(MainActivity.this, DashboardActivity.class);
-                            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
-                            startActivity(intent);
-
-                        }
-                        if (firebaseAuth.getUid() == null) {
-                            Intent in = new Intent(MainActivity.this, login.class);
-                            startActivity(in);
-                            finish();
-                        }
-
-                    }
-                }
-            };
-
-            new Thread(runnable).start();
         } else {
-//            SharedPreferences.Editor editor = sharedPreferences.edit();
-//            editor.putString("FirstTimeInstall","Yes");
-//            editor.apply();
             new Handler(getMainLooper()).postDelayed(new Runnable() {
                 @Override
                 public void run() {
@@ -80,5 +51,13 @@ public class MainActivity extends AppCompatActivity {
             }, 4000);
 
         }
+    }
+
+    private void checkLogin() {
+
+        SharedPreferences.Editor editor = sharedPref.edit();
+        editor.putBoolean(getString(R.string.isLoggedIn), false);
+        editor.apply();
+
     }
 }
