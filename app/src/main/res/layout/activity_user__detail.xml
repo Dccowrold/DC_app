@@ -10,31 +10,25 @@
 
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_marginRight="30dp"
+            android:layout_marginLeft="30dp"
             android:layout_height="wrap_content"
             android:fontFamily="@font/montserrat"
-            android:text="Great, now help us know"
+            android:text="@string/great"
             android:textColor="@color/white"
             android:textSize="20sp"
             android:textStyle="bold"
             android:layout_centerHorizontal="true"
-            android:layout_marginBottom="5dp" />
+            android:layout_marginBottom="15dp"
+            android:textAlignment="center"/>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/montserrat"
-            android:text="you more"
-            android:textColor="@color/white"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            android:layout_centerHorizontal="true"
-            android:layout_marginBottom="40dp"
-            android:layout_marginTop="-10dp"/>
 
         <EditText
             android:id="@+id/reference"
-            android:layout_width="320dp"
+            android:layout_width="match_parent"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
             android:layout_height="40dp"
             android:hint="Full Name"
             android:background="@drawable/squareblue"
@@ -56,14 +50,16 @@
 
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
 
             <EditText
                 android:id="@+id/state"
-                android:layout_width="210dp"
+                android:layout_width="0dp"
                 android:layout_height="40dp"
                 android:hint="State"
                 android:background="@drawable/squareblue"
@@ -80,11 +76,12 @@
                 android:textColorHint="@color/gray"
                 android:textColor="@color/white"
                 android:layout_marginRight="20dp"
+                android:layout_weight="2"
                 />
 
             <EditText
                 android:id="@+id/pincode"
-                android:layout_width="90dp"
+                android:layout_width="0dp"
                 android:layout_height="40dp"
                 android:hint="Pincode"
                 android:background="@drawable/squareblue"
@@ -100,6 +97,7 @@
                 android:fontFamily="@font/montserrat"
                 android:textColorHint="@color/gray"
                 android:textColor="@color/white"
+                android:layout_weight="1"
                 />
 
         </LinearLayout>
@@ -124,7 +122,9 @@
 
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:gravity="center"
@@ -132,7 +132,7 @@
 
             <Button
                 android:id="@+id/male"
-                android:layout_width="140dp"
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_centerHorizontal="true"
                 android:layout_marginRight="40dp"
@@ -146,11 +146,12 @@
                 android:paddingBottom="10dp"
                 android:paddingLeft="10dp"
                 android:drawableLeft="@drawable/man"
-                android:drawablePadding="10dp"/>
+                android:drawablePadding="10dp"
+                android:layout_weight="1"/>
 
             <Button
                 android:id="@+id/female"
-                android:layout_width="140dp"
+                android:layout_width="0dp"
                 android:layout_height="40dp"
                 android:fontFamily="@font/montserrat"
                 android:text="female"
@@ -163,7 +164,7 @@
                 android:paddingLeft="10dp"
                 android:drawableLeft="@drawable/woman"
                 android:drawablePadding="10dp"
-
+                android:layout_weight="1"
                 />
 
         </LinearLayout>
@@ -171,7 +172,9 @@
 
         <TextView
             android:id="@+id/dateOfBirth"
-            android:layout_width="320dp"
+            android:layout_width="match_parent"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
             android:layout_height="40dp"
             android:hint="Select Date Of Birth"
             android:background="@drawable/squareblue"
@@ -194,7 +197,9 @@
 
         <Button
             android:id="@+id/btn_detail"
-            android:layout_width="320dp"
+            android:layout_width="match_parent"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
             android:layout_height="40dp"
             android:fontFamily="@font/montserrat"
             android:text="Sign Up"

@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.DatePickerDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.DatePicker;
@@ -127,7 +128,6 @@ public class UserProfile extends AppCompatActivity {
                         binding.panCard.setText(users.getPanCard());
                         binding.aadharCard.setText(users.getAadharCard());
 
-
                     }
 
                     @Override
@@ -136,6 +136,13 @@ public class UserProfile extends AppCompatActivity {
                     }
                 });
 
+        binding.back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(UserProfile.this,DashboardActivity.class);
+                startActivity(intent);
+            }
+        });
 
     }
 }

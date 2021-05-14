@@ -23,7 +23,8 @@
             app:lottie_rawRes="@raw/creditcardanimation"
             android:layout_above="@+id/text1"
             android:layout_centerHorizontal="true"
-            android:layout_margin="30dp"/>
+            android:layout_margin="30dp"
+            />
 
         <TextView
             android:id="@+id/text2"
@@ -54,8 +55,8 @@
         <ProgressBar
             android:id="@+id/progressBar"
             android:layout_below="@+id/balance"
-            android:layout_width="200dp"
-            android:layout_height="200dp"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
             android:indeterminateOnly="false"
             android:progressDrawable="@drawable/circle"
             android:progress="90"
@@ -65,7 +66,9 @@
 
 
         <TextView
-            android:layout_width="350dp"
+            android:layout_width="match_parent"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
             android:layout_height="wrap_content"
             android:text="Money sorter helps you understand yours spends and guides you to save"
             android:textColor="@color/white"
@@ -82,7 +85,9 @@
 
         <Button
             android:id="@+id/link_account"
-            android:layout_width="320dp"
+            android:layout_width="match_parent"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
             android:layout_height="40dp"
             android:fontFamily="@font/montserrat"
             android:text="LINK ACCOUNT"

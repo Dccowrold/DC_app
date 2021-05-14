@@ -34,13 +34,15 @@
             android:layout_height="90dp"
             android:src="@drawable/dc"
             android:layout_centerHorizontal="true"
-            android:layout_marginBottom="50dp"
+            android:layout_marginBottom="40dp"
             />
 
 
         <EditText
             android:id="@+id/email"
-            android:layout_width="320dp"
+            android:layout_width="match_parent"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
             android:layout_height="wrap_content"
             android:background="@drawable/squareblue"
             android:hint="Email"
@@ -62,7 +64,9 @@
 
         <EditText
             android:id="@+id/password"
-            android:layout_width="320dp"
+            android:layout_width="match_parent"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
             android:layout_height="40dp"
             android:background="@drawable/squareblue"
             android:hint="Passsword"
@@ -83,7 +87,9 @@
 
         <EditText
             android:id="@+id/reference"
-            android:layout_width="320dp"
+            android:layout_width="match_parent"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
             android:layout_height="40dp"
             android:background="@drawable/squareblue"
             android:hint="Reference (Optional)"
@@ -106,30 +112,34 @@
 
 
         <LinearLayout
-            android:layout_width="320dp"
+            android:layout_width="match_parent"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:gravity="center">
 
             <CheckBox
                 android:id="@+id/checkbox"
-                android:layout_width="35dp"
+                android:layout_width="0dp"
                 android:layout_height="35dp"
-                app:buttonTint="@color/white"/>
+                app:buttonTint="@color/white"
+                android:layout_weight="1"/>
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:text="I agree to all statements included in"
                 android:fontFamily="@font/montserrat"
                 android:textColor="@color/white"
                 android:textSize="12sp"
                 android:layout_marginLeft="5dp"
+                android:layout_weight="5"
                 />
 
             <TextView
                 android:id="@+id/terms"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:text="Terms"
                 android:fontFamily="@font/montserrat"
@@ -137,6 +147,7 @@
                 android:textSize="12sp"
                 android:layout_marginLeft="5dp"
                 android:textStyle="bold"
+                android:layout_weight="1"
                 />
 
         </LinearLayout>
@@ -146,9 +157,12 @@
 
         <Button
             android:id="@+id/signUp"
-            android:layout_width="320dp"
+            android:layout_width="match_parent"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
             android:layout_height="wrap_content"
-            android:layout_margin="40dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginBottom="30dp"
             android:background="@drawable/roundgbluebutton"
             android:fontFamily="@font/montserrat"
             android:text="Continue"
@@ -157,7 +171,6 @@
             android:textSize="16sp"
             android:textStyle="bold"
             android:padding="10dp"
-            android:layout_centerHorizontal="true"
             />
 
     </LinearLayout>

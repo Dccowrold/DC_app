@@ -51,7 +51,7 @@ public class PhoneActivity extends AppCompatActivity {
                 binding.progressBar.setVisibility(View.VISIBLE);
                 binding.buttonGetOTP.setVisibility(View.INVISIBLE);
                 PhoneAuthProvider.getInstance().verifyPhoneNumber(    // number verification with country code
-                        code.getText().toString() + inputMobile.getText().toString(), 60,
+                        "+"+code.getText().toString() + inputMobile.getText().toString(), 60,
                         TimeUnit.SECONDS, PhoneActivity.this,
                         new PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
                             @Override
