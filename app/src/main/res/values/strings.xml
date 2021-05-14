@@ -85,5 +85,7 @@
     <string name="help">Help</string>
     <string name="new_payment">New Payment</string>
     <string name="isLoggedIn">isLoggedIn</string>
+    <string name="firstTime">FirstTimeUser</string>
+    <string name="great">"Great "</string>
 
 </resources>

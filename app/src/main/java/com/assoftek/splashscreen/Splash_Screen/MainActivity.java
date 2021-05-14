@@ -35,12 +35,18 @@ public class MainActivity extends AppCompatActivity {
 
         //check if application is opened for the first time
         boolean isLogin = sharedPref.getBoolean(getString(R.string.isLoggedIn), false);
+        boolean firsttimeLogin=sharedPref.getBoolean(getString(R.string.firstTime),true);
         if (isLogin) {
             Intent in = new Intent(MainActivity.this, DashboardActivity.class);
             startActivity(in);
             finish();
 
-        } else {
+        }
+        else if(!firsttimeLogin){
+            Intent in = new Intent(MainActivity.this, login.class);
+            startActivity(in);
+            finish();
+        } else{
             new Handler(getMainLooper()).postDelayed(new Runnable() {
                 @Override
                 public void run() {

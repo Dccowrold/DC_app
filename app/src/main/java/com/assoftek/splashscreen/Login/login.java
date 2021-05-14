@@ -193,6 +193,7 @@ public class login extends Activity {
         intentmovetouser.putExtra("user_name",user.getDisplayName());
         intentmovetouser.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP|Intent.FLAG_ACTIVITY_NEW_TASK);
         sharedPref.edit().putBoolean(getString(R.string.isLoggedIn),true).apply();
+        sharedPref.edit().putBoolean(getString(R.string.firstTime),false).apply();
         startActivity(intentmovetouser);
     }
 
