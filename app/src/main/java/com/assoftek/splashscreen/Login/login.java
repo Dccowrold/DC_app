@@ -2,6 +2,7 @@ package com.assoftek.splashscreen.Login;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -53,11 +54,13 @@ public class login extends Activity {
     FirebaseAuth mAuth;
     private int RC_SIGN_IN = 1;
     CallbackManager mCallbackManager;
+    private SharedPreferences sharedPref;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = ActivityLoginBinding.inflate(getLayoutInflater());
+        sharedPref= getSharedPreferences("PREFERENCE", MODE_PRIVATE);
         setContentView(binding.getRoot());
         binding.loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -70,10 +73,7 @@ public class login extends Activity {
                             @Override
                             public void onComplete(@NonNull Task<AuthResult> task) {
                                 if (task.isSuccessful()) {
-
                                     FirebaseUser user = mAuth.getCurrentUser();
-                                    Log.d("erir","Successful");
-                                    Log.d("name",user.getDisplayName());
                                     updateUIPhone(user);
                                 } else {
                                     Log.d("erir",task.getException().toString());
@@ -192,6 +192,8 @@ public class login extends Activity {
         intentmovetouser.putExtra("uuid",user.getUid());
         intentmovetouser.putExtra("user_name",user.getDisplayName());
         intentmovetouser.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP|Intent.FLAG_ACTIVITY_NEW_TASK);
+        sharedPref.edit().putBoolean(getString(R.string.isLoggedIn),true).apply();
+        sharedPref.edit().putBoolean(getString(R.string.firstTime),false).apply();
         startActivity(intentmovetouser);
     }
 
@@ -296,6 +298,7 @@ public class login extends Activity {
             Intent intentmovetouser = new Intent(login.this, LoginNumber.class);
             intentmovetouser.putExtra("uuid",fuser.getUid());
             intentmovetouser.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP|Intent.FLAG_ACTIVITY_NEW_TASK);
+            sharedPref.edit().putBoolean(getString(R.string.isLoggedIn),true).apply();
             startActivity(intentmovetouser);
         }
 

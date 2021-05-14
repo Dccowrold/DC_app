@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -18,12 +19,15 @@ import com.google.firebase.auth.FirebaseAuth;
 public class DashboardActivity extends AppCompatActivity {
     FirebaseAuth auth;
     ActivityDashboardBinding binding;
+    private SharedPreferences sharedPref;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding=ActivityDashboardBinding.inflate(getLayoutInflater());
+        sharedPref= getSharedPreferences("PREFERENCE", MODE_PRIVATE);
+        auth=FirebaseAuth.getInstance();
         setContentView(binding.getRoot());
         binding.profileName.setText(getIntent().getStringExtra("username"));
 
@@ -75,7 +79,8 @@ public class DashboardActivity extends AppCompatActivity {
                 break;
 
             case R.id.logout:
-                auth.signOut();                                                                  // user logout
+                auth.signOut();// user logout
+                sharedPref.edit().putBoolean(getString(R.string.isLoggedIn),false).apply();
                 Intent intent=new Intent(DashboardActivity.this, login.class);        // going back to sign in
                 startActivity(intent);
                 break;
