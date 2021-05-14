@@ -2,6 +2,7 @@ package com.assoftek.splashscreen;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.DialogFragment;
 
 import android.app.DatePickerDialog;
 import android.content.Intent;
@@ -19,16 +20,19 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.squareup.picasso.Picasso;
 
+import java.text.DateFormat;
 import java.util.Calendar;
 import java.util.HashMap;
 
-public class UserProfile extends AppCompatActivity {
+public class UserProfile extends AppCompatActivity implements DatePickerDialog.OnDateSetListener{
 
     ActivityUserProfileBinding binding;
-    int day1, month1, year1;
-    int day2, month2, year2;
     FirebaseAuth auth;
     FirebaseDatabase database;
+    static String date1="";
+    static String date2="";
+
+    boolean d1=false,d2=false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,29 +44,15 @@ public class UserProfile extends AppCompatActivity {
         auth= FirebaseAuth.getInstance();
         database= FirebaseDatabase.getInstance();
 
-        final Calendar calendar1=Calendar.getInstance();
-        year1=calendar1.get(Calendar.YEAR);
-        month1=calendar1.get(Calendar.MONTH);
-        day1=calendar1.get(Calendar.DAY_OF_MONTH);
-
-        final Calendar calendar2=Calendar.getInstance();
-        year2=calendar2.get(Calendar.YEAR);
-        month2=calendar2.get(Calendar.MONTH);
-        day2=calendar2.get(Calendar.DAY_OF_MONTH);
 
         binding.completion1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                d1=true;
+                d2=false;
+                DialogFragment datePicker = new DatePickerFragment();
+                datePicker.show(getSupportFragmentManager(), "date picker");
 
-                DatePickerDialog datePickerDialog=new DatePickerDialog(UserProfile.this, new DatePickerDialog.OnDateSetListener() {
-                    @Override
-                    public void onDateSet(DatePicker datePicker, int year1, int month1, int day1) {
-                        month1=month1+1;
-                        String date=day1+" / "+month1+" / "+year1;
-                        binding.completion1.setText(date);
-                    }
-                }, year1, month1,day1);
-                datePickerDialog.show();
             }
         });
 
@@ -70,18 +60,13 @@ public class UserProfile extends AppCompatActivity {
         binding.completion2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-                DatePickerDialog datePickerDialog=new DatePickerDialog(UserProfile.this, new DatePickerDialog.OnDateSetListener() {
-                    @Override
-                    public void onDateSet(DatePicker datePicker, int year2, int month2, int day2) {
-                        month2=month2+1;
-                        String date=day2+" / "+month2+" / "+year2;
-                        binding.completion2.setText(date);
-                    }
-                }, year2, month2,day2);
-                datePickerDialog.show();
+                d2=true;
+                d1=false;
+                DialogFragment datePicker = new DatePickerFragment();
+                datePicker.show(getSupportFragmentManager(), "date picker");
             }
         });
+
 
         binding.submit.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -143,6 +128,26 @@ public class UserProfile extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+    }
+
+    @Override
+    public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+        Calendar c = Calendar.getInstance();
+        c.set(Calendar.YEAR, year);
+        c.set(Calendar.MONTH, month);
+        c.set(Calendar.DAY_OF_MONTH, dayOfMonth);
+        String currentDateString = DateFormat.getDateInstance(DateFormat.FULL).format(c.getTime());
+        if(d1)
+        {
+            date1=currentDateString;
+        }
+
+        if(d2)
+        {
+            date2=currentDateString;
+        }
+
 
     }
 }

@@ -20,7 +20,6 @@ import org.json.JSONObject;
 public class PaymentsActivity extends AppCompatActivity implements PaymentResultListener {
     private String TAG="razorPay";
     ActivityPaymentsBinding binding;
-    Button PayButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,8 +27,8 @@ public class PaymentsActivity extends AppCompatActivity implements PaymentResult
         setContentView(R.layout.activity_payments);
         getSupportActionBar().hide();
         Checkout.preload(getApplicationContext());
-        PayButton=(Button)findViewById(R.id.PayButton);
-        PayButton.setOnClickListener(new View.OnClickListener() {
+
+        binding.PayButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 setUpPayment();
@@ -70,12 +69,12 @@ public class PaymentsActivity extends AppCompatActivity implements PaymentResult
 
     @Override
     public void onPaymentSuccess(String s) {
-        Toast.makeText(this,"payment Successful",Toast.LENGTH_SHORT).show();
+        Toast.makeText(this,"Payment Successful",Toast.LENGTH_SHORT).show();
     }
 
     @Override
     public void onPaymentError(int i, String s) {
-        Toast.makeText(this,"payment unSuccessful",Toast.LENGTH_SHORT).show();
+        Toast.makeText(this,"Payment unSuccessful",Toast.LENGTH_SHORT).show();
 
     }
 }

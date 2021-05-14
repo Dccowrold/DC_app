@@ -15,11 +15,17 @@ import android.widget.Toast;
 import com.assoftek.splashscreen.Login.login;
 import com.assoftek.splashscreen.databinding.ActivityDashboardBinding;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+import com.squareup.picasso.Picasso;
 
 public class DashboardActivity extends AppCompatActivity {
     FirebaseAuth auth;
     ActivityDashboardBinding binding;
     private SharedPreferences sharedPref;
+    FirebaseDatabase database;
 
 
     @Override
@@ -28,6 +34,8 @@ public class DashboardActivity extends AppCompatActivity {
         binding=ActivityDashboardBinding.inflate(getLayoutInflater());
         sharedPref= getSharedPreferences("PREFERENCE", MODE_PRIVATE);
         auth=FirebaseAuth.getInstance();
+        database=FirebaseDatabase.getInstance();
+
         setContentView(binding.getRoot());
         binding.profileName.setText(getIntent().getStringExtra("username"));
 
@@ -56,7 +64,24 @@ public class DashboardActivity extends AppCompatActivity {
              }
           });
 
+
+        database.getReference().child("Users").child(FirebaseAuth.getInstance().getUid()).
+                addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        UsersModel users=snapshot.getValue(UsersModel.class);
+
+                        binding.profileName.setText(users.getUserName());
+
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+
+                    }
+                });
     }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

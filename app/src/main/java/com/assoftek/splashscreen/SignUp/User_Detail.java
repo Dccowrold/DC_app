@@ -2,6 +2,7 @@ package com.assoftek.splashscreen.SignUp;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.DialogFragment;
 
 import android.app.DatePickerDialog;
 import android.app.ProgressDialog;
@@ -13,6 +14,7 @@ import android.widget.DatePicker;
 import android.widget.Toast;
 
 import com.assoftek.splashscreen.DashboardActivity;
+import com.assoftek.splashscreen.DatePickerFragment;
 import com.assoftek.splashscreen.R;
 import com.assoftek.splashscreen.UsersModel;
 import com.assoftek.splashscreen.databinding.ActivityUserDetailBinding;
@@ -22,10 +24,11 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
-public class User_Detail extends AppCompatActivity {
+public class User_Detail extends AppCompatActivity implements DatePickerDialog.OnDateSetListener {
 
     ActivityUserDetailBinding binding;
     private FirebaseAuth auth;
@@ -33,7 +36,7 @@ public class User_Detail extends AppCompatActivity {
     ProgressDialog progressDialog;
     static boolean male = false, female = false;
     static String gender = "";
-    int day, month, year;
+    static String dob="";
 
 
     @Override
@@ -43,39 +46,23 @@ public class User_Detail extends AppCompatActivity {
         setContentView(binding.getRoot());
         getSupportActionBar().hide();
 
-        final Calendar calendar = Calendar.getInstance();
-
         final String number = getIntent().getStringExtra("number");
         final String countryCode = getIntent().getStringExtra("countryCode");
 
         final String email = getIntent().getStringExtra("email");
         final String password = getIntent().getStringExtra("password");
 
-        final String name = binding.reference.getText().toString();
-        final String state = binding.state.getText().toString();
-        final String pincode = binding.pincode.getText().toString();
 
 
-        year = calendar.get(Calendar.YEAR);
-        month = calendar.get(Calendar.MONTH);
-        day = calendar.get(Calendar.DAY_OF_MONTH);
         binding.dateOfBirth.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-                DatePickerDialog datePickerDialog = new DatePickerDialog(User_Detail.this, new DatePickerDialog.OnDateSetListener() {
-                    @Override
-                    public void onDateSet(DatePicker datePicker, int year, int month, int day) {
-                        month = month + 1;
-                        String date = day + " / " + month + " / " + year;
-                        binding.dateOfBirth.setText(date);
-                    }
-                }, year, month, day);
-                datePickerDialog.show();
+                DialogFragment datePicker = new DatePickerFragment();
+                datePicker.show(getSupportFragmentManager(), "date picker");
             }
         });
 
-        final String dob = day+"/"+ month+"/"+year;
+
 
         binding.male.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -161,7 +148,8 @@ public class User_Detail extends AppCompatActivity {
                 }
 
 
-                UsersModel user = new UsersModel(name, email, number, countryCode, password, state, pincode, gender, dob);         // taking username, email, password in database.
+                UsersModel user = new UsersModel(binding.reference.getText().toString(), email, number, countryCode, password,
+                        binding.state.getText().toString(), binding.pincode.getText().toString(), gender, dob);         // taking username, email, password in database.
                 String id = getIntent().getStringExtra("uuid");
 
                 database.getReference().child("Users").child(id).setValue(user);
@@ -171,6 +159,18 @@ public class User_Detail extends AppCompatActivity {
                 Toast.makeText(User_Detail.this, "User Created Successfully", Toast.LENGTH_SHORT).show();
             }
         });
+
+    }
+
+    @Override
+    public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+        Calendar c = Calendar.getInstance();
+        c.set(Calendar.YEAR, year);
+        c.set(Calendar.MONTH, month);
+        c.set(Calendar.DAY_OF_MONTH, dayOfMonth);
+        String currentDateString = DateFormat.getDateInstance(DateFormat.FULL).format(c.getTime());
+        dob=currentDateString;
+        binding.dateOfBirth.setText(currentDateString);
 
     }
 }
