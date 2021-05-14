@@ -104,7 +104,7 @@ public class Otp_verify extends AppCompatActivity {
                                             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                                             intent.putExtra("uuid",FirebaseAuth.getInstance().getUid());
                                             Log.d("theotp",FirebaseAuth.getInstance().getUid());
-                                            intent.putExtra("mobile",number);
+                                            intent.putExtra("number",number);
                                             intent.putExtra("countryCode",countryCode);
                                             intent.putExtra("email",email);
                                             intent.putExtra("password",password);

@@ -74,7 +74,7 @@ public class User_Detail extends AppCompatActivity {
             }
         });
 
-        final String dob = "day+\" / \"+month+\" / \"+year";
+        final String dob = day+"/"+ month+"/"+year;
 
         binding.male.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -124,6 +124,11 @@ public class User_Detail extends AppCompatActivity {
 
                 if (!male && !female) {
                     Toast.makeText(User_Detail.this, "Select Gender!!", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+                if (binding.reference.getText().toString().isEmpty()) {
+                    binding.reference.setError("Enter your name!!");
                     return;
                 }
 
