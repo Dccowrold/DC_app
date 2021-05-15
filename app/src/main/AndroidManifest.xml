@@ -11,9 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".UserProfile"/>
-        <activity android:name=".Login.LoginOtp" />
-        <activity android:name=".Login.LoginNumber" />
+        <activity android:name=".SignUp.UserProfileActivity"></activity>
+        <activity android:name=".SignUp.UserEducationActivity" />
         <activity android:name=".SignUp.PhoneActivity" />
         <activity android:name=".WealthActivity" />
         <activity android:name=".DashboardActivity" />

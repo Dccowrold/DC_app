@@ -295,7 +295,7 @@ public class login extends Activity {
             String person_email = account.getEmail();
 
             Toast.makeText(this, "Logged in as "+person_email, Toast.LENGTH_SHORT).show();
-            Intent intentmovetouser = new Intent(login.this, LoginNumber.class);
+            Intent intentmovetouser = new Intent(login.this, DashboardActivity.class);
             intentmovetouser.putExtra("uuid",fuser.getUid());
             intentmovetouser.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP|Intent.FLAG_ACTIVITY_NEW_TASK);
             sharedPref.edit().putBoolean(getString(R.string.isLoggedIn),true).apply();

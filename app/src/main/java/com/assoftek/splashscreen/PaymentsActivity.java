@@ -28,6 +28,11 @@ public class PaymentsActivity extends AppCompatActivity implements PaymentResult
         getSupportActionBar().hide();
         Checkout.preload(getApplicationContext());
 
+
+        String sAmount="100";
+
+        int amount=Math.round(Float.parseFloat(sAmount)*100);
+
         binding.PayButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

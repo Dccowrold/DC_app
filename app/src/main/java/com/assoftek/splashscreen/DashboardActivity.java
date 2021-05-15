@@ -13,13 +13,14 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.assoftek.splashscreen.Login.login;
+import com.assoftek.splashscreen.SignUp.UserEducationActivity;
+import com.assoftek.splashscreen.SignUp.UserProfileActivity;
 import com.assoftek.splashscreen.databinding.ActivityDashboardBinding;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-import com.squareup.picasso.Picasso;
 
 public class DashboardActivity extends AppCompatActivity {
     FirebaseAuth auth;
@@ -72,7 +73,6 @@ public class DashboardActivity extends AppCompatActivity {
                         UsersModel users=snapshot.getValue(UsersModel.class);
 
                         binding.profileName.setText(users.getUserName());
-
                     }
 
                     @Override
@@ -95,7 +95,7 @@ public class DashboardActivity extends AppCompatActivity {
         switch(item.getItemId())
         {
             case R.id.profile:
-                Intent intent1=new Intent(DashboardActivity.this, UserProfile.class);
+                Intent intent1=new Intent(DashboardActivity.this, UserProfileActivity.class);
                 startActivity(intent1);
                 break;
 

@@ -1,4 +1,4 @@
-package com.assoftek.splashscreen;
+package com.assoftek.splashscreen.SignUp;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -11,22 +11,24 @@ import android.view.View;
 import android.widget.DatePicker;
 import android.widget.Toast;
 
-import com.assoftek.splashscreen.SignUp.User_Detail;
+import com.assoftek.splashscreen.DashboardActivity;
+import com.assoftek.splashscreen.DatePickerFragment;
+import com.assoftek.splashscreen.UsersModel;
+import com.assoftek.splashscreen.databinding.ActivityUserEducationBinding;
 import com.assoftek.splashscreen.databinding.ActivityUserProfileBinding;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-import com.squareup.picasso.Picasso;
 
 import java.text.DateFormat;
 import java.util.Calendar;
 import java.util.HashMap;
 
-public class UserProfile extends AppCompatActivity implements DatePickerDialog.OnDateSetListener{
+public class UserEducationActivity extends AppCompatActivity implements DatePickerDialog.OnDateSetListener{
 
-    ActivityUserProfileBinding binding;
+    ActivityUserEducationBinding binding;
     FirebaseAuth auth;
     FirebaseDatabase database;
     static String date1="";
@@ -37,7 +39,7 @@ public class UserProfile extends AppCompatActivity implements DatePickerDialog.O
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        binding=ActivityUserProfileBinding.inflate(getLayoutInflater());
+        binding=ActivityUserEducationBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         getSupportActionBar().hide();
 
@@ -86,10 +88,10 @@ public class UserProfile extends AppCompatActivity implements DatePickerDialog.O
                 obj.put("aadharCard",binding.aadharCard);
                 obj.put("panCard",binding.panCard);
 
-                database.getReference().child("Users").child(FirebaseAuth.getInstance().getUid())
+                database.getReference().child("Users").child(auth.getUid())
                         .setValue(obj);
 
-                Toast.makeText(UserProfile.this, "Profile Details Submitted",
+                Toast.makeText(UserEducationActivity.this, "Profile Details Submitted",
                         Toast.LENGTH_SHORT).show();
             }
         });
@@ -124,7 +126,7 @@ public class UserProfile extends AppCompatActivity implements DatePickerDialog.O
         binding.back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(UserProfile.this,DashboardActivity.class);
+                Intent intent=new Intent(UserEducationActivity.this, UserProfileActivity.class);
                 startActivity(intent);
             }
         });

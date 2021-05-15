@@ -66,13 +66,12 @@
     <string name="Api_Secret">b37B06p3RrVEgEhzj04fw4raycr4uxCgwfV7AbKTmGst1lk8vw</string>
 
     //dash board activity
-    <string name="good_morning">Good Morning,</string>
-    <string name="name">Vaishnavi</string>
+    <string name="welcome">Welcome,</string>
     <string name="your_net_worth">Your Net Worth</string>
     <string name="glad_to">Glad to have you onboard the Starship rocket</string>
     <string name="pay">Pay</string>
 
-    <string name="we_are_on">We are one a journey to start, manage and clean up your personal finance. It is slightly a long ride, but we promise you will love every step of it.</string>
+    <string name="we_are_on">We are one a journey to start, manage and clean up your personal finance.</string>
 
     // payment activity
     <string name="payments">Payments</string>
@@ -87,5 +86,19 @@
     <string name="isLoggedIn">isLoggedIn</string>
     <string name="firstTime">FirstTimeUser</string>
     <string name="great">"Great "</string>
+
+
+    // user profile
+    <string name="name">"Name :-"</string>
+    <string name="state">"State :-"</string>
+    <string name="gender">"Gender :-"</string>
+    <string name="pincode">"Pincode :-"</string>
+    <string name="save">"Save"</string>
+    <string name="dob">"D O B :-"</string>
+    <string name="link">"Link Accounts"</string>
+    <string name="number2">"Phone Number :-"</string>
+    <string name="select_dob">Select Date Of Birth</string>
+    <string name="great_now">Great, now help us know you more.</string>
+
 
 </resources>
