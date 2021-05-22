@@ -79,13 +79,6 @@ public class login extends Activity {
                             public void onComplete(@NonNull Task<AuthResult> task) {
                                 if (task.isSuccessful()) {
                                     FirebaseUser user = mAuth.getCurrentUser();
-
-                                    String userID=user.getUid();
-                                    reference= FirebaseDatabase.getInstance().getReference("USERS").child(userID);
-                                    HashMap<String,String> hashMap=new HashMap<>();
-                                    hashMap.put("ID",userID);
-                                    hashMap.put("Email",email);
-
                                     updateUIPhone(user);
                                 } else {
                                     Log.d("erir",task.getException().toString());
@@ -217,14 +210,6 @@ public class login extends Activity {
             public void onComplete(@NonNull Task<AuthResult> task) {
                 Toast.makeText(login.this, "Signed in twitter successfull", Toast.LENGTH_SHORT).show();
                 updateUI(mAuth.getCurrentUser());
-                FirebaseUser user = mAuth.getCurrentUser();
-
-                String userID=user.getUid();
-                reference= FirebaseDatabase.getInstance().getReference("USERS").child(userID);
-                HashMap<String,String> hashMap=new HashMap<>();
-                hashMap.put("ID",userID);
-
-
                 if (!task.isSuccessful()){
                     Toast.makeText(login.this, "Firebase Auth Failed", Toast.LENGTH_SHORT).show();
                 }
@@ -241,12 +226,6 @@ public class login extends Activity {
                 if (task.isSuccessful()) {
                     Toast.makeText(login.this, "SuccessFull", Toast.LENGTH_SHORT).show();
                     FirebaseUser user = mAuth.getCurrentUser();
-
-                    String userID=user.getUid();
-                    reference= FirebaseDatabase.getInstance().getReference("USERS").child(userID);
-                    HashMap<String,String> hashMap=new HashMap<>();
-                    hashMap.put("ID",userID);
-
                     updateUI(user);
                     binding.progress.setVisibility(View.GONE);
                     binding.loginButton.setVisibility(View.VISIBLE);
@@ -300,12 +279,6 @@ public class login extends Activity {
                 if (task.isSuccessful()) {
                     Toast.makeText(login.this, "SuccessFull", Toast.LENGTH_SHORT).show();
                     FirebaseUser user = mAuth.getCurrentUser();
-
-                    String userID=user.getUid();
-                    reference= FirebaseDatabase.getInstance().getReference("USERS").child(userID);
-                    HashMap<String,String> hashMap=new HashMap<>();
-                    hashMap.put("ID",userID);
-
                     updateUI(user);
                     binding.progress.setVisibility(View.GONE);
                     binding.loginButton.setVisibility(View.VISIBLE);
