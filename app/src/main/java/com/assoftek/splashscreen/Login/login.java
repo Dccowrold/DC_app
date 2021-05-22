@@ -36,6 +36,8 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
 import com.google.firebase.auth.TwitterAuthProvider;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.twitter.sdk.android.core.Callback;
 import com.twitter.sdk.android.core.Result;
 import com.twitter.sdk.android.core.Twitter;
@@ -45,6 +47,7 @@ import com.twitter.sdk.android.core.TwitterException;
 import com.twitter.sdk.android.core.TwitterSession;
 
 import java.util.Arrays;
+import java.util.HashMap;
 
 public class login extends Activity {
 
@@ -55,6 +58,8 @@ public class login extends Activity {
     private int RC_SIGN_IN = 1;
     CallbackManager mCallbackManager;
     private SharedPreferences sharedPref;
+
+    DatabaseReference reference;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -74,6 +79,13 @@ public class login extends Activity {
                             public void onComplete(@NonNull Task<AuthResult> task) {
                                 if (task.isSuccessful()) {
                                     FirebaseUser user = mAuth.getCurrentUser();
+
+                                    String userID=user.getUid();
+                                    reference= FirebaseDatabase.getInstance().getReference("USERS").child(userID);
+                                    HashMap<String,String> hashMap=new HashMap<>();
+                                    hashMap.put("ID",userID);
+                                    hashMap.put("Email",email);
+
                                     updateUIPhone(user);
                                 } else {
                                     Log.d("erir",task.getException().toString());
@@ -205,6 +217,13 @@ public class login extends Activity {
             public void onComplete(@NonNull Task<AuthResult> task) {
                 Toast.makeText(login.this, "Signed in twitter successfull", Toast.LENGTH_SHORT).show();
                 updateUI(mAuth.getCurrentUser());
+                FirebaseUser user = mAuth.getCurrentUser();
+
+                String userID=user.getUid();
+                reference= FirebaseDatabase.getInstance().getReference("USERS").child(userID);
+                HashMap<String,String> hashMap=new HashMap<>();
+                hashMap.put("ID",userID);
+
 
                 if (!task.isSuccessful()){
                     Toast.makeText(login.this, "Firebase Auth Failed", Toast.LENGTH_SHORT).show();
@@ -222,6 +241,12 @@ public class login extends Activity {
                 if (task.isSuccessful()) {
                     Toast.makeText(login.this, "SuccessFull", Toast.LENGTH_SHORT).show();
                     FirebaseUser user = mAuth.getCurrentUser();
+
+                    String userID=user.getUid();
+                    reference= FirebaseDatabase.getInstance().getReference("USERS").child(userID);
+                    HashMap<String,String> hashMap=new HashMap<>();
+                    hashMap.put("ID",userID);
+
                     updateUI(user);
                     binding.progress.setVisibility(View.GONE);
                     binding.loginButton.setVisibility(View.VISIBLE);
@@ -275,6 +300,12 @@ public class login extends Activity {
                 if (task.isSuccessful()) {
                     Toast.makeText(login.this, "SuccessFull", Toast.LENGTH_SHORT).show();
                     FirebaseUser user = mAuth.getCurrentUser();
+
+                    String userID=user.getUid();
+                    reference= FirebaseDatabase.getInstance().getReference("USERS").child(userID);
+                    HashMap<String,String> hashMap=new HashMap<>();
+                    hashMap.put("ID",userID);
+
                     updateUI(user);
                     binding.progress.setVisibility(View.GONE);
                     binding.loginButton.setVisibility(View.VISIBLE);
