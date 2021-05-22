@@ -101,4 +101,11 @@
     <string name="great_now">Great, now help us know you more.</string>
 
 
+    // Mobile Verification and Stack Pin
+
+    <string name="verify_the_code_sent_to_your_mobile_number">Verify the code sent to your mobile number</string>
+    <string name="enter_the_code_we_just_sent_to_91_mob">Enter the code we just sent to +91 mob.</string>
+    <string name="proceed">Proceed</string>
+    <string name="change_number">Change number</string>
+    <string name="resend_code">resend code</string>
 </resources>
