@@ -11,7 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".SignUp.UserProfileActivity"></activity>
+        <activity android:name=".CreatePaymentPin"></activity>
+        <activity android:name=".SignUp.UserProfileActivity" />
         <activity android:name=".SignUp.UserEducationActivity" />
         <activity android:name=".SignUp.PhoneActivity" />
         <activity android:name=".WealthActivity" />
