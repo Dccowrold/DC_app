@@ -63,4 +63,6 @@ dependencies {
 
     //pin view
     implementation 'com.chaos.view:pinview:1.4.3'
+
+    implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.19'
 }
