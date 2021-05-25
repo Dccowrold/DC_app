@@ -108,5 +108,4 @@
     <string name="proceed">Proceed</string>
     <string name="change_number">Change number</string>
     <string name="resend_code">resend code</string>
-    <string name="confirm_password">Confirm Password</string>
 </resources>

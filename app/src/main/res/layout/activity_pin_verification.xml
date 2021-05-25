@@ -109,7 +109,7 @@
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:background="@drawable/roundgbluebutton"
-            android:gravity="center_horizontal"
+            android:gravity="center"
             android:text="proceed"
             android:textAlignment="center"
             android:textColor="@color/white"

@@ -34,7 +34,7 @@ public class CreatePaymentPin extends AppCompatActivity {
         setupOTPInputs();
         sharedPreferences = getSharedPreferences("myPref", 0);
 
-        readpref();
+        //readpref();
 
         btn_verify.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -123,14 +123,10 @@ public class CreatePaymentPin extends AppCompatActivity {
     }
 
     public void readpref() {
-        int val1 = sharedPreferences.getInt("1", -1);
-        input1.setText(String.valueOf(val1));
-        int val2 = sharedPreferences.getInt("2", -1);
-        input2.setText(String.valueOf(val2));
-        int val3 = sharedPreferences.getInt("3", -1);
-        input3.setText(String.valueOf(val3));
-        int val4 = sharedPreferences.getInt("4", -1);
-        input4.setText(String.valueOf(val4));
+        input1.setText(String.valueOf(sharedPreferences.getInt("1",-1)));
+        input2.setText(String.valueOf(sharedPreferences.getInt("2",-1)));
+        input3.setText(String.valueOf(sharedPreferences.getInt("3",-1)));
+        input4.setText(String.valueOf( sharedPreferences.getInt("4",-1)));
 
     }
 
