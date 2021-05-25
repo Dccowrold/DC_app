@@ -11,7 +11,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="50dp"
-        android:text="CREATE 4-DIGIT PIN"
+        android:text="VERIFY 4-DIGIT PIN"
         android:textColor="@color/blue"
         android:textSize="22sp"
         android:textStyle="bold" />
@@ -20,7 +20,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="10dp"
-        android:text="Enter your pin below-:"
+        android:text="Enter your pin below to pay-:"
         android:textColor="@color/white"
         android:textSize="16sp"
         android:textStyle="bold" />
@@ -35,7 +35,7 @@
         android:orientation="horizontal">
 
         <EditText
-            android:id="@+id/inputCode1"
+            android:id="@+id/iCode1"
             android:layout_width="40dp"
             android:layout_height="45dp"
             android:layout_margin="5dp"
@@ -50,7 +50,7 @@
             tools:ignore="LabelFor" />
 
         <EditText
-            android:id="@+id/inputCode2"
+            android:id="@+id/iCode2"
             android:layout_width="40dp"
             android:layout_height="45dp"
             android:layout_margin="5dp"
@@ -65,7 +65,7 @@
             tools:ignore="LabelFor" />
 
         <EditText
-            android:id="@+id/inputCode3"
+            android:id="@+id/iCode3"
             android:layout_width="40dp"
             android:layout_height="45dp"
             android:layout_margin="5dp"
@@ -80,7 +80,7 @@
             tools:ignore="LabelFor" />
 
         <EditText
-            android:id="@+id/inputCode4"
+            android:id="@+id/iCode4"
             android:layout_width="40dp"
             android:layout_height="45dp"
             android:layout_margin="5dp"
@@ -97,6 +97,7 @@
 
     </LinearLayout>
 
+
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -104,18 +105,16 @@
         android:layout_marginRight="20dp">
 
         <Button
-            android:id="@+id/btn_verify"
+            android:id="@+id/proceed"
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:background="@drawable/roundgbluebutton"
-            android:gravity="center"
-            android:text="create"
+            android:gravity="center_horizontal"
+            android:text="proceed"
             android:textAlignment="center"
             android:textColor="@color/white"
             android:textSize="18sp" />
 
 
     </FrameLayout>
-
-
 </LinearLayout>
