@@ -17,6 +17,7 @@
         app:lottie_rawRes="@raw/otp"
         app:lottie_autoPlay="true"
         app:lottie_loop="true"
+
         android:layout_marginBottom="10dp"
         />
 
