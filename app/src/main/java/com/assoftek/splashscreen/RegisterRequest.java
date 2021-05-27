@@ -2,16 +2,16 @@ package com.assoftek.splashscreen;
 
 public class RegisterRequest {
 
-    private String userId;
+    private String name;
     private String email;
     private String password;
 
-    public String getUserId() {
-        return userId;
+    public String getName(String s) {
+        return name;
     }
 
-    public void setUserId(String userId) {
-        this.userId = userId;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getEmail() {

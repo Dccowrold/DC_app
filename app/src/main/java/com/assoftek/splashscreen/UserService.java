@@ -6,10 +6,10 @@ import retrofit2.http.POST;
 
 public interface UserService {
 
-    @POST("auth/")
+    @POST("signin")
     Call<LoginResponse> loginUser(@Body LoginRequest loginRequest);
 
-    @POST("user/")
+    @POST("register")
     Call<RegisterResponse> registerUser(@Body RegisterRequest registerRequest);
 
 }

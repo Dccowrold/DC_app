@@ -111,7 +111,7 @@
 
 
     <EditText
-        android:id="@+id/email"
+        android:id="@+id/edemailsignin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="20dp"
@@ -131,7 +131,7 @@
         android:textStyle="bold" />
 
     <EditText
-        android:id="@+id/password"
+        android:id="@+id/edpasswordsignin"
         android:layout_width="match_parent"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
@@ -168,7 +168,7 @@
         android:layout_margin="20dp">
 
         <Button
-            android:id="@+id/loginButton"
+            android:id="@+id/btnsignin"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:background="@drawable/roundgbluebutton"
@@ -208,7 +208,7 @@
             android:fontFamily="@font/montserrat"/>
 
         <TextView
-            android:id="@+id/signup"
+            android:id="@+id/noaccount"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Sign Up"
