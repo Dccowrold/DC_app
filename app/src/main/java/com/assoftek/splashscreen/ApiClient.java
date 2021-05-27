@@ -15,7 +15,7 @@ public class ApiClient {
 
         Retrofit retrofit=new Retrofit.Builder()
                 .addConverterFactory(GsonConverterFactory.create())
-                .baseUrl("http://upto.com/tk")
+                .baseUrl("http://dcipl.yourtechshow.com/")
                 .client(okHttpClient)
                 .build();
 
