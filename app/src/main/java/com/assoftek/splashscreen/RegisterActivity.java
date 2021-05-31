@@ -1,5 +1,6 @@
 package com.assoftek.splashscreen;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -56,9 +57,13 @@ public class RegisterActivity extends AppCompatActivity {
             public void onResponse( Call<RegisterResponse> call, Response<RegisterResponse> response) {
                 RegisterResponse registerResponse = response.body();
                 if (response.isSuccessful()) {
-                    Toast.makeText(RegisterActivity.this, registerResponse.getEmail(), Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(RegisterActivity.this , LoginActivity.class);
+                    intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                    startActivity(intent);
+                    finish();
+                    Toast.makeText(RegisterActivity.this, "Successful", Toast.LENGTH_SHORT).show();
                 }else {
-                    Toast.makeText(RegisterActivity.this, "error", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(RegisterActivity.this, "Failed", Toast.LENGTH_SHORT).show();
                     return;
                 }
             }
@@ -72,4 +77,3 @@ public class RegisterActivity extends AppCompatActivity {
 
     }
 }
-

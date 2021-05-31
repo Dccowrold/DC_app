@@ -174,7 +174,8 @@
 
             <FrameLayout
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                tools:ignore="UselessParent">
 
                 <com.twitter.sdk.android.core.identity.TwitterLoginButton
                     android:id="@+id/twitter"
@@ -190,7 +191,7 @@
                     android:layout_height="30dp"
                     android:src="@drawable/twitter"
                     android:layout_margin="10dp"
-                    />
+                    android:contentDescription="TODO" />
 
             </FrameLayout>
 
