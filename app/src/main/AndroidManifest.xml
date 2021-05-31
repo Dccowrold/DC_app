@@ -8,26 +8,35 @@
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="Derive Capital"
+        android:usesCleartextTraffic="true"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".CreatePaymentPin">
 
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity android:name=".SignUp.UserProfileActivity" />
         <activity android:name=".PinVerification"></activity>
         <activity android:name=".SignUp.UserEducationActivity" />
         <activity android:name=".SignUp.PhoneActivity" />
         <activity android:name=".WealthActivity" />
+        <activity android:name=".LoginActivity" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".RegisterActivity" >
+
+
+        </activity>
+        <activity android:name=".Login.login" />
+
         <activity android:name=".DashboardActivity" />
         <activity android:name=".CashScreenActivity" />
         <activity android:name=".HomeActivity.HomeActivity" />
-        <activity android:name=".Login.login" />
         <activity android:name=".SignUp.Otp_verify" />
         <activity android:name=".SignUp.User_Detail" />
         <activity android:name=".Onboarding.OnBoardingScreen" />
