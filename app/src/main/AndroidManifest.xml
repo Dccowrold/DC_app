@@ -8,6 +8,7 @@
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="Derive Capital"
+        android:usesCleartextTraffic="true"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
@@ -21,15 +22,15 @@
         <activity android:name=".SignUp.PhoneActivity" />
         <activity android:name=".WealthActivity" />
         <activity android:name=".LoginActivity" >
+
+        </activity>
+        <activity android:name=".RegisterActivity" >
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-        <activity android:name=".RegisterActivity" >
-
-
         </activity>
         <activity android:name=".Login.login" />
 

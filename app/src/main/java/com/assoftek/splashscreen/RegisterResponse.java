@@ -1,12 +1,43 @@
 package com.assoftek.splashscreen;
 
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
+
+
 public class RegisterResponse {
 
-    private int Id;
-    private String email;
+    @SerializedName("id")
+    @Expose
+    private Integer id;
+    @SerializedName("name")
+    @Expose
     private String name;
-    //private String password;
+    @SerializedName("email")
+    @Expose
+    private String email;
+    @SerializedName("joined")
+    @Expose
+    private String joined;
 
+
+    public RegisterResponse() {
+    }
+
+    public RegisterResponse(Integer id, String name, String email, String joined) {
+        super();
+        this.id = id;
+        this.name = name;
+        this.email = email;
+        this.joined = joined;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
     public String getName() {
         return name;
@@ -14,14 +45,6 @@ public class RegisterResponse {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public int getId() {
-        return Id;
-    }
-
-    public void setId(int id) {
-        Id = id;
     }
 
     public String getEmail() {
@@ -32,11 +55,12 @@ public class RegisterResponse {
         this.email = email;
     }
 
-//    public String getPassword() {
-//        return password;
-//    }
-//
-//    public void setPassword(String password) {
-//        this.password = password;
-//    }
+    public String getJoined() {
+        return joined;
+    }
+
+    public void setJoined(String joined) {
+        this.joined = joined;
+    }
+
 }

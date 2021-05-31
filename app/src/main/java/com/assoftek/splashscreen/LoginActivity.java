@@ -30,7 +30,7 @@ public class LoginActivity extends AppCompatActivity {
         btnsignin = findViewById(R.id.btnsignin);
         edemail = findViewById(R.id.edemailsignin);
         edpassword = findViewById(R.id.edpasswordsignin);
-        noAccount = findViewById(R.id.noaccount);
+        noAccount = findViewById(R.id.registerLink);
 
 
         noAccount.setOnClickListener(new View.OnClickListener() {
@@ -58,7 +58,7 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     public void loginuser(LoginRequest loginRequest) {
-        Call<LoginResponse> loginResponseCall = ApiClient.getService().loginUser(loginRequest);
+        Call<LoginResponse> loginResponseCall = RetrofitClient.getInstance().getApi().loginUser(loginRequest);
         loginResponseCall.enqueue(new Callback<LoginResponse>() {
             @Override
             public void onResponse(Call<LoginResponse> call, Response<LoginResponse> response) {
