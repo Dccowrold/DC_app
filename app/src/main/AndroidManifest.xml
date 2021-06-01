@@ -11,8 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".details"></activity>
         <activity android:name=".CreatePaymentPin">
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -20,7 +20,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".SignUp.UserProfileActivity" />
-        <activity android:name=".PinVerification"></activity>
+        <activity android:name=".PinVerification" />
         <activity android:name=".SignUp.UserEducationActivity" />
         <activity android:name=".SignUp.PhoneActivity" />
         <activity android:name=".WealthActivity" />
@@ -32,9 +32,7 @@
         <activity android:name=".SignUp.User_Detail" />
         <activity android:name=".Onboarding.OnBoardingScreen" />
         <activity android:name=".SignUp.SignUp" />
-        <activity android:name=".Splash_Screen.MainActivity">
-
-        </activity>
+        <activity android:name=".Splash_Screen.MainActivity"></activity>
 
         <meta-data
             android:name="preloaded_fonts"
