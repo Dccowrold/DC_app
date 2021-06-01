@@ -2,6 +2,9 @@ package com.assoftek.splashscreen;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
+import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -16,7 +19,7 @@ import retrofit2.Response;
 
 public class LoginActivity extends AppCompatActivity {
 
-    Button login;
+    Button btnLogin;
     EditText email, password ;
     TextView registerLink;
 
@@ -26,56 +29,73 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        login = findViewById(R.id.btnsignin);
+        btnLogin = findViewById(R.id.btnsignin);
         email = findViewById(R.id.edemailsignin);
         password = findViewById(R.id.edpasswordsignin);
         registerLink = findViewById(R.id.registerLink);
         getSupportActionBar().hide();
 
 
-//        registerLink.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                startActivity(new Intent(LoginActivity.this,RegisterActivity.class));
-//            }
-//        });
-
-        login.setOnClickListener(new View.OnClickListener() {
-            @Override
+        registerLink.setOnClickListener(new View.OnClickListener() {
+           @Override
             public void onClick(View v) {
-                userLogin();
+              startActivity(new Intent(LoginActivity.this,RegisterActivity.class));
             }
         });
 
+        btnLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                if(TextUtils.isEmpty(email.getText().toString()) || TextUtils.isEmpty(password.getText().toString())){
+                    Toast.makeText(LoginActivity.this,"Username / Password Required", Toast.LENGTH_LONG).show();
+                }else{
+                    //proceed to login
+                    login();
+                }
+
+            }
+        });
     }
 
-    private void userLogin() {
 
-        String userEmail = email.getText().toString();
-        String userPassword = password.getText().toString();
+    public void login(){
+        LoginRequest loginRequest = new LoginRequest();
+        loginRequest.setEmail(email.getText().toString());
+        loginRequest.setPassword(password.getText().toString());
 
-        if ((userEmail.isEmpty()) || (userPassword.isEmpty())) {
-            Toast.makeText(LoginActivity.this, "All fields required.", Toast.LENGTH_SHORT).show();
-        }
-
-        Call<LoginResponse> call = RetrofitClient.getInstance().getApi().signin(userEmail,userPassword);
-        call.enqueue(new Callback<LoginResponse>() {
+        Call<LoginResponse> loginResponseCall = RetrofitClient.getService().signin(loginRequest);
+        loginResponseCall.enqueue(new Callback<LoginResponse>() {
             @Override
             public void onResponse(Call<LoginResponse> call, Response<LoginResponse> response) {
-                LoginResponse loginResponse = response.body();
-                if (response.isSuccessful()) {
-                    Intent intent = new Intent(LoginActivity.this , DashboardActivity.class);
-                    intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                    startActivity(intent);
-                    Toast.makeText(LoginActivity.this, loginResponse.getEmail(), Toast.LENGTH_SHORT).show();
+                Log.d("error",response.toString());
+                if(response.isSuccessful()){
+                    Toast.makeText(LoginActivity.this,"Login Successful", Toast.LENGTH_LONG).show();
+                    LoginResponse loginResponse = response.body();
+
+                    new Handler().postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+
+                            startActivity(new Intent(LoginActivity.this,DashboardActivity.class).putExtra("data",loginResponse.getEmail()));
+                        }
+                    },700);
+
+                }else{
+                    Toast.makeText(LoginActivity.this,"Login Failed", Toast.LENGTH_LONG).show();
+
                 }
+
             }
 
             @Override
             public void onFailure(Call<LoginResponse> call, Throwable t) {
-                Toast.makeText(LoginActivity.this, t.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(LoginActivity.this,"Throwable "+t.getLocalizedMessage(), Toast.LENGTH_LONG).show();
+
             }
         });
 
+
     }
+
 }

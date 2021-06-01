@@ -1,37 +1,33 @@
 package com.assoftek.splashscreen;
 
+import okhttp3.OkHttpClient;
+import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class RetrofitClient {
+    public static String BASE_URL = "https://dcipl.yourtechshow.com";
+    private static Retrofit getRetrofit(){
 
-    public static String BASE_URL = "http://dcipl.yourtechshow.com/";
-    public static RetrofitClient retrofitClient;
-    public static Retrofit retrofit;
-    //    public static Retrofit getRetrofit(){
-//
-//        HttpLoggingInterceptor httpLoggingInterceptor=new HttpLoggingInterceptor();
-//        httpLoggingInterceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
-//
-//        OkHttpClient okHttpClient=new OkHttpClient.Builder().addInterceptor(httpLoggingInterceptor).build();
-    public RetrofitClient() {
-        retrofit=new Retrofit.Builder()
-                .baseUrl(BASE_URL)
+        HttpLoggingInterceptor httpLoggingInterceptor = new HttpLoggingInterceptor();
+        httpLoggingInterceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
+
+        OkHttpClient okHttpClient = new OkHttpClient.Builder().addInterceptor(httpLoggingInterceptor).build();
+
+        Retrofit retrofit = new Retrofit.Builder()
                 .addConverterFactory(GsonConverterFactory.create())
+                .baseUrl(BASE_URL)
+                .client(okHttpClient)
                 .build();
+
+        return retrofit;
     }
 
 
-    public static synchronized RetrofitClient getInstance() {
-        if (retrofitClient == null) {
-            retrofitClient = new RetrofitClient();
-        }
-        return retrofitClient;
+    public static Api getService(){
+       Api api = getRetrofit().create(Api.class);
+
+        return api;
     }
-    public Api getApi(){
-        return retrofit.create(Api.class);
-    }
-//    public static Api getApi() {
-//          return retrofit.create(Api.class);
-//    }
+
 }

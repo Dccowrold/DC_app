@@ -2,6 +2,7 @@ package com.assoftek.splashscreen;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -34,7 +35,6 @@ public class RegisterActivity extends AppCompatActivity {
         register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 userRegister();
             }
         });
@@ -51,20 +51,21 @@ public class RegisterActivity extends AppCompatActivity {
             Toast.makeText(RegisterActivity.this, "All fields required.", Toast.LENGTH_SHORT).show();
         }
 
-        Call<RegisterResponse> call = RetrofitClient.getInstance().getApi().register(userEmail, userName, userPassword);
+        Call<RegisterResponse> call = RetrofitClient.getService().register(userEmail, userName, userPassword);
         call.enqueue(new Callback<RegisterResponse>() {
             @Override
             public void onResponse( Call<RegisterResponse> call, Response<RegisterResponse> response) {
                 RegisterResponse registerResponse = response.body();
+                Log.d("response",response.toString());
                 if (response.isSuccessful()) {
-                    Intent intent = new Intent(RegisterActivity.this , LoginActivity.class);
+                    Intent intent = new Intent(RegisterActivity.this , DashboardActivity.class);
                     intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                    Toast.makeText(RegisterActivity.this, "Successful", Toast.LENGTH_SHORT).show();
                     startActivity(intent);
                     finish();
-                    Toast.makeText(RegisterActivity.this, "Successful", Toast.LENGTH_SHORT).show();
+
                 }else {
-                    Toast.makeText(RegisterActivity.this, "Failed", Toast.LENGTH_SHORT).show();
-                    return;
+                   // Toast.makeText(RegisterActivity.this, "Failed", Toast.LENGTH_SHORT).show();
                 }
             }
 

@@ -12,13 +12,15 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".details"></activity>
-        <activity android:name=".CreatePaymentPin">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+        <activity android:name=".CreatePaymentPin"/>
+        <activity android:name=".LoginActivity">
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
         </activity>
+        <activity android:name=".RegisterActivity"/>
         <activity android:name=".SignUp.UserProfileActivity" />
         <activity android:name=".PinVerification" />
         <activity android:name=".SignUp.UserEducationActivity" />

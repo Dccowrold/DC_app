@@ -219,7 +219,7 @@
             android:fontFamily="@font/montserrat"/>
 
         <TextView
-            android:id="@+id/noaccount"
+            android:id="@+id/registerLink"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Sign Up"
