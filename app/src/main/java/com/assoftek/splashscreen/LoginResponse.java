@@ -17,6 +17,7 @@ public class LoginResponse {
     @SerializedName("joined")
     @Expose
     private String joined;
+
     public LoginResponse() {
     }
 
