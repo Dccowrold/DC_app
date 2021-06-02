@@ -12,14 +12,10 @@ public interface Api {
     @POST("/signin")
     @Headers("Content-Type: application/json;charset=utf-8")
     Call<LoginResponse> signin (@Body LoginRequest loginRequest);
-    @FormUrlEncoded
-    @POST("/register")
-    Call<RegisterResponse> register (
-            @Field("email") String email,
-            @Field("name") String name,
-            @Field("password") String password
 
-    );
+    @POST("/register")
+    @Headers("Content-Type: application/json;charset=utf-8")
+    Call<RegisterResponse> register (@Body RegisterRequest registerRequest);
 
     @FormUrlEncoded
     @POST("data")

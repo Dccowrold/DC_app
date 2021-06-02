@@ -41,7 +41,7 @@ public class details extends AppCompatActivity {
         Standard=findViewById(R.id.standard);
         RiskWillingness=findViewById(R.id.RiskWillingness);
         Liquidity=findViewById(R.id.Liquidity);
-        save=findViewById(R.id.save);
+        //save=findViewById(R.id.save);
 
         save.setOnClickListener(new View.OnClickListener() {
             @Override

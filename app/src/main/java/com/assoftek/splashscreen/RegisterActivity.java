@@ -1,7 +1,10 @@
 package com.assoftek.splashscreen;
 
+import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -19,6 +22,7 @@ public class RegisterActivity extends AppCompatActivity {
     Button register;
     EditText name, email, password;
     TextView loginLink;
+    private SharedPreferences sharedPref;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +35,7 @@ public class RegisterActivity extends AppCompatActivity {
         email = findViewById(R.id.edemailregister);
         password = findViewById(R.id.edpasswordregister);
         loginLink = findViewById(R.id.loginLink);
+        sharedPref= getSharedPreferences("PREFERENCE", MODE_PRIVATE);
 
         register.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -50,23 +55,36 @@ public class RegisterActivity extends AppCompatActivity {
         if ((userEmail.isEmpty()) || (userName.isEmpty()) || (userPassword.isEmpty())) {
             Toast.makeText(RegisterActivity.this, "All fields required.", Toast.LENGTH_SHORT).show();
         }
-
-        Call<RegisterResponse> call = RetrofitClient.getService().register(userEmail, userName, userPassword);
+        RegisterRequest registerRequest=new RegisterRequest();
+        registerRequest.setEmail(userEmail);
+        registerRequest.setName(userName);
+        registerRequest.setPassword(userPassword);
+        Call<RegisterResponse> call = RetrofitClient.getService().register(registerRequest);
         call.enqueue(new Callback<RegisterResponse>() {
             @Override
             public void onResponse( Call<RegisterResponse> call, Response<RegisterResponse> response) {
                 RegisterResponse registerResponse = response.body();
                 Log.d("response",response.toString());
-                if (response.isSuccessful()) {
-                    Intent intent = new Intent(RegisterActivity.this , DashboardActivity.class);
-                    intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                    Toast.makeText(RegisterActivity.this, "Successful", Toast.LENGTH_SHORT).show();
-                    startActivity(intent);
-                    finish();
+                if(response.isSuccessful()){
+                    Toast.makeText(RegisterActivity.this,"SignUp Successful", Toast.LENGTH_LONG).show();
 
-                }else {
-                   // Toast.makeText(RegisterActivity.this, "Failed", Toast.LENGTH_SHORT).show();
+                    new Handler().postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            Intent intent=new Intent(RegisterActivity.this,DashboardActivity.class);
+                            intent.putExtra("username",registerResponse.getName());
+                            sharedPref.edit().putBoolean(getString(R.string.isLoggedIn),true).apply();
+                            sharedPref.edit().putBoolean(getString(R.string.firstTime),false).apply();
+                            startActivity(intent);
+                            finish();
+                        }
+                    },700);
+
+                }else{
+                    Toast.makeText(RegisterActivity.this,"SignUp Failed", Toast.LENGTH_LONG).show();
+
                 }
+
             }
 
             @Override

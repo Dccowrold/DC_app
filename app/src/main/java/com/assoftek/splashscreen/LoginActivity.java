@@ -1,6 +1,7 @@
 package com.assoftek.splashscreen;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
 import android.text.TextUtils;
@@ -22,6 +23,7 @@ public class LoginActivity extends AppCompatActivity {
     Button btnLogin;
     EditText email, password ;
     TextView registerLink;
+    private SharedPreferences sharedPref;
 
 
     @Override
@@ -33,6 +35,7 @@ public class LoginActivity extends AppCompatActivity {
         email = findViewById(R.id.edemailsignin);
         password = findViewById(R.id.edpasswordsignin);
         registerLink = findViewById(R.id.registerLink);
+        sharedPref= getSharedPreferences("PREFERENCE", MODE_PRIVATE);
         getSupportActionBar().hide();
 
 
@@ -76,8 +79,12 @@ public class LoginActivity extends AppCompatActivity {
                     new Handler().postDelayed(new Runnable() {
                         @Override
                         public void run() {
-
-                            startActivity(new Intent(LoginActivity.this,DashboardActivity.class).putExtra("data",loginResponse.getEmail()));
+                            Intent intent=new Intent(LoginActivity.this,DashboardActivity.class);
+                            intent.putExtra("username",loginResponse.getName());
+                            sharedPref.edit().putBoolean(getString(R.string.isLoggedIn),true).apply();
+                            sharedPref.edit().putBoolean(getString(R.string.firstTime),false).apply();
+                            startActivity(intent);
+                            finish();
                         }
                     },700);
 
