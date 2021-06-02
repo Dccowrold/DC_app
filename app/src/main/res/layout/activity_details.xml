@@ -297,6 +297,20 @@
                 android:id="@+id/Liquidity"
                 />
 
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/blue"/>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/roundgbluebutton"
+                android:layout_margin="10dp"
+                android:text="Save"
+
+                />
+
 
 
 
