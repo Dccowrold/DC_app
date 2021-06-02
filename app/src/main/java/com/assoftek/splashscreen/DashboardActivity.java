@@ -81,6 +81,7 @@ public class DashboardActivity extends AppCompatActivity {
                 sharedPref.edit().putBoolean(getString(R.string.isLoggedIn),false).apply();
                 Intent intent=new Intent(DashboardActivity.this, LoginActivity.class);        // going back to sign in
                 startActivity(intent);
+                finish();
                 break;
         }
         return true;

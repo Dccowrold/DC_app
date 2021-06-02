@@ -1,4 +1,4 @@
-package com.assoftek.splashscreen.Splash_Screen;
+package com.assoftek.splashscreen;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -8,10 +8,7 @@ import android.view.WindowManager;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.assoftek.splashscreen.DashboardActivity;
-import com.assoftek.splashscreen.LoginActivity;
 import com.assoftek.splashscreen.Onboarding.OnBoardingScreen;
-import com.assoftek.splashscreen.R;
 import com.google.firebase.auth.FirebaseAuth;
 
 import static java.lang.Thread.sleep;

@@ -14,11 +14,13 @@
         <activity android:name=".details"></activity>
         <activity android:name=".CreatePaymentPin"/>
         <activity android:name=".LoginActivity">
-        <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
+        </activity>
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity android:name=".RegisterActivity"/>
         <activity android:name=".SignUp.UserProfileActivity" />
@@ -33,7 +35,6 @@
         <activity android:name=".SignUp.User_Detail" />
         <activity android:name=".Onboarding.OnBoardingScreen" />
         <activity android:name=".SignUp.SignUp" />
-        <activity android:name=".Splash_Screen.MainActivity"></activity>
 
         <meta-data
             android:name="preloaded_fonts"
