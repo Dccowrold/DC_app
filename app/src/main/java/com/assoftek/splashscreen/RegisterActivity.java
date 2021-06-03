@@ -14,6 +14,9 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.assoftek.splashscreen.db.AppDatabase;
+import com.assoftek.splashscreen.db.User;
+
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -71,6 +74,9 @@ public class RegisterActivity extends AppCompatActivity {
                     new Handler().postDelayed(new Runnable() {
                         @Override
                         public void run() {
+                            //Storing to Room Database
+                            saveUser(userEmail, userPassword, userName);
+
                             Intent intent=new Intent(RegisterActivity.this,DashboardActivity.class);
                             intent.putExtra("username",registerResponse.getName());
                             sharedPref.edit().putBoolean(getString(R.string.isLoggedIn),true).apply();
@@ -95,4 +101,19 @@ public class RegisterActivity extends AppCompatActivity {
         });
 
     }
+
+    private void saveUser(String email, String password, String username) {
+        AppDatabase db = AppDatabase.getDbInstance(this.getApplicationContext());
+
+        User user = new User();
+        user.email = email;
+        user.password = password;
+        if(username.isEmpty())
+            user.username = "NA";
+        else
+            user.username = username;
+
+        db.userDao().insertUser(user);
+    }
+
 }
