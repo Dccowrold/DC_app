@@ -3,7 +3,6 @@ package com.assoftek.splashscreen;
 public class RegisterRequest {
     private String email;
     private String name;
-
     private String password;
 
     public String getEmail() {

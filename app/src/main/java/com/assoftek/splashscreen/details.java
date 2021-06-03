@@ -17,7 +17,23 @@ import retrofit2.Response;
 
 public class details extends AppCompatActivity {
 
-    EditText name,email,FixedIncome,OtherIncome,MedianIncome,TotalExpenses,SavingIncome,Age,RetirementAge, AssetClass,Return,Risk,Time,FinancialRisk,Standard,RiskWillingness,Liquidity;
+    EditText name,
+            email,
+            FixedIncome,
+            OtherIncome,
+            MedianIncome,
+            TotalExpenses,
+            SavingIncome,
+            Age,
+            RetirementAge,
+            AssetClass,
+            Return,
+            Risk,
+            Time,
+            FinancialRisk,
+            Standard,
+            RiskWillingness,
+            Liquidity;
     Button save;
     @Override
     protected void onCreate(Bundle savedInstanceState) {

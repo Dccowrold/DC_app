@@ -38,4 +38,9 @@ public interface Api {
             @Field("RiskWillingness") String RiskWillingness,
             @Field("Liquidity") String Liquidity
     );
+
+    @FormUrlEncoded
+    @POST("data")
+    @Headers("Content-Type: application/json;charset=utf-8")
+    Call<dataRequest> Data(@Body dataResponse dataResponse);
 }
