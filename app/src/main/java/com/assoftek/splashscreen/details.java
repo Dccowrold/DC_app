@@ -10,8 +10,8 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.assoftek.splashscreen.db.AppDatabase;
 import com.assoftek.splashscreen.db.Details;
-import com.assoftek.splashscreen.db.DetailsDatabase;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -167,7 +167,7 @@ public class details extends AppCompatActivity {
                              String AssetClass, String Return, String RiskString, String Time, String FinancialRisk,
                              String Standard, String RiskWillingness, String Liquidity) {
 
-        DetailsDatabase db = DetailsDatabase.getDbInstance(this.getApplicationContext());
+        AppDatabase db = AppDatabase.getDbInstance(this.getApplicationContext());
 
         Details details = new Details();
         details.email = email;

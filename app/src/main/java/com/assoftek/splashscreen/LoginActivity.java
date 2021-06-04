@@ -14,8 +14,8 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.assoftek.splashscreen.db.AppDatabase;
 import com.assoftek.splashscreen.db.User;
-import com.assoftek.splashscreen.db.UserDatabase;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -113,7 +113,7 @@ public class LoginActivity extends AppCompatActivity {
 
     private void saveUser(String email, String password) {
 
-        UserDatabase db = UserDatabase.getDbInstance(this.getApplicationContext());
+        AppDatabase db = AppDatabase.getDbInstance(this.getApplicationContext());
 
         User user = new User();
         user.email = email;
