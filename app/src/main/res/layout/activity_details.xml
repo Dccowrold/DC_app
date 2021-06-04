@@ -6,7 +6,7 @@
 
 
 
-    <ScrollView 
+    <ScrollView
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:id="@+id/scrollView"
@@ -191,7 +191,9 @@
                 android:background="@color/blue"/>
 
 
-            <EditText
+
+
+            <AutoCompleteTextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:paddingLeft="5dp"
@@ -200,7 +202,11 @@
 
                 android:layout_weight="1"
                 android:id="@+id/Return"
+
+
                 />
+
+
 
             <View
                 android:layout_width="match_parent"
@@ -208,7 +214,7 @@
                 android:background="@color/blue"/>
 
 
-            <EditText
+            <AutoCompleteTextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:hint="Risk"
@@ -240,11 +246,11 @@
                 android:background="@color/blue"/>
 
 
-            <EditText
+            <AutoCompleteTextView
                 android:layout_width="match_parent"
                 android:paddingLeft="5dp"
                 android:layout_height="match_parent"
-                android:hint="Financil Risk"
+                android:hint="Financial Risk"
                 android:textColorHint="@color/white"
 
                 android:layout_weight="1"
@@ -256,7 +262,7 @@
                 android:background="@color/blue"/>
 
 
-            <EditText
+            <AutoCompleteTextView
                 android:layout_width="match_parent"
                 android:paddingLeft="5dp"
                 android:layout_height="match_parent"
@@ -271,7 +277,7 @@
                 android:layout_height="1dp"
                 android:background="@color/blue"/>
 
-            <EditText
+            <AutoCompleteTextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:paddingLeft="5dp"
@@ -286,7 +292,7 @@
                 android:layout_height="1dp"
                 android:background="@color/blue"/>
 
-            <EditText
+            <AutoCompleteTextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:hint="Liquidity"
@@ -308,6 +314,7 @@
                 android:background="@drawable/roundgbluebutton"
                 android:layout_margin="10dp"
                 android:text="Save"
+                android:id="@+id/save"
 
                 />
 

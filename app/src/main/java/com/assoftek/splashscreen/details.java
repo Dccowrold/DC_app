@@ -6,6 +6,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
+import android.widget.Adapter;
+import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -17,7 +20,9 @@ import retrofit2.Response;
 
 public class details extends AppCompatActivity {
 
-    EditText name,email,FixedIncome,OtherIncome,MedianIncome,TotalExpenses,SavingIncome,Age,RetirementAge, AssetClass,Return,Risk,Time,FinancialRisk,Standard,RiskWillingness,Liquidity;
+    EditText name,email,FixedIncome,OtherIncome,MedianIncome,TotalExpenses,SavingIncome,Age,RetirementAge, AssetClass,Time;
+
+    AutoCompleteTextView Return ,Risk,FinancialRisk,Standard,RiskWillingness,Liquidity;
     Button save;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,7 +54,58 @@ public class details extends AppCompatActivity {
                 saveData();
             }
         });
+
+
+        ArrayAdapter<String>adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1,values);
+        Return.setAdapter(adapter);
+        FinancialRisk.setAdapter(adapter);
+        Standard.setAdapter(adapter);
+        RiskWillingness.setAdapter(adapter);
+        Liquidity.setAdapter(adapter);
+        Risk.setAdapter(adapter);
+
+        Return.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Return.showDropDown();
+            }
+        });
+        FinancialRisk.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                FinancialRisk.showDropDown();
+            }
+        });
+        Risk.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Risk.showDropDown();
+            }
+        });
+        Standard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Standard.showDropDown();
+            }
+        });
+        RiskWillingness.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                RiskWillingness.showDropDown();
+            }
+        });
+        Liquidity.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Liquidity.showDropDown();
+            }
+        });
+
     }
+
+
+
+    private static final String[] values = new String[]{"High","Medium","Low"};
 
     public void saveData(){
         Call<dataResponse> dataResponseCall= RetrofitClient.getService().
