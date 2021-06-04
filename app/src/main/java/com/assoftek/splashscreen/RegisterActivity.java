@@ -1,6 +1,5 @@
 package com.assoftek.splashscreen;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -14,8 +13,8 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.assoftek.splashscreen.db.AppDatabase;
 import com.assoftek.splashscreen.db.User;
+import com.assoftek.splashscreen.db.UserDatabase;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -38,7 +37,7 @@ public class RegisterActivity extends AppCompatActivity {
         email = findViewById(R.id.edemailregister);
         password = findViewById(R.id.edpasswordregister);
         loginLink = findViewById(R.id.loginLink);
-        sharedPref= getSharedPreferences("PREFERENCE", MODE_PRIVATE);
+        sharedPref = getSharedPreferences("PREFERENCE", MODE_PRIVATE);
 
         register.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -58,18 +57,18 @@ public class RegisterActivity extends AppCompatActivity {
         if ((userEmail.isEmpty()) || (userName.isEmpty()) || (userPassword.isEmpty())) {
             Toast.makeText(RegisterActivity.this, "All fields required.", Toast.LENGTH_SHORT).show();
         }
-        RegisterRequest registerRequest=new RegisterRequest();
+        RegisterRequest registerRequest = new RegisterRequest();
         registerRequest.setEmail(userEmail);
         registerRequest.setName(userName);
         registerRequest.setPassword(userPassword);
         Call<RegisterResponse> call = RetrofitClient.getService().register(registerRequest);
         call.enqueue(new Callback<RegisterResponse>() {
             @Override
-            public void onResponse( Call<RegisterResponse> call, Response<RegisterResponse> response) {
+            public void onResponse(Call<RegisterResponse> call, Response<RegisterResponse> response) {
                 RegisterResponse registerResponse = response.body();
-                Log.d("response",response.toString());
-                if(response.isSuccessful()){
-                    Toast.makeText(RegisterActivity.this,"SignUp Successful", Toast.LENGTH_LONG).show();
+                Log.d("response", response.toString());
+                if (response.isSuccessful()) {
+                    Toast.makeText(RegisterActivity.this, "SignUp Successful", Toast.LENGTH_LONG).show();
 
                     new Handler().postDelayed(new Runnable() {
                         @Override
@@ -77,17 +76,17 @@ public class RegisterActivity extends AppCompatActivity {
                             //Storing to Room Database
                             saveUser(userEmail, userPassword, userName);
 
-                            Intent intent=new Intent(RegisterActivity.this,DashboardActivity.class);
-                            intent.putExtra("username",registerResponse.getName());
-                            sharedPref.edit().putBoolean(getString(R.string.isLoggedIn),true).apply();
-                            sharedPref.edit().putBoolean(getString(R.string.firstTime),false).apply();
+                            Intent intent = new Intent(RegisterActivity.this, DashboardActivity.class);
+                            intent.putExtra("username", registerResponse.getName());
+                            sharedPref.edit().putBoolean(getString(R.string.isLoggedIn), true).apply();
+                            sharedPref.edit().putBoolean(getString(R.string.firstTime), false).apply();
                             startActivity(intent);
                             finish();
                         }
-                    },700);
+                    }, 700);
 
-                }else{
-                    Toast.makeText(RegisterActivity.this,"SignUp Failed", Toast.LENGTH_LONG).show();
+                } else {
+                    Toast.makeText(RegisterActivity.this, "SignUp Failed", Toast.LENGTH_LONG).show();
 
                 }
 
@@ -103,17 +102,16 @@ public class RegisterActivity extends AppCompatActivity {
     }
 
     private void saveUser(String email, String password, String username) {
-        AppDatabase db = AppDatabase.getDbInstance(this.getApplicationContext());
+
+        UserDatabase db = UserDatabase.getDbInstance(this.getApplicationContext());
 
         User user = new User();
         user.email = email;
         user.password = password;
-        if(username.isEmpty())
-            user.username = "NA";
-        else
-            user.username = username;
+        user.username = username;
 
         db.userDao().insertUser(user);
+
     }
 
 }

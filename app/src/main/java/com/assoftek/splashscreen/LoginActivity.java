@@ -14,8 +14,8 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.assoftek.splashscreen.db.AppDatabase;
 import com.assoftek.splashscreen.db.User;
+import com.assoftek.splashscreen.db.UserDatabase;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -24,7 +24,7 @@ import retrofit2.Response;
 public class LoginActivity extends AppCompatActivity {
 
     Button btnLogin;
-    EditText email, password ;
+    EditText email, password;
     TextView registerLink;
     private SharedPreferences sharedPref;
 
@@ -38,14 +38,14 @@ public class LoginActivity extends AppCompatActivity {
         email = findViewById(R.id.edemailsignin);
         password = findViewById(R.id.edpasswordsignin);
         registerLink = findViewById(R.id.registerLink);
-        sharedPref= getSharedPreferences("PREFERENCE", MODE_PRIVATE);
+        sharedPref = getSharedPreferences("PREFERENCE", MODE_PRIVATE);
         getSupportActionBar().hide();
 
 
         registerLink.setOnClickListener(new View.OnClickListener() {
-           @Override
+            @Override
             public void onClick(View v) {
-              startActivity(new Intent(LoginActivity.this,RegisterActivity.class));
+                startActivity(new Intent(LoginActivity.this, RegisterActivity.class));
             }
         });
 
@@ -53,9 +53,9 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                if(TextUtils.isEmpty(email.getText().toString()) || TextUtils.isEmpty(password.getText().toString())){
-                    Toast.makeText(LoginActivity.this,"Username / Password Required", Toast.LENGTH_LONG).show();
-                }else{
+                if (TextUtils.isEmpty(email.getText().toString()) || TextUtils.isEmpty(password.getText().toString())) {
+                    Toast.makeText(LoginActivity.this, "Username / Password Required", Toast.LENGTH_LONG).show();
+                } else {
                     //proceed to login
                     login();
                 }
@@ -65,7 +65,7 @@ public class LoginActivity extends AppCompatActivity {
     }
 
 
-    public void login(){
+    public void login() {
         LoginRequest loginRequest = new LoginRequest();
         loginRequest.setEmail(email.getText().toString());
         loginRequest.setPassword(password.getText().toString());
@@ -74,9 +74,9 @@ public class LoginActivity extends AppCompatActivity {
         loginResponseCall.enqueue(new Callback<LoginResponse>() {
             @Override
             public void onResponse(Call<LoginResponse> call, Response<LoginResponse> response) {
-                Log.d("error",response.toString());
-                if(response.isSuccessful()){
-                    Toast.makeText(LoginActivity.this,"Login Successful", Toast.LENGTH_LONG).show();
+                Log.d("error", response.toString());
+                if (response.isSuccessful()) {
+                    Toast.makeText(LoginActivity.this, "Login Successful", Toast.LENGTH_LONG).show();
                     LoginResponse loginResponse = response.body();
 
                     new Handler().postDelayed(new Runnable() {
@@ -85,17 +85,17 @@ public class LoginActivity extends AppCompatActivity {
                             //Storing to Room Database
                             saveUser(email.getText().toString(), password.getText().toString());
 
-                            Intent intent=new Intent(LoginActivity.this,DashboardActivity.class);
-                            intent.putExtra("username",loginResponse.getName());
-                            sharedPref.edit().putBoolean(getString(R.string.isLoggedIn),true).apply();
-                            sharedPref.edit().putBoolean(getString(R.string.firstTime),false).apply();
+                            Intent intent = new Intent(LoginActivity.this, DashboardActivity.class);
+                            intent.putExtra("username", loginResponse.getName());
+                            sharedPref.edit().putBoolean(getString(R.string.isLoggedIn), true).apply();
+                            sharedPref.edit().putBoolean(getString(R.string.firstTime), false).apply();
                             startActivity(intent);
                             finish();
                         }
-                    },700);
+                    }, 700);
 
-                }else{
-                    Toast.makeText(LoginActivity.this,"Login Failed", Toast.LENGTH_LONG).show();
+                } else {
+                    Toast.makeText(LoginActivity.this, "Login Failed", Toast.LENGTH_LONG).show();
 
                 }
 
@@ -103,7 +103,7 @@ public class LoginActivity extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<LoginResponse> call, Throwable t) {
-                Toast.makeText(LoginActivity.this,"Throwable "+t.getLocalizedMessage(), Toast.LENGTH_LONG).show();
+                Toast.makeText(LoginActivity.this, "Throwable " + t.getLocalizedMessage(), Toast.LENGTH_LONG).show();
 
             }
         });
@@ -112,7 +112,8 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void saveUser(String email, String password) {
-        AppDatabase db = AppDatabase.getDbInstance(this.getApplicationContext());
+
+        UserDatabase db = UserDatabase.getDbInstance(this.getApplicationContext());
 
         User user = new User();
         user.email = email;
@@ -120,6 +121,7 @@ public class LoginActivity extends AppCompatActivity {
         user.username = "NA";
 
         db.userDao().insertUser(user);
+
     }
 
 }
