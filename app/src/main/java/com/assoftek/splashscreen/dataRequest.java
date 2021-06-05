@@ -19,6 +19,26 @@ public class dataRequest {
     private String RiskWillingness;
     private String Liquidity;
 
+    public dataRequest(String name, String email, String fixedIncome, String otherIncome, String medianIncome, String totalExpenses, String savingIncome, String age, String retirementAge, String assetClass, String aReturn, String risk, String time, String financialRisk, String standard, String riskWillingness, String liquidity) {
+        this.name = name;
+        this.email = email;
+        FixedIncome = fixedIncome;
+        OtherIncome = otherIncome;
+        MedianIncome = medianIncome;
+        TotalExpenses = totalExpenses;
+        SavingIncome = savingIncome;
+        Age = age;
+        RetirementAge = retirementAge;
+        AssetClass = assetClass;
+        Return = aReturn;
+        Risk = risk;
+        Time = time;
+        FinancialRisk = financialRisk;
+        Standard = standard;
+        RiskWillingness = riskWillingness;
+        Liquidity = liquidity;
+    }
+
     public String getName() {
         return name;
     }

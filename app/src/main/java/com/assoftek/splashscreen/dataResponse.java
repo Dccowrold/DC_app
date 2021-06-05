@@ -1,16 +1,12 @@
 package com.assoftek.splashscreen;
 
 public class dataResponse {
-    private String name;
-    private String email;
-    private String FixedIncome;
-    private String OtherIncome;
+    private String TotalIncome;
     private String MedianIncome;
     private String TotalExpenses;
     private String SavingIncome;
     private String Age;
     private String RetirementAge;
-    private String AssetClass;
     private String Return;
     private String Risk;
     private String Time;
@@ -19,59 +15,12 @@ public class dataResponse {
     private String RiskWillingness;
     private String Liquidity;
 
-    public dataResponse(){
+    public String getTotalIncome() {
+        return TotalIncome;
     }
 
-    public dataResponse(String name, String email, String FixedIncome, String OtherIncome, String MedianIncome, String TotalExpenses, String SavingIncome, String Age, String RetirementAge, String AssetClass, String Return, String Risk, String Time, String FinancialRisk, String Standard, String RiskWillingness, String Liquidity) {
-        this.name = name;
-        this.email = email;
-        this.FixedIncome = FixedIncome;
-        this.OtherIncome = OtherIncome;
-        this.MedianIncome = MedianIncome;
-        this.TotalExpenses = TotalExpenses;
-        this.SavingIncome = SavingIncome;
-        this.Age = Age;
-        this.RetirementAge = RetirementAge;
-        this.AssetClass = AssetClass;
-        this.Return = Return;
-        this.Risk = Risk;
-        this.Time = Time;
-        this.FinancialRisk = FinancialRisk;
-        this.Standard = Standard;
-        this.RiskWillingness = RiskWillingness;
-        this.Liquidity = Liquidity;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public String getFixedIncome() {
-        return FixedIncome;
-    }
-
-    public void setFixedIncome(String fixedIncome) {
-        FixedIncome = fixedIncome;
-    }
-
-    public String getOtherIncome() {
-        return OtherIncome;
-    }
-
-    public void setOtherIncome(String otherIncome) {
-        OtherIncome = otherIncome;
+    public void setTotalIncome(String totalIncome) {
+        TotalIncome = totalIncome;
     }
 
     public String getMedianIncome() {
@@ -112,14 +61,6 @@ public class dataResponse {
 
     public void setRetirementAge(String retirementAge) {
         RetirementAge = retirementAge;
-    }
-
-    public String getAssetClass() {
-        return AssetClass;
-    }
-
-    public void setAssetClass(String assetClass) {
-        AssetClass = assetClass;
     }
 
     public String getReturn() {
@@ -178,3 +119,4 @@ public class dataResponse {
         Liquidity = liquidity;
     }
 }
+

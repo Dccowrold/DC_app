@@ -108,7 +108,7 @@ public class details extends AppCompatActivity {
 
     public void saveData() {
         Call<dataResponse> dataResponseCall = RetrofitClient.getService().
-                uploadData(name.getText().toString(),
+                uploadData(new dataRequest(name.getText().toString(),
                         email.getText().toString(),
                         FixedIncome.getText().toString(),
                         OtherIncome.getText().toString(),
@@ -124,7 +124,7 @@ public class details extends AppCompatActivity {
                         FinancialRisk.getText().toString(),
                         Standard.getText().toString(),
                         RiskWillingness.getText().toString(),
-                        Liquidity.getText().toString());
+                        Liquidity.getText().toString()));
         dataResponseCall.enqueue(new Callback<dataResponse>() {
             @Override
             public void onResponse(Call<dataResponse> call, Response<dataResponse> response) {
