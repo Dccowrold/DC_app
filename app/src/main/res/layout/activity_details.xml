@@ -1,0 +1,331 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/scrollView"
+        android:layout_margin="20dp"
+        android:background="@drawable/squareblue">
+
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical"
+            android:padding="10dp"
+            >
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:hint="Name"
+                android:paddingLeft="5dp"
+                android:textColorHint="@color/white"
+                android:textColor="@color/white"
+
+
+
+
+                android:id="@+id/name"
+                />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/blue"/>
+
+
+            <EditText
+
+                android:paddingLeft="5dp"
+                android:textColorHint="@color/white"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint="Email"
+                android:textColor="@color/white"
+                android:layout_weight="1"
+                android:id="@+id/email"
+                />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/blue"/>
+
+            <EditText
+
+                android:paddingLeft="5dp"
+                android:textColorHint="@color/white"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint="Fixed Income"
+                android:textColor="@color/white"
+                android:layout_weight="1"
+                android:id="@+id/fixedIncome"
+                />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/blue"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+
+                android:paddingLeft="5dp"
+                android:textColorHint="@color/white"
+                android:hint="Other Income"
+
+                android:textColor="@color/white"
+                android:layout_weight="1"
+                android:id="@+id/otherIncome"
+                />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/blue"/>
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint="Median Income"
+                android:textColor="@color/white"
+
+                android:paddingLeft="5dp"
+                android:textColorHint="@color/white"
+                android:layout_weight="1"
+                android:id="@+id/medianIncome"
+                />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/blue"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint="Total Expences"
+                android:textColor="@color/white"
+                android:layout_weight="1"
+
+                android:paddingLeft="5dp"
+                android:textColorHint="@color/white"
+                android:id="@+id/totalExpences"
+                />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/blue"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint="Saving Income"
+                android:textColor="@color/white"
+                android:layout_weight="1"
+
+                android:paddingLeft="5dp"
+                android:textColorHint="@color/white"
+                android:id="@+id/savingIncome"
+                />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/blue"/>
+
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint="Age"
+
+                android:layout_weight="1"
+                android:textColor="@color/white"
+                android:paddingLeft="5dp"
+                android:textColorHint="@color/white"
+                android:id="@+id/age"
+                />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/blue"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint="Retirement Age"
+                android:textColor="@color/white"
+                android:paddingLeft="5dp"
+                android:textColorHint="@color/white"
+
+                android:layout_weight="1"
+                android:id="@+id/retirementage"
+                />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/blue"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint="Asset Class"
+                android:textColorHint="@color/white"
+                android:paddingLeft="5dp"
+                android:textColor="@color/white"
+                android:layout_weight="1"
+                android:id="@+id/assetclass"
+                />
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/blue"/>
+
+
+
+
+            <AutoCompleteTextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingLeft="5dp"
+                android:hint="Return"
+                android:textColorHint="@color/white"
+                android:textColor="@color/white"
+                android:layout_weight="1"
+                android:id="@+id/Return"
+
+
+                />
+
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/blue"/>
+
+
+            <AutoCompleteTextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint="Risk"
+                android:textColorHint="@color/white"
+                android:textColor="@color/white"
+                android:layout_weight="1"
+                android:id="@+id/risk"
+                android:paddingLeft="5dp"
+                />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/blue"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint="Time"
+                android:paddingLeft="5dp"
+                android:textColorHint="@color/white"
+                android:textColor="@color/white"
+                android:layout_weight="1"
+                android:id="@+id/Time"
+                />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/blue"/>
+
+
+            <AutoCompleteTextView
+                android:layout_width="match_parent"
+                android:paddingLeft="5dp"
+                android:layout_height="match_parent"
+                android:hint="Financial Risk"
+                android:textColorHint="@color/white"
+                android:textColor="@color/white"
+                android:layout_weight="1"
+                android:id="@+id/Financial_Risk"
+                />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/blue"/>
+
+
+            <AutoCompleteTextView
+                android:layout_width="match_parent"
+                android:paddingLeft="5dp"
+                android:layout_height="match_parent"
+                android:hint="Standard"
+                android:textColorHint="@color/white"
+                android:textColor="@color/white"
+                android:layout_weight="1"
+                android:id="@+id/standard"
+                />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/blue"/>
+
+            <AutoCompleteTextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingLeft="5dp"
+                android:hint="Risk Willingness"
+                android:textColorHint="@color/white"
+                android:textColor="@color/white"
+                android:layout_weight="1"
+                android:id="@+id/RiskWillingness"
+                />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/blue"/>
+
+            <AutoCompleteTextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint="Liquidity"
+                android:paddingLeft="5dp"
+                android:textColorHint="@color/white"
+                android:textColor="@color/white"
+                android:layout_weight="1"
+                android:id="@+id/Liquidity"
+                />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/blue"/>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/roundgbluebutton"
+                android:layout_margin="10dp"
+                android:text="Save"
+                android:id="@+id/save"
+
+                />
+
+
+
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

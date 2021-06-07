@@ -12,7 +12,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.PagerAdapter;
 
-import com.assoftek.splashscreen.Login.login;
+import com.assoftek.splashscreen.LoginActivity;
 import com.assoftek.splashscreen.R;
 import com.bumptech.glide.Glide;
 
@@ -46,7 +46,7 @@ public class ViewPagerAdapter extends PagerAdapter {
             @Override
             public void onClick(View v) {
                 if (position == text.length - 1) {
-                    Intent intent = new Intent(context, login.class);
+                    Intent intent = new Intent(context, LoginActivity.class);
                     context.startActivity(intent);
                     ((AppCompatActivity) (context)).finish();
                 }

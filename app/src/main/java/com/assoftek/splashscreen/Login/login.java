@@ -13,6 +13,7 @@ import androidx.annotation.Nullable;
 
 import com.assoftek.splashscreen.DashboardActivity;
 import com.assoftek.splashscreen.R;
+import com.assoftek.splashscreen.SignUp.SignUp;
 import com.assoftek.splashscreen.databinding.ActivityLoginBinding;
 import com.facebook.AccessToken;
 import com.facebook.CallbackManager;
@@ -36,6 +37,7 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
 import com.google.firebase.auth.TwitterAuthProvider;
 import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.twitter.sdk.android.core.Callback;
 import com.twitter.sdk.android.core.Result;
 import com.twitter.sdk.android.core.Twitter;
@@ -45,6 +47,7 @@ import com.twitter.sdk.android.core.TwitterException;
 import com.twitter.sdk.android.core.TwitterSession;
 
 import java.util.Arrays;
+import java.util.HashMap;
 
 public class login extends Activity {
 

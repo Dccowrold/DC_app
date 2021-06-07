@@ -10,57 +10,54 @@ import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
-public class CreatePaymentPin extends AppCompatActivity {
+public class PinVerification extends AppCompatActivity {
 
     Button btn_verify;
     SharedPreferences sharedPreferences;
-    TextView view, textView;
     private EditText input1, input2, input3, input4;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_create_payment_pin);
+        setContentView(R.layout.activity_pin_verification);
 
-        btn_verify = findViewById(R.id.btn_verify);
-        input1 = findViewById(R.id.inputCode1);
-        input2 = findViewById(R.id.inputCode2);
-        input3 = findViewById(R.id.inputCode3);
-        input4 = findViewById(R.id.inputCode4);
+        btn_verify = findViewById(R.id.proceed);
+        input1 = findViewById(R.id.iCode1);
+        input2 = findViewById(R.id.iCode2);
+        input3 = findViewById(R.id.iCode3);
+        input4 = findViewById(R.id.iCode4);
 
         setupOTPInputs();
-        sharedPreferences = getSharedPreferences("myPref", 0);
 
-        //readpref();
+        sharedPreferences = getApplicationContext().getSharedPreferences("myPref", MODE_PRIVATE);
 
         btn_verify.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                int onev = Integer.parseInt(input1.getText().toString());
+                int twov = Integer.parseInt(input2.getText().toString());
+                int threev = Integer.parseInt(input3.getText().toString());
+                int fourv = Integer.parseInt(input4.getText().toString());
 
-                int one = Integer.parseInt(input1.getText().toString());
-                int two = Integer.parseInt(input2.getText().toString());
-                int three = Integer.parseInt(input3.getText().toString());
-                int four = Integer.parseInt(input4.getText().toString());
+                int pin1 = sharedPreferences.getInt("1", -2);
+                int pin2 = sharedPreferences.getInt("2", 0);
+                int pin3 = sharedPreferences.getInt("3", 1);
+                int pin4 = sharedPreferences.getInt("4", -1);
 
-                SharedPreferences.Editor editor = sharedPreferences.edit();
-                editor.putInt("1", one);
-                editor.putInt("2", two);
-                editor.putInt("3", three);
-                editor.putInt("4", four);
-                editor.commit();
-
-                Intent intent = new Intent(CreatePaymentPin.this, PinVerification.class);
-                startActivity(intent);
-
-
-                Toast.makeText(CreatePaymentPin.this, "Succesfull", Toast.LENGTH_SHORT).show();
+                if (onev == pin1 && twov == pin2 && threev == pin3 && fourv == pin4) {
+//                    Intent intent = new Intent(PinVerification.this , PaymentPage.class);
+//                    startActivity(intent);
+                    Toast.makeText(PinVerification.this, "verified successfully", Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(PinVerification.this, "Incorrect Pin", Toast.LENGTH_SHORT).show();
+                }
             }
         });
-    }
 
+
+    }
 
     private void setupOTPInputs() {
         input1.addTextChangedListener(new TextWatcher() {
@@ -123,10 +120,14 @@ public class CreatePaymentPin extends AppCompatActivity {
     }
 
     public void readpref() {
-        input1.setText(String.valueOf(sharedPreferences.getInt("1",-1)));
-        input2.setText(String.valueOf(sharedPreferences.getInt("2",-1)));
-        input3.setText(String.valueOf(sharedPreferences.getInt("3",-1)));
-        input4.setText(String.valueOf( sharedPreferences.getInt("4",-1)));
+
+        input1.setText(String.valueOf(sharedPreferences.getInt("1", -1)));
+
+        input2.setText(String.valueOf(sharedPreferences.getInt("2", -1)));
+
+        input3.setText(String.valueOf(sharedPreferences.getInt("3", -1)));
+
+        input4.setText(String.valueOf(sharedPreferences.getInt("4", -1)));
 
     }
 
