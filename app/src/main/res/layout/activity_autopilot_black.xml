@@ -5,15 +5,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@color/white"
-    tools:context=".Login.login">
+    android:background="@color/black"
+    tools:context=".autopilot_black">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="PUT SAVINGS ON"
         android:textSize="40dp"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         android:textStyle="bold"
         android:textAlignment="center"
         android:layout_marginTop="20dp"
@@ -41,7 +41,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="MacBook? Bali trip with gang ? Derive makes it happen. We'll set your extra money aside automatically. What's more? you can share jars and save together with friends and family!"
-        android:textColor="@color/lightblack"
+        android:textColor="#A6A3A3"
         android:textSize="19dp"
         android:textStyle="bold"
         android:textAlignment="center"
