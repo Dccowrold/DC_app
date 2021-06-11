@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/grad_back"
+    android:background="@color/black"
     android:scaleType="centerCrop">
 
     <TextView
@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="100dp"
         android:text="Create New Stack Pin"
-        android:textColor="#fff"
+        android:textColor="@color/blue"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -58,8 +58,8 @@
         android:layout_height="wrap_content"
         android:cursorVisible="true"
         android:inputType="number"
-        android:itemBackground="@drawable/pin_grad"
-        app:cursorColor="@color/white"
+        android:itemBackground="@color/black"
+        app:cursorColor="@color/blue"
         app:hideLineWhenFilled="true"
         app:itemCount="6"
         app:itemHeight="40dp"
