@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/grad_back"
+    android:background="@color/black"
     android:scaleType="centerCrop">
 
     <TextView
@@ -61,7 +61,7 @@
         android:layout_marginTop="76dp"
         android:cursorVisible="true"
         android:inputType="number"
-        android:itemBackground="@drawable/pin_grad"
+        android:itemBackground="@color/black"
         app:cursorColor="@color/white"
         app:hideLineWhenFilled="true"
         app:itemCount="6"
