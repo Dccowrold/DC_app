@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".newscreen3"
+    android:background="#FCF8FF">
+
+
+    <ImageView
+        android:id="@+id/screen3img"
+        android:layout_width="280dp"
+        android:layout_height="226dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        android:layout_marginStart="63dp"
+        android:layout_marginTop="43dp"
+        android:layout_marginEnd="68dp"
+        android:layout_marginBottom="461dp"
+        android:src="@drawable/screen3" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/screen3img"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_centerInParent="true"
+        android:layout_marginStart="9dp"
+        android:layout_marginTop="297dp"
+        android:layout_marginEnd="0dp"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:text="DERIVE COACH TO THE"
+        android:textColor="#2F046A"
+        android:textSize="45dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        android:layout_marginStart="22dp"
+        android:layout_marginBottom="254dp"
+        android:text="RESCUE !!"
+        android:textColor="#61E8BB"
+        android:textSize="55dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="363dp"
+        android:layout_height="wrap_content"
+
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="21dp"
+        android:layout_marginBottom="50dp"
+        android:background="@drawable/box"
+        android:padding="18dp"
+        android:text="How to budget? Am I spending too fast ? How can I sort my salary better? Derive Coach will be financial manager AKA saviour sitting in your pocket. And it's available 24x7"
+        android:textColor="#AD88728F"
+        android:textSize="18dp" />
+
+
+</RelativeLayout>
