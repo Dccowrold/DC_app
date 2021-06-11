@@ -1,0 +1,50 @@
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:orientation="vertical"
+android:background="@color/black"
+tools:context=".Login.login">
+
+<TextView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="ALL FINANCIAL SOLUTIONS"
+    android:textSize="40dp"
+    android:textColor="@color/white"
+    android:textStyle="bold"
+    android:textAlignment="center"
+    android:layout_marginTop="20dp"
+    android:layout_marginBottom="20dp"></TextView>
+<TextView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="UNDER ONE ROOF"
+    android:textSize="40dp"
+    android:textColor="@color/colorAccent"
+    android:textStyle="bold"
+    android:textAlignment="center"
+    android:layout_marginBottom="40dp"></TextView>
+
+
+    <ImageView
+        android:layout_width="596dp"
+        android:layout_height="224dp"
+        android:layout_gravity="center"
+        android:src="@drawable/housedc"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="-42dp"></ImageView>
+<TextView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="Get all your Finacial under one \tapp without the hassle of juggling between different apps.Track your net worth with extreme ease"
+    android:textSize="20sp"
+    android:textColor="#A5A1A1"
+    android:textStyle="bold"
+    android:textAlignment="center"
+    android:layout_marginTop="15dp"
+    android:layout_marginBottom="40dp"></TextView>
+
+</LinearLayout>
