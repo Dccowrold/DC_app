@@ -12,6 +12,10 @@ import com.assoftek.splashscreen.DashboardActivity;
 import com.assoftek.splashscreen.R;
 import com.assoftek.splashscreen.UsersModel;
 import com.assoftek.splashscreen.databinding.ActivityUserProfileBinding;
+import com.assoftek.splashscreen.db.AppDatabase;
+import com.assoftek.splashscreen.db.Details;
+import com.assoftek.splashscreen.db.User;
+import com.assoftek.splashscreen.db.UserProfile;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -60,6 +64,20 @@ public class UserProfileActivity extends AppCompatActivity {
                 String name=binding.name.getText().toString();
                 String state=binding.state.getText().toString();
                 String pincode=binding.pincode.getText().toString();
+                String Dob=binding.dateOfBirth.getText().toString();
+                String Phone_no =binding.number.getText().toString();
+
+                AppDatabase db = AppDatabase.getDbInstance(UserProfileActivity.this);
+
+                UserProfile userProfile= new UserProfile();
+                userProfile.name=name;
+                userProfile.state=state;
+                userProfile.pincode=pincode;
+                userProfile.Dob=Dob;
+                userProfile.Phone_no=Phone_no;
+
+                db.userProfileDao().insertProfile(userProfile);
+
 
                 HashMap<String , Object> obj = new HashMap<>();
                 obj.put("userName", name);
