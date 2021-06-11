@@ -108,4 +108,12 @@
     <string name="proceed">Proceed</string>
     <string name="change_number">Change number</string>
     <string name="resend_code">resend code</string>
+
+
+    <string-array name="Values">
+
+        <item>High</item>
+        <item>medium</item>
+        <item>low</item>
+    </string-array>
 </resources>

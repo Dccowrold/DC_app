@@ -2,6 +2,7 @@ package com.assoftek.splashscreen;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.Editable;
@@ -25,15 +26,15 @@ public class CreatePaymentPin extends AppCompatActivity {
         setContentView(R.layout.activity_create_payment_pin);
 
         btn_verify = findViewById(R.id.btn_verify);
-        input1=findViewById(R.id.inputCode1);
-        input2=findViewById(R.id.inputCode2);
-        input3=findViewById(R.id.inputCode3);
-        input4=findViewById(R.id.inputCode4);
+        input1 = findViewById(R.id.inputCode1);
+        input2 = findViewById(R.id.inputCode2);
+        input3 = findViewById(R.id.inputCode3);
+        input4 = findViewById(R.id.inputCode4);
 
         setupOTPInputs();
-        sharedPreferences = getSharedPreferences("myPref" , 0);
+        sharedPreferences = getSharedPreferences("myPref", 0);
 
-        readpref();
+        //readpref();
 
         btn_verify.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -45,11 +46,14 @@ public class CreatePaymentPin extends AppCompatActivity {
                 int four = Integer.parseInt(input4.getText().toString());
 
                 SharedPreferences.Editor editor = sharedPreferences.edit();
-                editor.putInt("1" , one);
-                editor.putInt("2" , two);
-                editor.putInt("3" , three);
-                editor.putInt("4" , four);
+                editor.putInt("1", one);
+                editor.putInt("2", two);
+                editor.putInt("3", three);
+                editor.putInt("4", four);
                 editor.commit();
+
+                Intent intent = new Intent(CreatePaymentPin.this, PinVerification.class);
+                startActivity(intent);
 
 
                 Toast.makeText(CreatePaymentPin.this, "Succesfull", Toast.LENGTH_SHORT).show();
@@ -119,14 +123,10 @@ public class CreatePaymentPin extends AppCompatActivity {
     }
 
     public void readpref() {
-        int val1  = sharedPreferences.getInt("1",-1);
-        input1.setText(String.valueOf(val1));
-        int val2 =  sharedPreferences.getInt("2",-1);
-        input2.setText(String.valueOf(val2));
-        int val3 = sharedPreferences.getInt("3",-1);
-        input3.setText(String.valueOf(val3));
-        int val4 =  sharedPreferences.getInt("4",-1);
-        input4.setText(String.valueOf(val4));
+        input1.setText(String.valueOf(sharedPreferences.getInt("1",-1)));
+        input2.setText(String.valueOf(sharedPreferences.getInt("2",-1)));
+        input3.setText(String.valueOf(sharedPreferences.getInt("3",-1)));
+        input4.setText(String.valueOf( sharedPreferences.getInt("4",-1)));
 
     }
 

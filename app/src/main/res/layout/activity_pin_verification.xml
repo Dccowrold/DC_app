@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="50dp"
+        android:text="VERIFY 4-DIGIT PIN"
+        android:textColor="@color/blue"
+        android:textSize="22sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:text="Enter your pin below to pay-:"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:layout_marginBottom="15dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/iCode1"
+            android:layout_width="40dp"
+            android:layout_height="45dp"
+            android:layout_margin="5dp"
+            android:background="@drawable/squareblue"
+            android:gravity="center"
+            android:imeOptions="actionNext"
+            android:importantForAutofill="no"
+            android:inputType="number"
+            android:maxLength="1"
+            android:textColor="@color/white"
+            android:textSize="22sp"
+            tools:ignore="LabelFor" />
+
+        <EditText
+            android:id="@+id/iCode2"
+            android:layout_width="40dp"
+            android:layout_height="45dp"
+            android:layout_margin="5dp"
+            android:background="@drawable/squareblue"
+            android:gravity="center"
+            android:imeOptions="actionNext"
+            android:importantForAutofill="no"
+            android:inputType="number"
+            android:maxLength="1"
+            android:textColor="@color/white"
+            android:textSize="22sp"
+            tools:ignore="LabelFor" />
+
+        <EditText
+            android:id="@+id/iCode3"
+            android:layout_width="40dp"
+            android:layout_height="45dp"
+            android:layout_margin="5dp"
+            android:background="@drawable/squareblue"
+            android:gravity="center"
+            android:imeOptions="actionNext"
+            android:importantForAutofill="no"
+            android:inputType="number"
+            android:maxLength="1"
+            android:textColor="@color/white"
+            android:textSize="22sp"
+            tools:ignore="LabelFor" />
+
+        <EditText
+            android:id="@+id/iCode4"
+            android:layout_width="40dp"
+            android:layout_height="45dp"
+            android:layout_margin="5dp"
+            android:background="@drawable/squareblue"
+            android:gravity="center"
+            android:imeOptions="actionNext"
+            android:importantForAutofill="no"
+            android:inputType="number"
+            android:maxLength="1"
+            android:textColor="@color/white"
+            android:textSize="22sp"
+            tools:ignore="LabelFor" />
+
+
+    </LinearLayout>
+
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp">
+
+        <Button
+            android:id="@+id/proceed"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="@drawable/roundgbluebutton"
+            android:gravity="center"
+            android:text="proceed"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+
+
+    </FrameLayout>
+</LinearLayout>

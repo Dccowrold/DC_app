@@ -1,6 +1,5 @@
-package com.assoftek.splashscreen.Splash_Screen;
+package com.assoftek.splashscreen;
 
-import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -9,12 +8,8 @@ import android.view.WindowManager;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.assoftek.splashscreen.DashboardActivity;
-import com.assoftek.splashscreen.Login.login;
 import com.assoftek.splashscreen.Onboarding.OnBoardingScreen;
-import com.assoftek.splashscreen.R;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 
 import static java.lang.Thread.sleep;
 
@@ -43,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
 
         }
         else if(!firsttimeLogin){
-            Intent in = new Intent(MainActivity.this, login.class);
+            Intent in = new Intent(MainActivity.this, LoginActivity.class);
             startActivity(in);
             finish();
         } else{

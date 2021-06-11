@@ -10,39 +10,38 @@
 
 
     <ImageView
-        android:id="@+id/logo"
-        android:layout_width="90dp"
-        android:layout_height="90dp"
-        android:src="@drawable/dc"
-        android:layout_marginBottom="40dp"
-        android:scaleType="centerCrop"
-        />
+    android:id="@+id/logo"
+    android:layout_width="90dp"
+    android:layout_height="90dp"
+    android:src="@drawable/dc"
+    android:layout_marginBottom="40dp"
+    android:scaleType="centerCrop"
+
+    />
 
 
     <EditText
-        android:id="@+id/email"
+        android:id="@+id/edemailsignin"
         android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
-        android:layout_height="wrap_content"
         android:background="@drawable/squareblue"
+        android:drawableLeft="@drawable/email"
+        android:drawablePadding="20dp"
+        android:fontFamily="@font/montserrat"
         android:hint="Email"
+        android:paddingLeft="10dp"
         android:paddingTop="10dp"
         android:paddingBottom="10dp"
-        android:paddingLeft="10dp"
-        android:textStyle="bold"
-        android:layout_margin="20dp"
-        android:fontFamily="@font/montserrat"
         android:textColor="@color/white"
         android:textColorHint="@color/gray"
         android:textSize="16sp"
-        android:drawableLeft="@drawable/email"
-        android:drawablePadding="20dp"
-        />
-
+        android:textStyle="bold" />
 
     <EditText
-        android:id="@+id/password"
+        android:id="@+id/edpasswordsignin"
         android:layout_width="match_parent"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
@@ -70,7 +69,7 @@
         android:layout_margin="20dp">
 
         <Button
-            android:id="@+id/loginButton"
+            android:id="@+id/btnsignin"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:background="@drawable/roundgbluebutton"
@@ -175,7 +174,8 @@
 
             <FrameLayout
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                tools:ignore="UselessParent">
 
                 <com.twitter.sdk.android.core.identity.TwitterLoginButton
                     android:id="@+id/twitter"
@@ -191,7 +191,7 @@
                     android:layout_height="30dp"
                     android:src="@drawable/twitter"
                     android:layout_margin="10dp"
-                    />
+                    android:contentDescription="TODO" />
 
             </FrameLayout>
 
@@ -219,7 +219,7 @@
             android:fontFamily="@font/montserrat"/>
 
         <TextView
-            android:id="@+id/signup"
+            android:id="@+id/registerLink"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Sign Up"
