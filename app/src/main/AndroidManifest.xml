@@ -11,7 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".loginpage"></activity>
+        <activity android:name=".screen3Black"></activity>
+        <activity android:name=".loginpage" />
         <activity android:name=".welcome_screen" />
         <activity android:name=".SignUp.UserProfileActivity" />
         <activity android:name=".SignUp.UserEducationActivity" />
