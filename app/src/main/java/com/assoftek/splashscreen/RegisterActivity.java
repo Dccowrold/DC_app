@@ -29,14 +29,14 @@ public class RegisterActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_signup);
+        setContentView(R.layout.activity_sign_up);
         getSupportActionBar().hide();
 
-        register = findViewById(R.id.btnSignup);
-        name = findViewById(R.id.edusername);
-        email = findViewById(R.id.edemailregister);
-        password = findViewById(R.id.edpasswordregister);
-        loginLink = findViewById(R.id.loginLink);
+        register = findViewById(R.id.btnSignUp);
+        name = findViewById(R.id.etName);
+        email = findViewById(R.id.etEmail);
+        password = findViewById(R.id.etPassword);
+        //loginLink = findViewById(R.id.loginLink);
         sharedPref = getSharedPreferences("PREFERENCE", MODE_PRIVATE);
 
         register.setOnClickListener(new View.OnClickListener() {
