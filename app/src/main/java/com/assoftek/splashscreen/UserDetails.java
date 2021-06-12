@@ -7,14 +7,22 @@ import android.widget.AutoCompleteTextView;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.assoftek.splashscreen.db.AppDatabase;
+import com.assoftek.splashscreen.db.Details;
+
 public class UserDetails extends AppCompatActivity {
 
     TextView name, email, FixedIncome, OtherIncome, MedianIncome, TotalExpenses, SavingIncome, Age, RetirementAge, AssetClass, Time, Return, Risk, FinancialRisk, Standard, RiskWillingness, Liquidity;
+
+    String emailFromExtra;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_details);
+
+        //Email of the current user received from calling activity
+        emailFromExtra = getIntent().getStringExtra("emailID");
 
         name = findViewById(R.id.name);
         email = findViewById(R.id.email);
@@ -33,6 +41,35 @@ public class UserDetails extends AppCompatActivity {
         Standard = findViewById(R.id.standard);
         RiskWillingness = findViewById(R.id.RiskWillingness);
         Liquidity = findViewById(R.id.Liquidity);
+
+        //Populating the textviews
+        setFields(emailFromExtra);
+    }
+
+    private void setFields(String emailID) {
+
+        AppDatabase db = AppDatabase.getDbInstance(this.getApplicationContext());
+
+        Details currentUserData = db.detailsDao().findUserFromEmail(emailID);
+
+        name.setText(currentUserData.name);
+        email.setText(emailID);
+        FixedIncome.setText(currentUserData.FixedIncome);
+        OtherIncome.setText(currentUserData.OtherIncome);
+        MedianIncome.setText(currentUserData.MedianIncome);
+        TotalExpenses.setText(currentUserData.TotalExpenses);
+        SavingIncome.setText(currentUserData.SavingIncome);
+        Age.setText(currentUserData.Age);
+        RetirementAge.setText(currentUserData.RetirementAge);
+        AssetClass.setText(currentUserData.AssetClass);
+        Return.setText(currentUserData.Return);
+        Risk.setText(currentUserData.Risk);
+        Time.setText(currentUserData.Time);
+        FinancialRisk.setText(currentUserData.FinancialRisk);
+        Standard.setText(currentUserData.Standard);
+        RiskWillingness.setText(currentUserData.RiskWillingness);
+        Liquidity.setText(currentUserData.Liquidity);
+
     }
 
 }
