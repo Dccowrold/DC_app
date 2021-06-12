@@ -132,7 +132,7 @@ public class detailsActivity extends AppCompatActivity {
             public void onResponse(Call<dataResponse> call, Response<dataResponse> response) {
                 if (response.isSuccessful()) {
                     //Storing to Room Database
-                    /*saveDetails(email.getText().toString(),
+                    saveDetails(email.getText().toString(),
                             name.getText().toString(),
                             FixedIncome.getText().toString(),
                             OtherIncome.getText().toString(),
@@ -148,7 +148,7 @@ public class detailsActivity extends AppCompatActivity {
                             FinancialRisk.getText().toString(),
                             Standard.getText().toString(),
                             RiskWillingness.getText().toString(),
-                            Liquidity.getText().toString());*/
+                            Liquidity.getText().toString());
                     Log.d("TAG",response.body().toString());
 
                     Toast.makeText(detailsActivity.this, "data saved Successful", Toast.LENGTH_LONG).show();
@@ -196,6 +196,8 @@ public class detailsActivity extends AppCompatActivity {
         details.Liquidity = Liquidity;
 
         db.detailsDao().insertUser(details);
+        Details currentUserData = db.detailsDao().findUserFromEmail(email);
+        Log.d("Email",currentUserData.name);
 
     }
 

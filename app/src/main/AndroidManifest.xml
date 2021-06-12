@@ -18,6 +18,10 @@
         <activity android:name=".DashboardActivity" />
         <activity android:name=".CashScreenActivity" />
         <activity android:name=".HomeActivity.HomeActivity" />
+        <activity android:name=".LoginActivity"/>
+        <activity android:name=".RegisterActivity"/>
+        <activity android:name=".detailsActivity"/>
+        <activity android:name=".UserDetails"/>
         <activity android:name=".Onboarding.OnBoardingScreen" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

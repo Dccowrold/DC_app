@@ -14,7 +14,7 @@ public interface DetailsDao {
     @Delete
     void delete(Details details);
 
-    @Query("SELECT * FROM details_data WHERE email = :emailID")
-    Details findUserFromEmail(String emailID);
+    @Query("SELECT * FROM details_data WHERE email = :email")
+    Details findUserFromEmail(String email);
 
 }

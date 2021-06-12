@@ -15,6 +15,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.assoftek.splashscreen.db.AppDatabase;
+import com.assoftek.splashscreen.db.Details;
 import com.assoftek.splashscreen.db.User;
 
 import retrofit2.Call;
@@ -26,6 +27,7 @@ public class LoginActivity extends AppCompatActivity {
     Button btnLogin;
     EditText email, password;
     TextView registerLink;
+    String userName;
     private SharedPreferences sharedPref;
 
 
@@ -86,7 +88,8 @@ public class LoginActivity extends AppCompatActivity {
                             //saveUser(email.getText().toString(), password.getText().toString());
 
                             Intent intent = new Intent(LoginActivity.this, detailsActivity.class);
-                            intent.putExtra("username", loginResponse.getName());
+                            userName=loginResponse.getName();
+                            intent.putExtra("username",userName);
                             sharedPref.edit().putBoolean(getString(R.string.isLoggedIn), true).apply();
                             sharedPref.edit().putBoolean(getString(R.string.firstTime), false).apply();
                             startActivity(intent);
@@ -118,7 +121,7 @@ public class LoginActivity extends AppCompatActivity {
         User user = new User();
         user.email = email;
         user.password = password;
-        user.username = "NA";
+        user.username = userName;
 
         db.userDao().insertUser(user);
 
