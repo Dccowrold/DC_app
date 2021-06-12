@@ -74,9 +74,9 @@ public class RegisterActivity extends AppCompatActivity {
                         @Override
                         public void run() {
                             //Storing to Room Database
-                            saveUser(userEmail, userPassword, userName);
+                            //saveUser(userEmail, userPassword, userName);
 
-                            Intent intent = new Intent(RegisterActivity.this, DashboardActivity.class);
+                            Intent intent = new Intent(RegisterActivity.this, detailsActivity.class);
                             intent.putExtra("username", registerResponse.getName());
                             sharedPref.edit().putBoolean(getString(R.string.isLoggedIn), true).apply();
                             sharedPref.edit().putBoolean(getString(R.string.firstTime), false).apply();

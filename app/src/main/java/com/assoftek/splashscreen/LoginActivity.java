@@ -83,9 +83,9 @@ public class LoginActivity extends AppCompatActivity {
                         @Override
                         public void run() {
                             //Storing to Room Database
-                            saveUser(email.getText().toString(), password.getText().toString());
+                            //saveUser(email.getText().toString(), password.getText().toString());
 
-                            Intent intent = new Intent(LoginActivity.this, DashboardActivity.class);
+                            Intent intent = new Intent(LoginActivity.this, detailsActivity.class);
                             intent.putExtra("username", loginResponse.getName());
                             sharedPref.edit().putBoolean(getString(R.string.isLoggedIn), true).apply();
                             sharedPref.edit().putBoolean(getString(R.string.firstTime), false).apply();

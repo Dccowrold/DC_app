@@ -1,6 +1,8 @@
 package com.assoftek.splashscreen;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
@@ -17,7 +19,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class details extends AppCompatActivity {
+public class detailsActivity extends AppCompatActivity {
 
     EditText name, email, FixedIncome, OtherIncome, MedianIncome, TotalExpenses, SavingIncome, Age, RetirementAge, AssetClass, Time;
 
@@ -130,7 +132,7 @@ public class details extends AppCompatActivity {
             public void onResponse(Call<dataResponse> call, Response<dataResponse> response) {
                 if (response.isSuccessful()) {
                     //Storing to Room Database
-                    saveDetails(email.getText().toString(),
+                    /*saveDetails(email.getText().toString(),
                             name.getText().toString(),
                             FixedIncome.getText().toString(),
                             OtherIncome.getText().toString(),
@@ -146,18 +148,23 @@ public class details extends AppCompatActivity {
                             FinancialRisk.getText().toString(),
                             Standard.getText().toString(),
                             RiskWillingness.getText().toString(),
-                            Liquidity.getText().toString());
+                            Liquidity.getText().toString());*/
+                    Log.d("TAG",response.body().toString());
 
-                    Toast.makeText(details.this, "data saved Successful", Toast.LENGTH_LONG).show();
+                    Toast.makeText(detailsActivity.this, "data saved Successful", Toast.LENGTH_LONG).show();
+                    Intent intent=new Intent(detailsActivity.this,DashboardActivity.class);
+                    intent.putExtra("username",getIntent().getStringExtra("username"));
+                    startActivity(intent);
+                    finish();
 
                 } else {
-                    Toast.makeText(details.this, "data uploading Failed", Toast.LENGTH_LONG).show();
+                    Toast.makeText(detailsActivity.this, "data uploading Failed", Toast.LENGTH_LONG).show();
                 }
             }
 
             @Override
             public void onFailure(Call<dataResponse> call, Throwable t) {
-                Toast.makeText(details.this, "Throwable " + t.getLocalizedMessage(), Toast.LENGTH_LONG).show();
+                Toast.makeText(detailsActivity.this, "Throwable " + t.getLocalizedMessage(), Toast.LENGTH_LONG).show();
             }
         });
     }
