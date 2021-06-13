@@ -27,7 +27,7 @@ public class LoginActivity extends AppCompatActivity {
     Button btnLogin;
     EditText email, password;
     TextView registerLink;
-    String userName;
+    String userName, emailID;
     private SharedPreferences sharedPref;
 
 
@@ -89,7 +89,9 @@ public class LoginActivity extends AppCompatActivity {
 
                             Intent intent = new Intent(LoginActivity.this, detailsActivity.class);
                             userName=loginResponse.getName();
+                            emailID=loginResponse.getEmail();
                             intent.putExtra("username",userName);
+                            intent.putExtra("emailID",emailID);
                             sharedPref.edit().putBoolean(getString(R.string.isLoggedIn), true).apply();
                             sharedPref.edit().putBoolean(getString(R.string.firstTime), false).apply();
                             startActivity(intent);

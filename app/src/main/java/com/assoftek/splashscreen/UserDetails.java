@@ -1,21 +1,23 @@
 package com.assoftek.splashscreen;
 
-import androidx.appcompat.app.AppCompatActivity;
-
+import android.os.AsyncTask;
 import android.os.Bundle;
-import android.util.Log;
-import android.widget.AutoCompleteTextView;
-import android.widget.EditText;
 import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.assoftek.splashscreen.db.AppDatabase;
 import com.assoftek.splashscreen.db.Details;
 
+import java.lang.ref.WeakReference;
+
 public class UserDetails extends AppCompatActivity {
 
-    TextView name, email, FixedIncome, OtherIncome, MedianIncome, TotalExpenses, SavingIncome, Age, RetirementAge, AssetClass, Time, Return, Risk, FinancialRisk, Standard, RiskWillingness, Liquidity;
+    private TextView name, email, FixedIncome, OtherIncome, MedianIncome, TotalExpenses, SavingIncome, Age, RetirementAge, AssetClass, Time, Return, Risk, FinancialRisk, Standard, RiskWillingness, Liquidity;
 
-    String emailFromExtra;
+    private String emailFromExtra;
+
+    private AppDatabase db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,27 +51,49 @@ public class UserDetails extends AppCompatActivity {
 
     private void setFields(String emailID) {
 
-        AppDatabase db = AppDatabase.getDbInstance(this.getApplicationContext());
+        db = AppDatabase.getDbInstance(this.getApplicationContext());
 
-        Details currentUserData = db.detailsDao().findUserFromEmail(emailID);
+        new RetrieveTask(this).execute();
 
-        name.setText(currentUserData.name);
-        email.setText(emailID);
-        FixedIncome.setText(currentUserData.FixedIncome);
-        OtherIncome.setText(currentUserData.OtherIncome);
-        MedianIncome.setText(currentUserData.MedianIncome);
-        TotalExpenses.setText(currentUserData.TotalExpenses);
-        SavingIncome.setText(currentUserData.SavingIncome);
-        Age.setText(currentUserData.Age);
-        RetirementAge.setText(currentUserData.RetirementAge);
-        AssetClass.setText(currentUserData.AssetClass);
-        Return.setText(currentUserData.Return);
-        Risk.setText(currentUserData.Risk);
-        Time.setText(currentUserData.Time);
-        FinancialRisk.setText(currentUserData.FinancialRisk);
-        Standard.setText(currentUserData.Standard);
-        RiskWillingness.setText(currentUserData.RiskWillingness);
-        Liquidity.setText(currentUserData.Liquidity);
+    }
+
+    private class RetrieveTask extends AsyncTask<Void, Void, Details> {
+
+        private WeakReference<UserDetails> activityReference;
+
+        // only retain a weak reference to the activity
+        RetrieveTask(UserDetails context) {
+            activityReference = new WeakReference<>(context);
+        }
+
+        @Override
+        protected Details doInBackground(Void... voids) {
+            if (activityReference.get() != null)
+                return activityReference.get().db.detailsDao().findUserFromEmail(emailFromExtra);
+            else
+                return null;
+        }
+
+        @Override
+        protected void onPostExecute(Details currentUserData) {
+            name.setText(currentUserData.name);
+            email.setText(emailFromExtra);
+            FixedIncome.setText(currentUserData.FixedIncome);
+            OtherIncome.setText(currentUserData.OtherIncome);
+            MedianIncome.setText(currentUserData.MedianIncome);
+            TotalExpenses.setText(currentUserData.TotalExpenses);
+            SavingIncome.setText(currentUserData.SavingIncome);
+            Age.setText(currentUserData.Age);
+            RetirementAge.setText(currentUserData.RetirementAge);
+            AssetClass.setText(currentUserData.AssetClass);
+            Return.setText(currentUserData.Return);
+            Risk.setText(currentUserData.Risk);
+            Time.setText(currentUserData.Time);
+            FinancialRisk.setText(currentUserData.FinancialRisk);
+            Standard.setText(currentUserData.Standard);
+            RiskWillingness.setText(currentUserData.RiskWillingness);
+            Liquidity.setText(currentUserData.Liquidity);
+        }
 
     }
 

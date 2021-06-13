@@ -70,6 +70,7 @@ public class DashboardActivity extends AppCompatActivity {
         {
             case R.id.profile:
                 Intent intent1=new Intent(DashboardActivity.this, UserDetails.class);
+                intent1.putExtra("emailID",getIntent().getStringExtra("emailID"));
                 startActivity(intent1);
                 break;
 

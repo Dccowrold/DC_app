@@ -154,6 +154,7 @@ public class detailsActivity extends AppCompatActivity {
                     Toast.makeText(detailsActivity.this, "data saved Successful", Toast.LENGTH_LONG).show();
                     Intent intent=new Intent(detailsActivity.this,DashboardActivity.class);
                     intent.putExtra("username",getIntent().getStringExtra("username"));
+                    intent.putExtra("emailID",getIntent().getStringExtra("emailID"));
                     startActivity(intent);
                     finish();
 
