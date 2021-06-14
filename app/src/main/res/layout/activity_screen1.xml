@@ -17,7 +17,7 @@
         android:layout_marginStart="-44dp"
         android:layout_marginTop="-151dp"
         android:layout_marginEnd="227dp"
-        android:src="@drawable/screen2img" />
+        android:src="@drawable/screen1img" />
 
     <ImageView
         android:id="@+id/screenimg"
@@ -31,7 +31,7 @@
         android:layout_marginTop="409dp"
         android:layout_marginEnd="-89dp"
         android:layout_marginBottom="-109dp"
-        android:src="@drawable/screen2img" />
+        android:src="@drawable/screen1img" />
 
     <TextView
         android:layout_width="wrap_content"

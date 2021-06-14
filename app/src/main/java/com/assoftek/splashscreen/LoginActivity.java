@@ -15,6 +15,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.assoftek.splashscreen.db.AppDatabase;
+import com.assoftek.splashscreen.db.Details;
 import com.assoftek.splashscreen.db.User;
 
 import retrofit2.Call;
@@ -28,16 +29,6 @@ public class LoginActivity extends AppCompatActivity {
     TextView registerLink;
     String userName, emailID;
     private SharedPreferences sharedPref;
-
-//    TwitterConfig config = new TwitterConfig.Builder(this)
-//            .logger(new DefaultLogger(Log.DEBUG))
-//            .twitterAuthConfig(new TwitterAuthConfig(getString(R.string.twitter_key), getString(R.string.twitter_secret)))
-//            .debug(true)
-//            .build();
-//    Twitter.initialize(config);
-//    setContentView(R.layout.activity_login);
-//    mLoginButton = (TwitterLoginButton) findViewById(R.id.login_twitter);
-//    mLoginButton.setCallback(new Callback<TwitterSession>() {}
 
 
     @Override

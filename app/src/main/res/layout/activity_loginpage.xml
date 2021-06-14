@@ -6,10 +6,15 @@
     android:layout_height="match_parent"
     android:background="@color/black"
     tools:context=".PaymentsActivity">
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        >
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
             android:id="@+id/imageView4"
@@ -26,7 +31,7 @@
             app:layout_constraintVertical_bias="0.092" />
 
         <Button
-            android:id="@+id/sign"
+            android:id="@+id/registerLink"
             android:layout_width="160dp"
             android:layout_height="50dp"
             android:layout_alignParentStart="true"
@@ -87,6 +92,7 @@
             tools:ignore="MissingConstraints">
 
             <EditText
+                android:id="@+id/edemailsignin"
                 android:layout_width="280dp"
                 android:layout_height="50dp"
                 android:layout_marginLeft="20dp"
@@ -100,6 +106,7 @@
                 android:textSize="18sp" />
 
             <EditText
+                android:id="@+id/edpasswordsignin"
                 android:layout_width="280dp"
                 android:layout_height="50dp"
                 android:layout_marginLeft="20dp"
@@ -124,6 +131,7 @@
                 android:textStyle="bold" />
 
             <Button
+                android:id="@+id/btnsignin"
                 android:layout_width="280dp"
                 android:layout_height="50dp"
                 android:layout_marginLeft="20dp"
