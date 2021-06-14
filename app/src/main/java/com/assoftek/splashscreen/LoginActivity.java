@@ -25,7 +25,7 @@ import retrofit2.Response;
 public class LoginActivity extends AppCompatActivity {
     Button btnLogin;
     EditText email, password;
-    TextView registerLink;
+    TextView registerLink,temp;
     String userName, emailID;
     private SharedPreferences sharedPref;
     @Override
@@ -38,6 +38,8 @@ public class LoginActivity extends AppCompatActivity {
         email = findViewById(R.id.edemailsignin);
         password = findViewById(R.id.edpasswordsignin);
         registerLink = findViewById(R.id.registerLink);
+        temp=findViewById(R.id.textView8);
+        temp.setVisibility(View.INVISIBLE);
 
         sharedPref = getSharedPreferences("PREFERENCE", MODE_PRIVATE);
 
