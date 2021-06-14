@@ -11,30 +11,40 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".screen3Black"/>
+        <activity android:name=".NotificationActivity">
+
+
+        </activity>
+        <activity android:name=".screen3Black" />
         <activity android:name=".loginpage" />
         <activity android:name=".welcome_screen" />
         <activity android:name=".WealthActivity" />
-        <activity android:name=".DashboardActivity" />
-        <activity android:name=".CashScreenActivity" />
-        <activity android:name=".HomeActivity.HomeActivity" />
-        <activity android:name=".LoginActivity"/>
-        <activity android:name=".RegisterActivity"/>
-        <activity android:name=".detailsActivity"/>
-        <activity android:name=".UserDetails"/>
-        <activity android:name=".Onboarding.OnBoardingScreen" >
+        <activity android:name=".DashboardActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".CashScreenActivity" />
+        <activity android:name=".HomeActivity.HomeActivity" />
+        <activity android:name=".LoginActivity" />
+        <activity android:name=".RegisterActivity" />
+        <activity android:name=".detailsActivity" />
+        <activity android:name=".UserDetails" />
+        <activity android:name=".Onboarding.OnBoardingScreen">
+
+
+        </activity>
+
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
         <meta-data
             android:name="com.facebook.sdk.ApplicationId"
             android:value="@string/facebook_app_id" />
+
+        <receiver android:name=".AlarmReciever" />
     </application>
 
 </manifest>
