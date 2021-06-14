@@ -98,7 +98,6 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
     }
-
     private void saveUser(String email, String password) {
         AppDatabase db = AppDatabase.getDbInstance(this.getApplicationContext());
         User user = new User();

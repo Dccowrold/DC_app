@@ -62,48 +62,44 @@ public class RegisterActivity extends AppCompatActivity {
         if ((userEmail.isEmpty()) || (userName.isEmpty()) || (userPassword.isEmpty())) {
             Toast.makeText(RegisterActivity.this, "All fields required.", Toast.LENGTH_SHORT).show();
         }
-        RegisterRequest registerRequest = new RegisterRequest();
-        registerRequest.setEmail(userEmail);
-        registerRequest.setName(userName);
-        registerRequest.setPassword(userPassword);
-        Call<RegisterResponse> call = RetrofitClient.getService().register(registerRequest);
-        call.enqueue(new Callback<RegisterResponse>() {
-            @Override
-            public void onResponse(Call<RegisterResponse> call, Response<RegisterResponse> response) {
-                RegisterResponse registerResponse = response.body();
-                Log.d("response", response.toString());
-                if (response.isSuccessful()) {
-                    Toast.makeText(RegisterActivity.this, "SignUp Successful", Toast.LENGTH_LONG).show();
-
-                    new Handler().postDelayed(new Runnable() {
-                        @Override
-                        public void run() {
-                            //Storing to Room Database
-                            //saveUser(userEmail, userPassword, userName);
-
-                            Intent intent = new Intent(RegisterActivity.this, detailsActivity.class);
-                            intent.putExtra("username", registerResponse.getName());
-                            intent.putExtra("emailID",registerResponse.getEmail());
-                            sharedPref.edit().putBoolean(getString(R.string.isLoggedIn), true).apply();
-                            sharedPref.edit().putBoolean(getString(R.string.firstTime), false).apply();
-                            startActivity(intent);
-                            finish();
-                        }
-                    }, 700);
-
-                } else {
-                    Toast.makeText(RegisterActivity.this, "SignUp Failed", Toast.LENGTH_LONG).show();
-
+        else {
+            RegisterRequest registerRequest = new RegisterRequest();
+            registerRequest.setEmail(userEmail);
+            registerRequest.setName(userName);
+            registerRequest.setPassword(userPassword);
+            Call<RegisterResponse> call = RetrofitClient.getService().register(registerRequest);
+            call.enqueue(new Callback<RegisterResponse>() {
+                @Override
+                public void onResponse(Call<RegisterResponse> call, Response<RegisterResponse> response) {
+                    RegisterResponse registerResponse = response.body();
+                    if (response.isSuccessful()) {
+                        Toast.makeText(RegisterActivity.this, "SignUp Successful", Toast.LENGTH_LONG).show();
+                        new Handler().postDelayed(new Runnable() {
+                            @Override
+                            public void run() {
+//                            Storing to Room Database
+//                            saveUser(userEmail, userPassword, userName);
+                                Intent intent = new Intent(RegisterActivity.this, detailsActivity.class);
+                                intent.putExtra("username", registerResponse.getName());
+                                intent.putExtra("emailID", registerResponse.getEmail());
+                                sharedPref.edit().putBoolean(getString(R.string.isLoggedIn), true).apply();
+                                sharedPref.edit().putBoolean(getString(R.string.firstTime), false).apply();
+                                startActivity(intent);
+                                finish();
+                            }
+                        }, 700);
+                    } else {
+                        Toast.makeText(RegisterActivity.this, "SignUp Failed", Toast.LENGTH_LONG).show();
+                    }
                 }
 
-            }
-
-            @Override
-            public void onFailure(Call<RegisterResponse> call, Throwable t) {
-                Toast.makeText(RegisterActivity.this, t.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
-                //startActivity(new Intent(RegisterActivity.this, LoginActivity.class));
-            }
-        });
+                @Override
+                public void onFailure(Call<RegisterResponse> call, Throwable t) {
+                    Toast.makeText(RegisterActivity.this, t.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
+                    //startActivity(new Intent(RegisterActivity.this, LoginActivity.class));
+                }
+            });
+        }
 
     }
 
