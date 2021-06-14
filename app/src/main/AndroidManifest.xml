@@ -11,7 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".pricing"></activity>
+        <activity android:name=".notification_screen"></activity>
+        <activity android:name=".pricing" />
         <activity android:name=".newscreen3_dark" />
         <activity android:name=".newscreen3" />
         <activity android:name=".screen1_dark" />
