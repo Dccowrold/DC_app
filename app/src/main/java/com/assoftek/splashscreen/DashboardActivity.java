@@ -1,8 +1,5 @@
 package com.assoftek.splashscreen;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -12,7 +9,9 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
-//import com.assoftek.splashscreen.SignUp.UserProfileActivity;
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.assoftek.splashscreen.databinding.ActivityDashboardBinding;
 
 public class DashboardActivity extends AppCompatActivity {
@@ -69,13 +68,17 @@ public class DashboardActivity extends AppCompatActivity {
         switch(item.getItemId())
         {
             case R.id.profile:
-                Intent intent1=new Intent(DashboardActivity.this, UserDetails.class);
-                intent1.putExtra("emailID",getIntent().getStringExtra("emailID"));
-                startActivity(intent1);
+//                Intent intent1=new Intent(DashboardActivity.this, UserProfileActivity.class);
+//                startActivity(intent1);
                 break;
 
             case R.id.visibility:
                 Toast.makeText(DashboardActivity.this,"Visibility", Toast.LENGTH_SHORT).show();
+                break;
+
+            case R.id.notification:
+                Intent intent1=new Intent(DashboardActivity.this, NotificationActivity.class);
+                startActivity(intent1);
                 break;
 
             case R.id.logout:
