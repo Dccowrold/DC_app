@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -9,10 +10,13 @@
 
         <ImageView
             android:id="@+id/back"
-            android:layout_width="15dp"
-            android:layout_height="15dp"
-            android:background="@drawable/arrow"
-            android:layout_margin="15dp"/>
+            android:layout_width="0dp"
+            android:layout_height="11dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginBottom="15dp"
+            android:background="@drawable/arrow" />
 
         <com.airbnb.lottie.LottieAnimationView
             android:id="@+id/animation"
@@ -24,7 +28,7 @@
             android:layout_above="@+id/text1"
             android:layout_centerHorizontal="true"
             android:layout_margin="30dp"
-            />
+            tools:ignore="UnknownIdInLayout" />
 
         <TextView
             android:id="@+id/text2"

@@ -30,7 +30,7 @@
         android:background="@drawable/squareblue"
         android:drawableLeft="@drawable/email"
         android:drawablePadding="20dp"
-        android:fontFamily="@font/montserrat"
+
         android:hint="Email"
         android:paddingLeft="10dp"
         android:paddingTop="10dp"
@@ -52,7 +52,7 @@
         android:paddingBottom="10dp"
         android:paddingLeft="10dp"
         android:textStyle="bold"
-        android:fontFamily="@font/montserrat"
+
         android:textSize="16sp"
         android:textColor="@color/white"
         android:textColorHint="@color/gray"
@@ -73,7 +73,7 @@
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:background="@drawable/roundgbluebutton"
-            android:fontFamily="@font/montserrat"
+
             android:text="LOG IN"
             android:textAlignment="center"
             android:textColor="@color/white"
@@ -102,7 +102,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
         android:textColor="@color/white"
-        android:fontFamily="@font/montserrat"
+
         android:textStyle="bold"
         android:textSize="18sp"
         />

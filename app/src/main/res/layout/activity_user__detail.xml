@@ -132,11 +132,11 @@
                 android:background="@drawable/squareblue"
                 android:fontFamily="@font/montserrat"
                 android:text="male"
+                android:drawableLeft="@drawable/man"
                 android:textColor="@color/white"
                 android:textSize="13sp"
                 android:textStyle="bold"
                 android:padding="10dp"
-                android:drawableLeft="@drawable/man"
                 android:drawablePadding="10dp"
                 android:layout_weight="1"/>
 
