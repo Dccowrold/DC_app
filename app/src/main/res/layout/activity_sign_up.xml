@@ -85,17 +85,6 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.546"
             tools:ignore="MissingConstraints">
-            <EditText
-                android:layout_width="280dp"
-                android:layout_height="50dp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="25dp"
-                android:background="@drawable/curvedbutton"
-                android:hint="Name"
-                android:paddingLeft="15dp"
-                android:textColor="@color/white"
-                android:textColorHint="#D8CACA"
-                android:textSize="18sp" />
 
             <EditText
                 android:layout_width="280dp"
@@ -123,6 +112,17 @@
                 android:textColorHint="#D8CACA"
                 android:textSize="18sp" />
 
+            <Button
+                android:layout_width="280dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/curvedbutton"
+                android:text="Sign Up"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                app:backgroundTint="#1AA6B8" />
+
         </LinearLayout>
 
         <TextView
@@ -141,7 +141,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.822" />
+            app:layout_constraintVertical_bias="0.748" />
 
         <TextView
             android:id="@+id/textView7"
@@ -157,21 +157,10 @@
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.493"
+            app:layout_constraintHorizontal_bias="0.481"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.917" />
-
-        <Button
-            android:layout_width="280dp"
-            android:layout_height="50dp"
-            android:background="@drawable/curvedbutton"
-            android:text="Sign Up"
-            android:textColor="@color/black"
-            android:textSize="20sp"
-            app:backgroundTint="#1AA6B8"
-            tools:layout_editor_absoluteX="65dp"
-            tools:layout_editor_absoluteY="516dp" />
+            app:layout_constraintVertical_bias="0.848" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </RelativeLayout>

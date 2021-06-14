@@ -14,9 +14,9 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginStart="-28dp"
-        android:layout_marginTop="-127dp"
-        android:layout_marginEnd="210dp"
+        android:layout_marginStart="-44dp"
+        android:layout_marginTop="-151dp"
+        android:layout_marginEnd="227dp"
         android:src="@drawable/screen1img" />
 
     <ImageView
@@ -126,14 +126,14 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/screendriveup"
         android:layout_centerInParent="true"
-        android:layout_marginLeft="-151dp"
-        android:layout_marginTop="4dp"
+        android:layout_marginLeft="-136dp"
+        android:layout_marginTop="10dp"
         android:layout_toRightOf="@id/screensmart"
-        android:padding="5dp"
-        android:paddingRight="20dp"
         android:text="to begin saving 3X more than others!"
         android:textColor="#A3838381"
         android:textSize="23dp"
+        android:paddingRight="20dp"
+        android:padding="5dp"
         android:textStyle="bold" />
 
 

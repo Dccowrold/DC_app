@@ -44,7 +44,7 @@ android:layout_width="match_parent"
 android:layout_height="117dp"
 android:layout_marginLeft="20dp"
 android:layout_marginTop="10dp"
-android:shadowRadius="10dp"
+android:shadowRadius="10"
 android:layout_marginRight="20dp"
 android:layout_marginBottom="40dp"
 
