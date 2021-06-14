@@ -28,7 +28,7 @@
             tools:ignore="MissingConstraints" />
 
         <Button
-            android:id="@+id/sign"
+            android:id="@+id/registerLink"
             android:layout_width="160dp"
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
@@ -49,7 +49,7 @@
             tools:ignore="MissingConstraints" />
 
         <Button
-            android:id="@+id/button2"
+            android:id="@+id/loginLink"
             android:layout_width="160dp"
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
@@ -73,7 +73,7 @@
             android:id="@+id/layout"
             android:layout_width="320dp"
             android:layout_height="235dp"
-            android:layout_alignBottom="@+id/sign"
+            android:layout_alignBottom="@+id/registerLink"
             android:layout_alignParentStart="true"
             android:layout_alignParentEnd="true"
             android:background="#2C2E2E"
@@ -87,6 +87,20 @@
             tools:ignore="MissingConstraints">
 
             <EditText
+                android:id="@+id/etName"
+                android:layout_width="280dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="25dp"
+                android:background="@drawable/curvedbutton"
+                android:hint="@string/nameUser"
+                android:paddingStart="15dp"
+                android:textColor="@color/white"
+                android:textColorHint="#D8CACA"
+                android:textSize="18sp" />
+
+            <EditText
+                android:id="@+id/etEmail"
                 android:layout_width="280dp"
                 android:layout_height="50dp"
                 android:layout_marginLeft="20dp"
@@ -99,6 +113,7 @@
                 android:textSize="18sp" />
 
             <EditText
+                android:id="@+id/etPassword"
                 android:layout_width="280dp"
                 android:layout_height="50dp"
                 android:layout_marginLeft="20dp"
@@ -112,18 +127,22 @@
                 android:textColorHint="#D8CACA"
                 android:textSize="18sp" />
 
-            <Button
-                android:layout_width="280dp"
-                android:layout_height="50dp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="20dp"
-                android:background="@drawable/curvedbutton"
-                android:text="Sign Up"
-                android:textColor="@color/black"
-                android:textSize="20sp"
-                app:backgroundTint="#1AA6B8" />
-
         </LinearLayout>
+
+        <Button
+            android:id="@+id/btnSignUp"
+            android:layout_width="280dp"
+            android:layout_height="50dp"
+            android:layout_margin="20dp"
+            android:background="@drawable/curvedbutton"
+            android:text="Sign Up"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            app:backgroundTint="#1AA6B8"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/layout" />
 
         <TextView
             android:id="@+id/textView6"
@@ -135,13 +154,14 @@
             android:gravity="center"
             android:text="USE SOCIAL NETWORKS"
             android:textColor="@color/white"
-            android:textSize="20dp"
+            android:textSize="20sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.748" />
+            app:layout_constraintTop_toBottomOf="@+id/button2"
+            app:layout_constraintVertical_bias="0.846" />
 
         <TextView
             android:id="@+id/textView7"
@@ -157,10 +177,10 @@
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.481"
+            app:layout_constraintHorizontal_bias="0.602"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.848" />
+            app:layout_constraintVertical_bias="0.779" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </RelativeLayout>

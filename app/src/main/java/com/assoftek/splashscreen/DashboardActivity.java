@@ -12,7 +12,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
-import com.assoftek.splashscreen.SignUp.UserProfileActivity;
+//import com.assoftek.splashscreen.SignUp.UserProfileActivity;
 import com.assoftek.splashscreen.databinding.ActivityDashboardBinding;
 
 public class DashboardActivity extends AppCompatActivity {
@@ -69,7 +69,8 @@ public class DashboardActivity extends AppCompatActivity {
         switch(item.getItemId())
         {
             case R.id.profile:
-                Intent intent1=new Intent(DashboardActivity.this, UserProfileActivity.class);
+                Intent intent1=new Intent(DashboardActivity.this, UserDetails.class);
+                intent1.putExtra("emailID",getIntent().getStringExtra("emailID"));
                 startActivity(intent1);
                 break;
 
