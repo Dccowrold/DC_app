@@ -21,9 +21,8 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class RegisterActivity extends AppCompatActivity {
-    Button register;
+    Button register,loginLink;
     EditText name, email, password;
-    TextView loginLink;
     private SharedPreferences sharedPref;
 
     @Override
@@ -36,13 +35,19 @@ public class RegisterActivity extends AppCompatActivity {
         name = findViewById(R.id.etName);
         email = findViewById(R.id.etEmail);
         password = findViewById(R.id.etPassword);
-        //loginLink = findViewById(R.id.loginLink);
+        loginLink = findViewById(R.id.loginLink);
         sharedPref = getSharedPreferences("PREFERENCE", MODE_PRIVATE);
 
         register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 userRegister();
+            }
+        });
+        loginLink.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(RegisterActivity.this,LoginActivity.class));
             }
         });
 

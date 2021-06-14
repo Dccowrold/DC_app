@@ -23,55 +23,47 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class LoginActivity extends AppCompatActivity {
-
     Button btnLogin;
     EditText email, password;
     TextView registerLink;
     String userName, emailID;
     private SharedPreferences sharedPref;
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
+
+        setContentView(R.layout.activity_loginpage);
 
         btnLogin = findViewById(R.id.btnsignin);
         email = findViewById(R.id.edemailsignin);
         password = findViewById(R.id.edpasswordsignin);
         registerLink = findViewById(R.id.registerLink);
+
         sharedPref = getSharedPreferences("PREFERENCE", MODE_PRIVATE);
+
         getSupportActionBar().hide();
-
-
         registerLink.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(LoginActivity.this, RegisterActivity.class));
             }
         });
-
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
                 if (TextUtils.isEmpty(email.getText().toString()) || TextUtils.isEmpty(password.getText().toString())) {
                     Toast.makeText(LoginActivity.this, "Username / Password Required", Toast.LENGTH_LONG).show();
                 } else {
                     //proceed to login
                     login();
                 }
-
             }
         });
     }
-
-
     public void login() {
         LoginRequest loginRequest = new LoginRequest();
         loginRequest.setEmail(email.getText().toString());
         loginRequest.setPassword(password.getText().toString());
-
         Call<LoginResponse> loginResponseCall = RetrofitClient.getService().signin(loginRequest);
         loginResponseCall.enqueue(new Callback<LoginResponse>() {
             @Override
@@ -80,13 +72,11 @@ public class LoginActivity extends AppCompatActivity {
                 if (response.isSuccessful()) {
                     Toast.makeText(LoginActivity.this, "Login Successful", Toast.LENGTH_LONG).show();
                     LoginResponse loginResponse = response.body();
-
                     new Handler().postDelayed(new Runnable() {
                         @Override
                         public void run() {
                             //Storing to Room Database
                             //saveUser(email.getText().toString(), password.getText().toString());
-
                             Intent intent = new Intent(LoginActivity.this, detailsActivity.class);
                             userName=loginResponse.getName();
                             emailID=loginResponse.getEmail();
@@ -98,35 +88,24 @@ public class LoginActivity extends AppCompatActivity {
                             finish();
                         }
                     }, 700);
-
                 } else {
                     Toast.makeText(LoginActivity.this, "Login Failed", Toast.LENGTH_LONG).show();
-
                 }
-
             }
-
             @Override
             public void onFailure(Call<LoginResponse> call, Throwable t) {
                 Toast.makeText(LoginActivity.this, "Throwable " + t.getLocalizedMessage(), Toast.LENGTH_LONG).show();
-
             }
         });
-
-
     }
 
     private void saveUser(String email, String password) {
-
         AppDatabase db = AppDatabase.getDbInstance(this.getApplicationContext());
-
         User user = new User();
         user.email = email;
         user.password = password;
         user.username = userName;
-
         db.userDao().insertUser(user);
-
     }
 
 }
