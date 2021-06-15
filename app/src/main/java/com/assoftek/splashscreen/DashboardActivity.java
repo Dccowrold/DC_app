@@ -16,6 +16,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.assoftek.splashscreen.databinding.ActivityDashboardBinding;
 
 public class DashboardActivity extends AppCompatActivity {
+
     ActivityDashboardBinding binding;
     private SharedPreferences sharedPref;
     SharedPreferences mypref;
@@ -60,7 +61,7 @@ public class DashboardActivity extends AppCompatActivity {
                @Override
              public void onClick(View view) {
                 Intent movetoPayments = new Intent(DashboardActivity.this, PaymentsActivity.class);
-                 startActivity(movetoPayments);
+                startActivity(movetoPayments);
              }
           });
 

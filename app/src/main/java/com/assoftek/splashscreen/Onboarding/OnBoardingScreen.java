@@ -34,6 +34,7 @@ public class OnBoardingScreen extends AppCompatActivity {
         Objects.requireNonNull(getSupportActionBar()).hide();
 
 
+
         // Setting ViewPager
         adapter = new ViewPagerAdapter(this);
         binding.viewPager.setAdapter(adapter);
