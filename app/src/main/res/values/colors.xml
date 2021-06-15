@@ -18,7 +18,8 @@
     <color name="lightgreen">#0FED73</color>
     <color name="dull_black">#95000000</color>
     <color name="dull_white">#B4FFFFFF</color>
-
+    <color name="puce">#CC8899</color>
+    <color name="teal">#008080</color>
     <color name="lightgray">#cdc9c9</color>
     <color name="lightblack">#696969</color>
     <color name="lightblue">#00ffff</color>
