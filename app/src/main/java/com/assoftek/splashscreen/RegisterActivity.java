@@ -76,7 +76,7 @@ public class RegisterActivity extends AppCompatActivity {
                             @Override
                             public void run() {
 //                            Storing to Room Database
-//                            saveUser(userEmail, userPassword, userName);
+                               saveUser(userEmail, userPassword, userName);
                                 Intent intent = new Intent(RegisterActivity.this, detailsActivity.class);
                                 intent.putExtra("username", registerResponse.getName());
                                 intent.putExtra("emailID", registerResponse.getEmail());
