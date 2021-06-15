@@ -28,7 +28,7 @@ public class LoginActivity extends AppCompatActivity {
     EditText email, password;
     TextView registerLink;
     String userName, emailID;
-    private SharedPreferences sharedPref;
+    private static SharedPreferences sharedPref;
     SharedPreferences mypref;
 
     public static final String FileName = "login";
@@ -49,8 +49,11 @@ public class LoginActivity extends AppCompatActivity {
         sharedPref = getSharedPreferences("PREFERENCE", MODE_PRIVATE);
         getSupportActionBar().hide();
 
+
+        boolean temp=sharedPref.getBoolean(getString(R.string.isLoggedIn),false);
+
         mypref = getSharedPreferences(FileName , Context.MODE_PRIVATE);
-        if(mypref.contains(Username)) {
+        if(temp) {
             Intent i = new Intent(LoginActivity.this , DashboardActivity.class);
             startActivity(i);
         }
