@@ -31,7 +31,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
-            android:fontFamily="@font/montserrat"
+            android:fontFamily="@font/montserat"
             android:text="@string/payments"
             android:textColor="@color/white"
             android:textSize="18sp"
@@ -57,7 +57,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="10dp"
-            android:fontFamily="@font/montserrat"
+            android:fontFamily="@font/montserat"
             android:text="@string/payment_history"
             android:textColor="@color/white"
             android:textStyle="bold" />
@@ -79,7 +79,7 @@
             android:layout_centerHorizontal="true"
             android:layout_marginLeft="20dp"
             android:layout_marginBottom="10dp"
-            android:fontFamily="@font/montserrat"
+            android:fontFamily="@font/montserat"
             android:text="@string/no_payment_history"
             android:textColor="@color/white" />
 
@@ -103,7 +103,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="10dp"
-            android:fontFamily="@font/montserrat"
+            android:fontFamily="@font/montserat"
             android:text="@string/payment_methods"
             android:textColor="@color/white"
             android:textStyle="bold" />
@@ -126,7 +126,7 @@
             android:layout_marginTop="10dp"
             android:layout_marginRight="10dp"
             android:layout_toRightOf="@id/image2"
-            android:fontFamily="@font/montserrat"
+            android:fontFamily="@font/montserat"
             android:text="@string/to_protect"
             android:textColor="@color/white" />
 
@@ -139,7 +139,7 @@
             android:layout_marginRight="10dp"
             android:layout_marginBottom="10dp"
             android:layout_toRightOf="@id/image2"
-            android:fontFamily="@font/montserrat"
+            android:fontFamily="@font/montserat"
             android:text="@string/learn_more"
             android:textColor="@color/blue"
             android:textStyle="bold" />
@@ -168,7 +168,7 @@
                 android:layout_below="@id/text4"
                 android:layout_margin="15dp"
                 android:layout_toRightOf="@id/image2"
-                android:fontFamily="@font/montserrat"
+                android:fontFamily="@font/montserat"
                 android:text="@string/add_payment_method"
                 android:textColor="@color/white"
                 android:textStyle="bold" />
@@ -199,7 +199,7 @@
             android:layout_height="wrap_content"
             android:text="@string/help"
             android:textColor="@color/white"
-            android:fontFamily="@font/montserrat"
+            android:fontFamily="@font/montserat"
             android:layout_margin="15dp"
             android:textStyle="bold"/>
 

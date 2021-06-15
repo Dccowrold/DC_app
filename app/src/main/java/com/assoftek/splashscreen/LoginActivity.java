@@ -1,5 +1,6 @@
 package com.assoftek.splashscreen;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -15,7 +16,6 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.assoftek.splashscreen.db.AppDatabase;
-import com.assoftek.splashscreen.db.Details;
 import com.assoftek.splashscreen.db.User;
 
 import retrofit2.Call;
@@ -29,6 +29,12 @@ public class LoginActivity extends AppCompatActivity {
     TextView registerLink;
     String userName, emailID;
     private SharedPreferences sharedPref;
+    SharedPreferences mypref;
+
+    public static final String FileName = "login";
+    public static final String Username = "username";
+    public static final String Pass = "password";
+
 
 
     @Override
@@ -42,6 +48,12 @@ public class LoginActivity extends AppCompatActivity {
         registerLink = findViewById(R.id.registerLink);
         sharedPref = getSharedPreferences("PREFERENCE", MODE_PRIVATE);
         getSupportActionBar().hide();
+
+        mypref = getSharedPreferences(FileName , Context.MODE_PRIVATE);
+        if(mypref.contains(Username)) {
+            Intent i = new Intent(LoginActivity.this , DashboardActivity.class);
+            startActivity(i);
+        }
 
 
         registerLink.setOnClickListener(new View.OnClickListener() {
@@ -64,6 +76,8 @@ public class LoginActivity extends AppCompatActivity {
 
             }
         });
+
+
     }
 
 
@@ -92,6 +106,11 @@ public class LoginActivity extends AppCompatActivity {
                             emailID=loginResponse.getEmail();
                             intent.putExtra("username",userName);
                             intent.putExtra("emailID",emailID);
+                            SharedPreferences.Editor editor = mypref.edit();
+                            editor.putString(Username , email.getText().toString());
+                            editor.putString(Pass , password.getText().toString());
+                            editor.commit();
+
                             sharedPref.edit().putBoolean(getString(R.string.isLoggedIn), true).apply();
                             sharedPref.edit().putBoolean(getString(R.string.firstTime), false).apply();
                             startActivity(intent);

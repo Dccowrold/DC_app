@@ -29,7 +29,7 @@
             android:layout_height="wrap_content"
             android:text="@string/link_account"
             android:layout_marginLeft="20dp"
-            android:fontFamily="@font/montserrat"
+            android:fontFamily="@font/montserat"
             android:textColor="@color/white"
             android:textSize="18sp"
             android:textStyle="bold"
@@ -78,7 +78,7 @@
                     android:layout_marginLeft="10dp"
                     android:textStyle="bold"
                     android:textSize="16sp"
-                    android:fontFamily="@font/montserrat"
+                    android:fontFamily="@font/montserat"
                     android:textColor="@color/white"/>
 
             </LinearLayout>
@@ -124,7 +124,7 @@
                         android:text="@string/mutual_fund"
                         android:maxWidth="50dp"
                         android:textAlignment="center"
-                        android:fontFamily="@font/montserrat"
+                        android:fontFamily="@font/montserat"
                         android:textColor="@color/white"/>
                 </LinearLayout>
 
@@ -160,7 +160,7 @@
                         android:text="@string/stocks"
                         android:maxWidth="50dp"
                         android:textAlignment="center"
-                        android:fontFamily="@font/montserrat"
+                        android:fontFamily="@font/montserat"
                         android:textColor="@color/white"/>
                 </LinearLayout>
 
@@ -194,7 +194,7 @@
                         android:layout_height="wrap_content"
                         android:text="@string/fixed"
                         android:textAlignment="center"
-                        android:fontFamily="@font/montserrat"
+                        android:fontFamily="@font/montserat"
                         android:textColor="@color/white"/>
 
                     <TextView
@@ -202,7 +202,7 @@
                         android:layout_height="wrap_content"
                         android:text="@string/deposit"
                         android:textAlignment="center"
-                        android:fontFamily="@font/montserrat"
+                        android:fontFamily="@font/montserat"
                         android:textColor="@color/white"/>
                 </LinearLayout>
 
@@ -238,7 +238,7 @@
                         android:text="@string/ppf"
                         android:maxWidth="45dp"
                         android:textAlignment="center"
-                        android:fontFamily="@font/montserrat"
+                        android:fontFamily="@font/montserat"
                         android:textColor="@color/white"/>
                 </LinearLayout>
             </LinearLayout>
@@ -283,7 +283,7 @@
                         android:text="@string/epf"
                         android:maxWidth="45dp"
                         android:textAlignment="center"
-                        android:fontFamily="@font/montserrat"
+                        android:fontFamily="@font/montserat"
                         android:textColor="@color/white"/>
                 </LinearLayout>
 
@@ -319,7 +319,7 @@
                         android:text="@string/nps"
                         android:maxWidth="45dp"
                         android:textAlignment="center"
-                        android:fontFamily="@font/montserrat"
+                        android:fontFamily="@font/montserat"
                         android:textColor="@color/white"/>
                 </LinearLayout>
 
@@ -354,7 +354,7 @@
                         android:text="@string/real_estate"
                         android:maxWidth="45dp"
                         android:textAlignment="center"
-                        android:fontFamily="@font/montserrat"
+                        android:fontFamily="@font/montserat"
                         android:textColor="@color/white"/>
                 </LinearLayout>
 
@@ -390,7 +390,7 @@
                         android:text="@string/gold"
                         android:maxWidth="45dp"
                         android:textAlignment="center"
-                        android:fontFamily="@font/montserrat"
+                        android:fontFamily="@font/montserat"
                         android:textColor="@color/white"/>
                 </LinearLayout>
             </LinearLayout>
@@ -433,7 +433,7 @@
                         android:text="@string/bonds"
                         android:maxWidth="45dp"
                         android:textAlignment="center"
-                        android:fontFamily="@font/montserrat"
+                        android:fontFamily="@font/montserat"
                         android:textColor="@color/white"/>
 
                 </LinearLayout>
@@ -479,7 +479,7 @@
                     android:layout_marginLeft="10dp"
                     android:textStyle="bold"
                     android:textSize="16sp"
-                    android:fontFamily="@font/montserrat"
+                    android:fontFamily="@font/montserat"
                     android:textColor="@color/white"/>
 
             </LinearLayout>
@@ -526,7 +526,7 @@
                         android:text="@string/bank"
                         android:maxWidth="50dp"
                         android:textAlignment="center"
-                        android:fontFamily="@font/montserrat"
+                        android:fontFamily="@font/montserat"
                         android:textColor="@color/white"/>
 
                     <TextView
@@ -535,7 +535,7 @@
                         android:text="@string/account"
                         android:maxWidth="60dp"
                         android:textAlignment="center"
-                        android:fontFamily="@font/montserrat"
+                        android:fontFamily="@font/montserat"
                         android:textColor="@color/white"/>
                 </LinearLayout>
 
@@ -571,7 +571,7 @@
                         android:text="@string/cash"
                         android:maxWidth="50dp"
                         android:textAlignment="center"
-                        android:fontFamily="@font/montserrat"
+                        android:fontFamily="@font/montserat"
                         android:textColor="@color/white"/>
                 </LinearLayout>
 
@@ -614,7 +614,7 @@
                     android:layout_marginLeft="10dp"
                     android:textStyle="bold"
                     android:textSize="16sp"
-                    android:fontFamily="@font/montserrat"
+                    android:fontFamily="@font/montserat"
                     android:textColor="@color/white"/>
 
             </LinearLayout>
@@ -661,7 +661,7 @@
                         android:text="@string/credit_card"
                         android:maxWidth="50dp"
                         android:textAlignment="center"
-                        android:fontFamily="@font/montserrat"
+                        android:fontFamily="@font/montserat"
                         android:textColor="@color/white" />
 
                 </LinearLayout>
@@ -698,7 +698,7 @@
                         android:text="@string/loans"
                         android:maxWidth="50dp"
                         android:textAlignment="center"
-                        android:fontFamily="@font/montserrat"
+                        android:fontFamily="@font/montserat"
                         android:textColor="@color/white"/>
                 </LinearLayout>
 

@@ -1,5 +1,6 @@
 package com.assoftek.splashscreen;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -17,6 +18,10 @@ import com.assoftek.splashscreen.databinding.ActivityDashboardBinding;
 public class DashboardActivity extends AppCompatActivity {
     ActivityDashboardBinding binding;
     private SharedPreferences sharedPref;
+    SharedPreferences mypref;
+
+    public static final String FileName = "login";
+    public static final String Username = "username";
 
 
     @Override
@@ -26,6 +31,12 @@ public class DashboardActivity extends AppCompatActivity {
         sharedPref= getSharedPreferences("PREFERENCE", MODE_PRIVATE);
 
         setContentView(binding.getRoot());
+
+        mypref = getSharedPreferences(FileName , Context.MODE_PRIVATE);
+//        if(mypref.contains(Username)) {
+//            Toast.makeText(this, "Done", Toast.LENGTH_SHORT).show();
+//        }
+
         binding.profileName.setText(getIntent().getStringExtra("username"));
 
         binding.wealth.setOnClickListener(new View.OnClickListener() {
