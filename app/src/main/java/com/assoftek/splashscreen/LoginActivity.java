@@ -101,7 +101,7 @@ public class LoginActivity extends AppCompatActivity {
                             //Storing to Room Database
                             //saveUser(email.getText().toString(), password.getText().toString());
 
-                            Intent intent = new Intent(LoginActivity.this, detailsActivity.class);
+                            Intent intent = new Intent(LoginActivity.this, DashboardActivity.class);
                             userName=loginResponse.getName();
                             emailID=loginResponse.getEmail();
                             intent.putExtra("username",userName);

@@ -12,6 +12,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".screen3Black"/>
+        <activity android:name=".PaymentsActivity"/>
+        <activity android:name=".NotificationActivity"/>
         <activity android:name=".loginpage" />
         <activity android:name=".welcome_screen" />
         <activity android:name=".WealthActivity" />

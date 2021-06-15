@@ -59,7 +59,7 @@ public class DashboardActivity extends AppCompatActivity {
              binding.pay.setOnClickListener(new View.OnClickListener() {
                @Override
              public void onClick(View view) {
-                Intent movetoPayments = new Intent(getApplicationContext(), PaymentsActivity.class);
+                Intent movetoPayments = new Intent(DashboardActivity.this, PaymentsActivity.class);
                  startActivity(movetoPayments);
              }
           });
@@ -79,8 +79,8 @@ public class DashboardActivity extends AppCompatActivity {
         switch(item.getItemId())
         {
             case R.id.profile:
-//                Intent intent1=new Intent(DashboardActivity.this, UserProfileActivity.class);
-//                startActivity(intent1);
+                Intent intent1=new Intent(DashboardActivity.this, detailsActivity.class);
+                startActivity(intent1);
                 break;
 
             case R.id.visibility:
@@ -88,15 +88,15 @@ public class DashboardActivity extends AppCompatActivity {
                 break;
 
             case R.id.notification:
-                Intent intent1=new Intent(DashboardActivity.this, NotificationActivity.class);
-                startActivity(intent1);
+                Intent i=new Intent(DashboardActivity.this, NotificationActivity.class);
+                startActivity(i);
                 break;
 
             case R.id.logout:
-                sharedPref.edit().putBoolean(getString(R.string.isLoggedIn),false).apply();
+                //sharedPref.edit().putBoolean(getString(R.string.isLoggedIn),false).apply();
                 Intent intent=new Intent(DashboardActivity.this, LoginActivity.class);        // going back to sign in
                 startActivity(intent);
-                finish();
+                //finish();
                 break;
         }
         return true;
