@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    tools:context=".CashScreenActivity">
+
+    <ImageView
+        android:id="@+id/back"
+        android:layout_width="0dp"
+        android:layout_height="11dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="15dp"
+        android:background="@drawable/arrow" />
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/animation"
+        android:layout_width="250dp"
+        android:layout_height="150dp"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/creditcardanimation"
+        android:layout_above="@+id/text1"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="30dp"
+        tools:ignore="UnknownIdInLayout" />
+
+    <TextView
+        android:id="@+id/text2"
+        android:layout_below="@+id/animation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Bank Balance"
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:fontFamily="@font/montserat"/>
+
+    <TextView
+        android:layout_below="@+id/text2"
+        android:id="@+id/balance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0.00"
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:fontFamily="@font/montserat"
+        android:layout_margin="10dp"/>
+
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_below="@+id/balance"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:indeterminateOnly="false"
+        android:progressDrawable="@drawable/circle"
+        android:progress="90"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"/>
+
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_height="wrap_content"
+        android:text="Money sorter helps you understand yours spends and guides you to save"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:fontFamily="@font/montserat"
+        android:textAlignment="center"
+        android:layout_centerHorizontal="true"
+        android:layout_above="@+id/link_account"
+        android:layout_marginBottom="30dp"
+        />
+
+
+
+    <Button
+        android:id="@+id/link_account"
+        android:layout_width="match_parent"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_height="40dp"
+        android:fontFamily="@font/montserat"
+        android:text="LINK ACCOUNT"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/roundgbluebutton"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="40dp"/>
+
+
+
+</RelativeLayout>

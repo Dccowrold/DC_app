@@ -18,7 +18,7 @@ import com.assoftek.splashscreen.databinding.ActivityDashboardBinding;
 public class DashboardActivity extends AppCompatActivity {
 
     ActivityDashboardBinding binding;
-    private SharedPreferences sharedPref;
+    public static SharedPreferences sharedPref;
     SharedPreferences mypref;
 
     public static final String FileName = "login";

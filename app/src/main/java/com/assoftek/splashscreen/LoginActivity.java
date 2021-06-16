@@ -15,6 +15,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.assoftek.splashscreen.homePage.HomePage;
 import com.assoftek.splashscreen.db.AppDatabase;
 import com.assoftek.splashscreen.db.User;
 
@@ -54,7 +55,7 @@ public class LoginActivity extends AppCompatActivity {
 
         mypref = getSharedPreferences(FileName , Context.MODE_PRIVATE);
         if(temp) {
-            Intent i = new Intent(LoginActivity.this , DashboardActivity.class);
+            Intent i = new Intent(LoginActivity.this , HomePage.class);
             startActivity(i);
         }
 
@@ -104,7 +105,7 @@ public class LoginActivity extends AppCompatActivity {
                             //Storing to Room Database
                             //saveUser(email.getText().toString(), password.getText().toString());
 
-                            Intent intent = new Intent(LoginActivity.this, DashboardActivity.class);
+                            Intent intent = new Intent(LoginActivity.this, HomePage.class);
                             userName=loginResponse.getName();
                             emailID=loginResponse.getEmail();
                             intent.putExtra("username",userName);

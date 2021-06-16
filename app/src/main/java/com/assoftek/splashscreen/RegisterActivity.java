@@ -21,7 +21,7 @@ import retrofit2.Response;
 public class RegisterActivity extends AppCompatActivity {
     Button register,loginLink;
     EditText name, email, password;
-    private SharedPreferences sharedPref;
+    public static SharedPreferences sharedPref;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -82,6 +82,7 @@ public class RegisterActivity extends AppCompatActivity {
                                 intent.putExtra("emailID", registerResponse.getEmail());
                                 sharedPref.edit().putBoolean(getString(R.string.isLoggedIn), true).apply();
                                 sharedPref.edit().putBoolean(getString(R.string.firstTime), false).apply();
+                                sharedPref.edit().putString("Username",userName).apply();
                                 startActivity(intent);
                                 finish();
                             }
