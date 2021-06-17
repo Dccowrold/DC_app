@@ -40,15 +40,15 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="316dp"
-        android:layout_height="337dp"
-        android:src="@drawable/img1"
+        android:layout_width="343dp"
+        android:layout_height="368dp"
+        android:src="@drawable/scr3"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.505"
+        app:layout_constraintHorizontal_bias="0.544"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.464"
+        app:layout_constraintVertical_bias="0.449"
         tools:ignore="MissingConstraints" />
 
     <TextView
@@ -64,6 +64,18 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.842"
+        tools:ignore="MissingConstraints" />
+
+    <ImageView
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:src="@drawable/chat"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.911"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.976"
         tools:ignore="MissingConstraints" />
 
 

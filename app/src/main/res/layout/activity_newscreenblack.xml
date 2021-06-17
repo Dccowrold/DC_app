@@ -16,11 +16,12 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.553"
+        app:layout_constraintHorizontal_bias="0.539"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.042"
+        app:layout_constraintVertical_bias="0.045"
         tools:ignore="MissingConstraints" />
+
 
     <ImageView
         android:layout_width="262dp"
@@ -31,7 +32,7 @@
         app:layout_constraintHorizontal_bias="0.771"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.168"
+        app:layout_constraintVertical_bias="0.145"
         tools:ignore="MissingConstraints" />
 
     <ImageView
@@ -43,7 +44,7 @@
         app:layout_constraintHorizontal_bias="0.477"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.252"
+        app:layout_constraintVertical_bias="0.232"
         tools:ignore="MissingConstraints" />
 
     <ImageView
@@ -54,33 +55,39 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.161"
+        app:layout_constraintVertical_bias="0.137"
         app:srcCompat="@drawable/im1"
         tools:ignore="MissingConstraints" />
-
 
     <ImageView
         android:layout_width="119dp"
         android:layout_height="116dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.883"
+        app:layout_constraintHorizontal_bias="0.931"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.386"
+        app:layout_constraintVertical_bias="0.334"
         app:srcCompat="@drawable/man"
         tools:ignore="MissingConstraints,VectorDrawableCompat" />
 
-    <ImageView
-        android:layout_width="226dp"
-        android:layout_height="116dp"
+    <TextView
+        android:layout_width="272dp"
+        android:layout_height="60dp"
+        android:background="@drawable/chatbox"
+        android:paddingLeft="14dp"
+        android:paddingTop="8dp"
+        android:paddingRight="10dp"
+        android:text="My monthly GST savings of 5L is now helping business growth"
+        android:textColor="@color/white"
+        android:textSize="17dp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.243"
+        app:layout_constraintHorizontal_bias="0.179"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.385"
-        app:srcCompat="@drawable/text"
+        app:layout_constraintVertical_bias="0.35"
         tools:ignore="MissingConstraints,VectorDrawableCompat" />
 
     <ImageView
@@ -90,7 +97,7 @@
         app:srcCompat="@drawable/im7"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="401dp" />
+        tools:layout_editor_absoluteY="369dp" />
 
     <ImageView
         android:id="@+id/imageView8"
@@ -101,7 +108,7 @@
         app:layout_constraintHorizontal_bias="0.049"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.77"
+        app:layout_constraintVertical_bias="0.733"
         app:srcCompat="@drawable/im6"
         tools:ignore="MissingConstraints" />
 
@@ -114,8 +121,8 @@
         app:layout_constraintHorizontal_bias="0.049"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.948"
-        app:srcCompat="@drawable/img2"
+        app:layout_constraintVertical_bias="0.924"
+        app:srcCompat="@drawable/file"
         tools:ignore="MissingConstraints" />
 
     <TextView
@@ -127,10 +134,10 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.861"
+        app:layout_constraintHorizontal_bias="0.888"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.635"
+        app:layout_constraintVertical_bias="0.579"
         tools:ignore="MissingConstraints" />
 
     <TextView
@@ -143,10 +150,10 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.843"
+        app:layout_constraintHorizontal_bias="0.863"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.81"
+        app:layout_constraintVertical_bias="0.761"
         tools:ignore="MissingConstraints" />
 
     <TextView
@@ -159,10 +166,10 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.832"
+        app:layout_constraintHorizontal_bias="0.852"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.971"
+        app:layout_constraintVertical_bias="0.922"
         tools:ignore="MissingConstraints" />
 
     <TextView
@@ -173,8 +180,8 @@
         android:textSize="15sp"
         android:textStyle="bold"
         tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="124dp"
-        tools:layout_editor_absoluteY="387dp" />
+        tools:layout_editor_absoluteX="126dp"
+        tools:layout_editor_absoluteY="359dp" />
 
     <TextView
         android:id="@+id/textView11"
@@ -186,10 +193,10 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.568"
+        app:layout_constraintHorizontal_bias="0.587"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.72"
+        app:layout_constraintVertical_bias="0.675"
         tools:ignore="MissingConstraints" />
 
     <TextView
@@ -201,7 +208,18 @@
         android:textSize="15sp"
         android:textStyle="bold"
         tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="126dp"
-        tools:layout_editor_absoluteY="618dp" />
+        tools:layout_editor_absoluteX="128dp"
+        tools:layout_editor_absoluteY="586dp" />
+    <ImageView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/chat"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.955"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.991"
+        tools:ignore="MissingConstraints" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
