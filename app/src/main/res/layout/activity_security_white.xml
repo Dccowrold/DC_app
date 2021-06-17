@@ -13,7 +13,8 @@
         android:layout_width="596dp"
         android:layout_height="312dp"
         android:layout_gravity="center"
-        android:src="@drawable/phone"
+        android:src="@drawable/securityimg"
+        android:layout_marginTop="20dp"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="-42dp"></ImageView>
 
@@ -55,5 +56,11 @@
         android:textColor="@color/gray"
         android:textSize="20dp"
         android:textStyle="bold"></TextView>
+    <ImageView
+        android:id="@+id/imageView10"
+        android:layout_width="101dp"
+        android:layout_height="60dp"
+        android:layout_gravity="right"
+        app:srcCompat="@drawable/chatimg" />
 
 </LinearLayout>

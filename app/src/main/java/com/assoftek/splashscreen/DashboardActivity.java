@@ -1,8 +1,6 @@
 package com.assoftek.splashscreen;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -12,12 +10,19 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
-//import com.assoftek.splashscreen.SignUp.UserProfileActivity;
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.assoftek.splashscreen.databinding.ActivityDashboardBinding;
 
 public class DashboardActivity extends AppCompatActivity {
+
     ActivityDashboardBinding binding;
-    private SharedPreferences sharedPref;
+    public static SharedPreferences sharedPref;
+    SharedPreferences mypref;
+
+    public static final String FileName = "login";
+    public static final String Username = "username";
 
 
     @Override
@@ -27,6 +32,12 @@ public class DashboardActivity extends AppCompatActivity {
         sharedPref= getSharedPreferences("PREFERENCE", MODE_PRIVATE);
 
         setContentView(binding.getRoot());
+
+        mypref = getSharedPreferences(FileName , Context.MODE_PRIVATE);
+//        if(mypref.contains(Username)) {
+//            Toast.makeText(this, "Done", Toast.LENGTH_SHORT).show();
+//        }
+
         binding.profileName.setText(getIntent().getStringExtra("username"));
 
         binding.wealth.setOnClickListener(new View.OnClickListener() {
@@ -49,8 +60,8 @@ public class DashboardActivity extends AppCompatActivity {
              binding.pay.setOnClickListener(new View.OnClickListener() {
                @Override
              public void onClick(View view) {
-                Intent movetoPayments = new Intent(getApplicationContext(), PaymentsActivity.class);
-                 startActivity(movetoPayments);
+                Intent movetoPayments = new Intent(DashboardActivity.this, PaymentsActivity.class);
+                startActivity(movetoPayments);
              }
           });
 
@@ -69,8 +80,7 @@ public class DashboardActivity extends AppCompatActivity {
         switch(item.getItemId())
         {
             case R.id.profile:
-                Intent intent1=new Intent(DashboardActivity.this, UserDetails.class);
-                intent1.putExtra("emailID",getIntent().getStringExtra("emailID"));
+                Intent intent1=new Intent(DashboardActivity.this, detailsActivity.class);
                 startActivity(intent1);
                 break;
 
@@ -78,9 +88,15 @@ public class DashboardActivity extends AppCompatActivity {
                 Toast.makeText(DashboardActivity.this,"Visibility", Toast.LENGTH_SHORT).show();
                 break;
 
+            case R.id.notification:
+                Intent i=new Intent(DashboardActivity.this, NotificationActivity.class);
+                startActivity(i);
+                break;
+
             case R.id.logout:
-                sharedPref.edit().putBoolean(getString(R.string.isLoggedIn),false).apply();
-                Intent intent=new Intent(DashboardActivity.this, LoginActivity.class);        // going back to sign in
+                //sharedPref.edit().putBoolean(getString(R.string.isLoggedIn),false).apply();
+                sharedPref.edit().putBoolean(getString(R.string.isLoggedIn), false).apply();
+                Intent intent=new Intent(DashboardActivity.this, LoginActivity.class);
                 startActivity(intent);
                 finish();
                 break;

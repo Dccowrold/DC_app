@@ -24,7 +24,7 @@
         android:layout_below="@+id/image"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="16dp"
-        android:fontFamily="@font/montserrat"
+        android:fontFamily="@font/montserat"
         android:gravity="center"
         android:text="@string/we_are"
         android:textColor="@color/white"
