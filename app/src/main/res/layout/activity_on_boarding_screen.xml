@@ -8,7 +8,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
-        android:fontFamily="@font/montserrat"
+        android:fontFamily="@font/montserat"
         android:text="Skip"
         android:elevation="4dp"
         android:textColor="@color/white"

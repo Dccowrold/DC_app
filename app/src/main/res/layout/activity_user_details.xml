@@ -9,11 +9,15 @@
     android:background="@drawable/squareblue"
     android:layout_margin="20dp">
 
+
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/container"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         tools:context=".UserDetails">
+
+
 
     <LinearLayout
         android:id="@+id/linlayout"
@@ -22,6 +26,16 @@
         android:orientation="vertical"
         android:padding="12dp"
         tools:ignore="MissingConstraints">
+
+        <ImageView
+            android:id="@+id/backd"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="10dp"
+            android:layout_gravity="top"
+            android:layout_marginBottom="20dp"
+            android:src="@drawable/leftarrow"
+            app:tint="@color/white" />
 
         <TextView
             android:id="@+id/name"

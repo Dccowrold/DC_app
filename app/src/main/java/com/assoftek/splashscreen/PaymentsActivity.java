@@ -1,16 +1,14 @@
 package com.assoftek.splashscreen;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
-import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.Toast;
 
-import com.assoftek.splashscreen.databinding.ActivityDashboardBinding;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.assoftek.splashscreen.databinding.ActivityPaymentsBinding;
 import com.razorpay.Checkout;
 import com.razorpay.PaymentResultListener;
@@ -20,6 +18,7 @@ import org.json.JSONObject;
 public class PaymentsActivity extends AppCompatActivity implements PaymentResultListener {
     private String TAG="razorPay";
     ActivityPaymentsBinding binding;
+    ImageView back;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,17 +27,26 @@ public class PaymentsActivity extends AppCompatActivity implements PaymentResult
         getSupportActionBar().hide();
         Checkout.preload(getApplicationContext());
 
+        back = findViewById(R.id.back);
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(PaymentsActivity.this , DashboardActivity.class);
+                startActivity(intent);
+            }
+        });
+
 
         String sAmount="100";
 
         int amount=Math.round(Float.parseFloat(sAmount)*100);
 
-        binding.PayButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                setUpPayment();
-            }
-        });
+//        binding.PayButton.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                setUpPayment();
+//            }
+//        });
 
     }
 

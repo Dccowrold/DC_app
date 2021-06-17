@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:title="Wealth"
+        android:id="@+id/Wealth_Tab_option"
+        android:icon="@drawable/wealth">
+    </item>
+    <item
+        android:title="Pay"
+        android:id="@+id/Pay_Tab_option"
+        android:icon="@drawable/money">
+    </item>
+    <item
+        android:title="Cash"
+        android:id="@+id/Cash_Tab_option"
+        android:icon="@drawable/rupee">
+    </item>
+</menu>

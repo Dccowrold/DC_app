@@ -15,6 +15,7 @@
         android:layout_marginEnd="132dp"
         android:layout_marginBottom="413dp"
         android:text="Home Actvity"
+        android:textColor="@color/white"
         android:textSize="28sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

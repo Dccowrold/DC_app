@@ -7,11 +7,17 @@
         android:title="Profile"/>
 
     <item
+        android:id="@+id/notification"
+        android:title="Set daily reminder"/>
+
+
+    <item
         android:id="@+id/visibility"
         android:title="Visibility"/>
 
     <item
         android:id="@+id/logout"
         android:title="Logout"/>
+
 
 </menu>

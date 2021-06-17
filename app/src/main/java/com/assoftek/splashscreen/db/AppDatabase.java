@@ -13,8 +13,6 @@ public abstract class AppDatabase extends RoomDatabase {
 
     public abstract DetailsDao detailsDao();
 
-    //public abstract UserProfileDao userProfileDao();
-
     private static AppDatabase INSTANCE;
 
     public static AppDatabase getDbInstance(Context context) {
