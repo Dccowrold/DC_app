@@ -11,6 +11,61 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+        <Button
+            android:id="@+id/sign"
+            android:layout_width="138dp"
+            android:layout_height="80dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/rountbutt"
+            android:text="Sign Up"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:backgroundTint="#2C2E2E"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.12"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.233"
+            tools:ignore="MissingConstraints" />
+
+        <Button
+            android:id="@+id/loginLink"
+            android:layout_width="203dp"
+            android:layout_height="54dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/rountbutt"
+            android:text="Login"
+            android:textColor="@color/lightblack"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:backgroundTint="@color/black"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.022"
+            app:layout_constraintStart_toEndOf="@+id/sign"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.237"
+            tools:ignore="MissingConstraints" />
+
+        <Button
+            android:id="@+id/register"
+            android:layout_width="217dp"
+            android:layout_height="55dp"
+            android:background="@drawable/curvedbutton"
+            android:text="Sign Up"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            app:backgroundTint="#1AA6B8"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="81dp"
+            tools:layout_editor_absoluteY="510dp" />
+
         <ImageView
             android:id="@+id/imageView3"
             android:layout_width="80dp"
@@ -27,52 +82,10 @@
             app:layout_constraintVertical_bias="0.092"
             tools:ignore="MissingConstraints" />
 
-        <Button
-            android:id="@+id/sign"
-            android:layout_width="160dp"
-            android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentBottom="true"
-            android:background="@drawable/rountbutt"
-            android:text="Sign Up"
-            android:textColor="@color/white"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            app:backgroundTint="#2C2E2E"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.159"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.326"
-            tools:ignore="MissingConstraints" />
-
-        <Button
-            android:id="@+id/loginLink"
-            android:layout_width="160dp"
-            android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentBottom="true"
-            android:background="@drawable/rountbutt"
-            android:text="Login"
-            android:textColor="@color/lightblack"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            app:backgroundTint="@color/black"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.796"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.326"
-            tools:ignore="MissingConstraints" />
-
         <LinearLayout
             android:id="@+id/layout"
-            android:layout_width="320dp"
-            android:layout_height="350dp"
+            android:layout_width="335dp"
+            android:layout_height="254dp"
             android:layout_alignBottom="@+id/sign"
             android:layout_alignParentStart="true"
             android:layout_alignParentEnd="true"
@@ -80,22 +93,24 @@
             android:orientation="vertical"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.439"
+            app:layout_constraintHorizontal_bias="0.434"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.546"
+            app:layout_constraintVertical_bias="0.457"
             tools:ignore="MissingConstraints">
+
 
             <EditText
                 android:id="@+id/etName"
                 android:layout_width="280dp"
-                android:layout_height="50dp"
+                android:layout_height="63dp"
                 android:layout_marginLeft="20dp"
-                android:layout_marginTop="75dp"
+                android:layout_marginTop="25dp"
                 android:background="@drawable/curvedbutton"
                 android:hint="Name"
-                android:paddingLeft="15dp"
+
                 android:inputType="textEmailAddress"
+                android:paddingLeft="15dp"
                 android:textColor="@color/white"
                 android:textColorHint="#D8CACA"
                 android:textSize="18sp" />
@@ -108,8 +123,8 @@
                 android:layout_marginTop="25dp"
                 android:background="@drawable/curvedbutton"
                 android:hint="Email"
-                android:paddingLeft="15dp"
                 android:inputType="textEmailAddress"
+                android:paddingLeft="15dp"
                 android:textColor="@color/white"
                 android:textColorHint="#D8CACA"
                 android:textSize="18sp" />
@@ -130,38 +145,20 @@
                 android:textColorHint="#D8CACA"
                 android:textSize="18sp" />
 
-
-            <Button
-                android:id="@+id/register"
-                android:layout_width="280dp"
-                android:layout_height="50dp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="20dp"
-                android:background="@drawable/curvedbutton"
-                android:text="Sign Up"
-                android:textColor="@color/black"
-                android:textSize="20sp"
-                app:backgroundTint="#1AA6B8" />
-
         </LinearLayout>
 
-<!--        <TextView-->
-<!--            android:id="@+id/textView6"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_alignParentStart="true"-->
-<!--            android:layout_alignParentEnd="true"-->
-<!--            android:layout_alignParentBottom="true"-->
-<!--            android:gravity="center"-->
-<!--            android:text="USE SOCIAL NETWORKS"-->
-<!--            android:textColor="@color/white"-->
-<!--            android:textSize="20dp"-->
-<!--            android:textStyle="bold"-->
-<!--            app:layout_constraintBottom_toBottomOf="parent"-->
-<!--            app:layout_constraintEnd_toEndOf="parent"-->
-<!--            app:layout_constraintStart_toStartOf="parent"-->
-<!--            app:layout_constraintTop_toTopOf="parent"-->
-<!--            app:layout_constraintVertical_bias="0.748" />-->
+        <TextView
+            android:id="@+id/textView8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="USE SOCIAL NETWORKS"
+            android:textColor="@color/white"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="81dp"
+            tools:layout_editor_absoluteY="591dp" />
 
         <TextView
             android:id="@+id/textView7"
@@ -177,10 +174,10 @@
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.481"
+            app:layout_constraintHorizontal_bias="0.361"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.848" />
+            app:layout_constraintVertical_bias="0.931" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </RelativeLayout>
