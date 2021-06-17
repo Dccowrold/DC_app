@@ -1,7 +1,10 @@
 package com.assoftek.splashscreen;
 
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -18,6 +21,8 @@ public class UserDetails extends AppCompatActivity {
     private String emailFromExtra;
 
     private AppDatabase db;
+
+    ImageView backd;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +49,15 @@ public class UserDetails extends AppCompatActivity {
         Standard = findViewById(R.id.standard);
         RiskWillingness = findViewById(R.id.RiskWillingness);
         Liquidity = findViewById(R.id.Liquidity);
+        backd = findViewById(R.id.backd);
+
+        backd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(UserDetails.this , DashboardActivity.class);
+                startActivity(intent);
+            }
+        });
 
         //Populating the textviews
         setFields(emailFromExtra);

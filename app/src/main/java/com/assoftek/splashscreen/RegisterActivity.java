@@ -4,11 +4,9 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -23,7 +21,7 @@ import retrofit2.Response;
 public class RegisterActivity extends AppCompatActivity {
     Button register,loginLink;
     EditText name, email, password;
-    private SharedPreferences sharedPref;
+    public static SharedPreferences sharedPref;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,10 +29,10 @@ public class RegisterActivity extends AppCompatActivity {
         setContentView(R.layout.activity_sign_up);
         getSupportActionBar().hide();
 
-        register = findViewById(R.id.btnSignUp);
+        register = findViewById(R.id.register);
         name = findViewById(R.id.etName);
-        email = findViewById(R.id.etEmail);
-        password = findViewById(R.id.etPassword);
+        email = findViewById(R.id.etemail);
+        password = findViewById(R.id.etpassword);
         loginLink = findViewById(R.id.loginLink);
         sharedPref = getSharedPreferences("PREFERENCE", MODE_PRIVATE);
 
@@ -78,12 +76,13 @@ public class RegisterActivity extends AppCompatActivity {
                             @Override
                             public void run() {
 //                            Storing to Room Database
-//                            saveUser(userEmail, userPassword, userName);
+                               saveUser(userEmail, userPassword, userName);
                                 Intent intent = new Intent(RegisterActivity.this, detailsActivity.class);
                                 intent.putExtra("username", registerResponse.getName());
                                 intent.putExtra("emailID", registerResponse.getEmail());
                                 sharedPref.edit().putBoolean(getString(R.string.isLoggedIn), true).apply();
                                 sharedPref.edit().putBoolean(getString(R.string.firstTime), false).apply();
+                                sharedPref.edit().putString("Username",userName).apply();
                                 startActivity(intent);
                                 finish();
                             }

@@ -25,7 +25,7 @@ public class RetrofitClient {
 
 
     public static Api getService(){
-       Api api = getRetrofit().create(Api.class);
+        Api api = getRetrofit().create(Api.class);
 
         return api;
     }

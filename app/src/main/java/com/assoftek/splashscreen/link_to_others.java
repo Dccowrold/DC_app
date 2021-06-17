@@ -1,10 +1,8 @@
-package com.example.task1;
-
-import androidx.appcompat.app.AppCompatActivity;
+package com.assoftek.splashscreen;
 
 import android.os.Bundle;
 
-import com.assoftek.splashscreen.R;
+import androidx.appcompat.app.AppCompatActivity;
 
 public class link_to_others extends AppCompatActivity {
 

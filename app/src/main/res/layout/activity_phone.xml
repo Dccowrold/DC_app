@@ -41,7 +41,7 @@
         android:textColor="@color/white"
         android:textSize="14sp"
         android:layout_marginBottom="10dp"
-        android:fontFamily="@font/montserrat"/>
+        android:fontFamily="@font/montserat"/>
 
     <TextView
         android:layout_width="match_parent"
@@ -53,7 +53,7 @@
         android:textColor="@color/white"
         android:textSize="16sp"
         android:layout_marginBottom="20dp"
-        android:fontFamily="@font/montserrat"/>
+        android:fontFamily="@font/montserat"/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -71,7 +71,7 @@
             android:paddingTop="10dp"
             android:paddingBottom="10dp"
             android:paddingLeft="20dp"
-            android:fontFamily="@font/montserrat"
+            android:fontFamily="@font/montserat"
             android:textStyle="bold"
             android:textColor="@color/white"
             android:textColorHint="@color/gray"
@@ -88,7 +88,7 @@
             android:paddingBottom="10dp"
             android:paddingLeft="20dp"
             android:textStyle="bold"
-            android:fontFamily="@font/montserrat"
+            android:fontFamily="@font/montserat"
             android:layout_marginLeft="20dp"
             android:textColor="@color/white"
             android:textColorHint="@color/gray"
@@ -109,7 +109,7 @@
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:background="@drawable/roundgbluebutton"
-            android:fontFamily="@font/montserrat"
+            android:fontFamily="@font/montserat"
             android:text="CONTINUE"
             android:textAlignment="center"
             android:textColor="@color/white"

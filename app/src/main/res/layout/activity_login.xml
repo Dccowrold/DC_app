@@ -46,6 +46,7 @@
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:layout_height="40dp"
+        android:inputType="textPassword"
         android:background="@drawable/squareblue"
         android:hint="Password"
         android:paddingTop="10dp"
@@ -216,7 +217,7 @@
             android:text="Don't have an account?"
             android:textColor="@color/white"
             android:textSize="16sp"
-            android:fontFamily="@font/montserrat"/>
+            android:fontFamily="@font/montserat"/>
 
         <TextView
             android:id="@+id/registerLink"
@@ -226,7 +227,7 @@
             android:textColor="@color/blue"
             android:textStyle="bold"
             android:textSize="16sp"
-            android:fontFamily="@font/montserrat"
+            android:fontFamily="@font/montserat"
             android:layout_marginLeft="10dp"/>
 
 
