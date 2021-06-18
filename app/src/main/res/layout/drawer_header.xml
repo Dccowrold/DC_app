@@ -13,15 +13,23 @@
         android:layout_width="150dp"
         android:layout_height="150dp"
         app:civ_border_width="2dp"
-        app:civ_border_color="@color/blue"
-        android:src="@drawable/user9"/>
+        app:civ_border_color="@color/white"
+        android:layout_marginTop="17dp"
+        android:src="@drawable/user9"
+        android:layout_gravity="center"
+        android:focusable="true"/>
 
     <TextView
         android:id="@+id/username_nav"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:layout_weight="1"
         android:text="USERNAME"
+        android:layout_marginTop="6dp"
+        android:fontFamily="@font/montserrat"
         android:textSize="30sp"
-        android:textColor="#FFFFFF"/>
+        android:textStyle="bold"
+        android:layout_gravity="center"
+        android:textColor="#FFFFFF"
+        android:focusable="true"/>
 </LinearLayout>

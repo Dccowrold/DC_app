@@ -6,7 +6,6 @@
     android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#3DDCA9"
     tools:openDrawer="start"
     tools:context=".homePage.HomePage">
 
@@ -39,8 +38,10 @@
         <com.google.android.material.bottomnavigation.BottomNavigationView
             android:id="@+id/bottomNavigationView"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="?actionBarSize"
             android:background="@drawable/grad_tab"
+            app:itemTextColor="@color/white"
+            app:itemIconTint="@color/white"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -56,6 +57,7 @@
         android:layout_height="match_parent"
         android:layout_gravity="start"
         android:background="@drawable/grad_back"
+        app:itemTextAppearance="@style/customTextItems"
         android:fitsSystemWindows="true"
         app:headerLayout="@layout/drawer_header"
         app:itemTextColor="#ffffff"

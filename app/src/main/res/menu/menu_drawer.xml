@@ -1,33 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
-        android:title="contacts"
-        android:id="@+id/menu_contacts">
-    </item>
-    <item
-        android:title="chat"
-        android:id="@+id/menu_chat">
-    </item>
-    <item
-        android:title="communication"
+        android:title="Communication"
         android:id="@+id/menu_communication">
-        <menu>
-            <item
-                android:title="Profile"
-                android:id="@+id/menu_profile">
-            </item>
-            <item
-                android:title="Set daily reminder"
-                android:id="@+id/menu_reminder">
-            </item>
-            <item
-                android:title="Visibility"
-                android:id="@+id/menu_visibility">
-            </item>
-            <item
-                android:title="logout"
-                android:id="@+id/menu_logout">
-            </item>
-        </menu>
+    </item>
+
+    <item
+        android:title="Profile"
+        android:id="@+id/menu_profile">
+    </item>
+    <item
+        android:title="Set daily reminder"
+        android:id="@+id/menu_reminder">
+    </item>
+    <item
+        android:title="Visibility"
+        android:id="@+id/menu_visibility">
+    </item>
+    <item
+        android:title="Logout"
+        android:id="@+id/menu_logout">
     </item>
 </menu>
