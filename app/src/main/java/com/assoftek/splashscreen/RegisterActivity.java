@@ -13,6 +13,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.assoftek.splashscreen.db.AppDatabase;
 import com.assoftek.splashscreen.db.User;
+import com.assoftek.splashscreen.homePage.HomePage;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -77,7 +78,7 @@ public class RegisterActivity extends AppCompatActivity {
                             public void run() {
 //                            Storing to Room Database
                                saveUser(userEmail, userPassword, userName);
-                                Intent intent = new Intent(RegisterActivity.this, detailsActivity.class);
+                                Intent intent = new Intent(RegisterActivity.this, HomePage.class);
                                 intent.putExtra("username", registerResponse.getName());
                                 intent.putExtra("emailID", registerResponse.getEmail());
                                 sharedPref.edit().putBoolean(getString(R.string.isLoggedIn), true).apply();
