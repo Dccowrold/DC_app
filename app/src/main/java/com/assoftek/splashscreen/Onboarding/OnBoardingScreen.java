@@ -1,6 +1,7 @@
 package com.assoftek.splashscreen.Onboarding;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
@@ -19,6 +20,7 @@ import java.util.Objects;
 public class OnBoardingScreen extends AppCompatActivity {
 
     private static final String TAG = "mTAG";
+    private static SharedPreferences sharedPref;
 
     ImageView[] imageViews;
     ViewPagerAdapter adapter;
@@ -30,6 +32,16 @@ public class OnBoardingScreen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = ActivityOnBoardingScreenBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+        sharedPref = getSharedPreferences("PREFERENCE", MODE_PRIVATE);
+        boolean temp=sharedPref.getBoolean(getString(R.string.firstTime),false);
+        if(!temp)
+        {
+            Intent i=new Intent(OnBoardingScreen.this,LoginActivity.class);
+            startActivity(i);
+            finish();
+        }
+
+
 
         Objects.requireNonNull(getSupportActionBar()).hide();
 

@@ -9,6 +9,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -29,6 +30,7 @@ import java.util.Objects;
 public class HomePage extends AppCompatActivity {
 
     private DrawerLayout drawerLayout;
+    private SharedPreferences sharedPref ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +38,7 @@ public class HomePage extends AppCompatActivity {
         setContentView(R.layout.activity_home_page);
 
         Objects.requireNonNull(getSupportActionBar()).hide();
+        sharedPref=getSharedPreferences("PREFERENCE", MODE_PRIVATE);
 
         BottomNavigationView nav=findViewById(R.id.bottomNavigationView);
         getSupportFragmentManager().beginTransaction().replace(R.id.Frame_layout,new Wealth_tab()).commit();
@@ -77,7 +80,7 @@ public class HomePage extends AppCompatActivity {
 
                     case R.id.menu_logout:
                         //sharedPref.edit().putBoolean(getString(R.string.isLoggedIn),false).apply();
-                        DashboardActivity.sharedPref.edit().putBoolean(getString(R.string.isLoggedIn), false).apply();
+                        sharedPref.edit().putBoolean(getString(R.string.isLoggedIn), false).apply();
                         Intent intent=new Intent(HomePage.this, LoginActivity.class);
                         startActivity(intent);
                         finish();
