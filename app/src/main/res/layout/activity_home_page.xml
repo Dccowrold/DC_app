@@ -40,8 +40,8 @@
             android:layout_width="0dp"
             android:layout_height="?actionBarSize"
             android:background="@drawable/grad_tab"
-            app:itemTextColor="@color/white"
-            app:itemIconTint="@color/white"
+            app:itemTextColor="@color/black"
+            app:itemIconTint="@color/black"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -59,9 +59,10 @@
         android:background="@drawable/grad_back"
         app:itemTextAppearance="@style/customTextItems"
         android:fitsSystemWindows="true"
-        app:headerLayout="@layout/drawer_header"
         app:itemTextColor="#ffffff"
-        app:menu="@menu/menu_drawer">
+        app:itemIconTint="@color/white"
+        app:menu="@menu/menu_drawer"
+        app:headerLayout="@layout/drawer_header">
 
     </com.google.android.material.navigation.NavigationView>
 </androidx.drawerlayout.widget.DrawerLayout>

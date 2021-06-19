@@ -13,6 +13,7 @@ import androidx.viewpager.widget.ViewPager;
 
 import com.assoftek.splashscreen.LoginActivity;
 import com.assoftek.splashscreen.R;
+import com.assoftek.splashscreen.RegisterActivity;
 import com.assoftek.splashscreen.databinding.ActivityOnBoardingScreenBinding;
 
 import java.util.Objects;
@@ -121,7 +122,7 @@ public class OnBoardingScreen extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 isHandlerRunning = false;
-                Intent intent = new Intent(OnBoardingScreen.this,LoginActivity.class);
+                Intent intent = new Intent(OnBoardingScreen.this, LoginActivity.class);
                 startActivity(intent);
                 finish();
             }

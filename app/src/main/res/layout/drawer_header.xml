@@ -2,9 +2,11 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="vertical">
+    android:layout_width="wrap_content"
+    android:layout_height="300dp"
+    android:orientation="vertical"
+    android:layout_marginTop="-55dp"
+    android:background="@drawable/nav_design2">
 
 
 
@@ -14,7 +16,7 @@
         android:layout_height="150dp"
         app:civ_border_width="2dp"
         app:civ_border_color="@color/white"
-        android:layout_marginTop="17dp"
+        android:layout_marginTop="77dp"
         android:src="@drawable/user9"
         android:layout_gravity="center"
         android:focusable="true"/>
@@ -22,14 +24,14 @@
     <TextView
         android:id="@+id/username_nav"
         android:layout_width="wrap_content"
-        android:layout_height="0dp"
-        android:layout_weight="1"
+        android:layout_height="36dp"
         android:text="USERNAME"
         android:layout_marginTop="6dp"
         android:fontFamily="@font/montserrat"
-        android:textSize="30sp"
+        android:textSize="25sp"
         android:textStyle="bold"
         android:layout_gravity="center"
         android:textColor="#FFFFFF"
         android:focusable="true"/>
+
 </LinearLayout>
