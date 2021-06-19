@@ -11,7 +11,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".homePage.HomePage"></activity>
+        <activity android:name=".DC_Use_DarkActivity"></activity>
+        <activity android:name=".DC_UseActivity" />
+        <activity android:name=".homePage.HomePage" />
         <activity android:name=".screen3Black" />
         <activity android:name=".PaymentsActivity" />
         <activity android:name=".NotificationActivity" />
