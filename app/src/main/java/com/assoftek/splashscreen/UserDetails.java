@@ -90,6 +90,23 @@ public class UserDetails extends AppCompatActivity {
 
         @Override
         protected void onPostExecute(Details currentUserData) {
+            name = findViewById(R.id.name);
+            email = findViewById(R.id.email);
+            FixedIncome = findViewById(R.id.fixedIncome);
+            OtherIncome = findViewById(R.id.otherIncome);
+            MedianIncome = findViewById(R.id.medianIncome);
+            TotalExpenses = findViewById(R.id.totalExpences);
+            SavingIncome = findViewById(R.id.savingIncome);
+            Age = findViewById(R.id.age);
+            RetirementAge = findViewById(R.id.retirementage);
+            AssetClass = findViewById(R.id.assetclass);
+            Return = findViewById(R.id.Return);
+            Risk = findViewById(R.id.risk);
+            Time = findViewById(R.id.Time);
+            FinancialRisk = findViewById(R.id.Financial_Risk);
+            Standard = findViewById(R.id.standard);
+            RiskWillingness = findViewById(R.id.RiskWillingness);
+            Liquidity = findViewById(R.id.Liquidity);
             name.setText(currentUserData.name);
             email.setText(emailFromExtra);
             FixedIncome.setText(currentUserData.FixedIncome);

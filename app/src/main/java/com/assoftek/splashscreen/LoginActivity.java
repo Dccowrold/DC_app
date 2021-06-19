@@ -46,7 +46,6 @@ public class LoginActivity extends AppCompatActivity {
         btnLogin = findViewById(R.id.btnsignin);
         email = findViewById(R.id.edemailsignin);
         password = findViewById(R.id.edpasswordsignin);
-        registerLink = findViewById(R.id.registerLink);
         sharedPref = getSharedPreferences("PREFERENCE", MODE_PRIVATE);
         getSupportActionBar().hide();
 
@@ -59,13 +58,6 @@ public class LoginActivity extends AppCompatActivity {
             startActivity(i);
         }
 
-
-        registerLink.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(LoginActivity.this, RegisterActivity.class));
-            }
-        });
 
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
