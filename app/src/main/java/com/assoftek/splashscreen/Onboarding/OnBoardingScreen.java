@@ -33,7 +33,7 @@ public class OnBoardingScreen extends AppCompatActivity {
         binding = ActivityOnBoardingScreenBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         sharedPref = getSharedPreferences("PREFERENCE", MODE_PRIVATE);
-        boolean temp=sharedPref.getBoolean(getString(R.string.firstTime),false);
+        boolean temp=sharedPref.getBoolean(getString(R.string.firstTime),true);
         if(!temp)
         {
             Intent i=new Intent(OnBoardingScreen.this,LoginActivity.class);

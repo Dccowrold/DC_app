@@ -26,6 +26,7 @@ import retrofit2.Response;
 public class LoginActivity extends AppCompatActivity {
 
     Button btnLogin;
+    Button btnSignup;
     EditText email, password;
     TextView registerLink;
     String userName, emailID;
@@ -46,11 +47,20 @@ public class LoginActivity extends AppCompatActivity {
         btnLogin = findViewById(R.id.btnsignin);
         email = findViewById(R.id.edemailsignin);
         password = findViewById(R.id.edpasswordsignin);
+        btnSignup=findViewById(R.id.btnSignup);
         sharedPref = getSharedPreferences("PREFERENCE", MODE_PRIVATE);
         getSupportActionBar().hide();
 
 
         boolean temp=sharedPref.getBoolean(getString(R.string.isLoggedIn),false);
+        btnSignup.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(LoginActivity.this, RegisterActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
 
         mypref = getSharedPreferences(FileName , Context.MODE_PRIVATE);
         if(temp) {
@@ -86,7 +96,6 @@ public class LoginActivity extends AppCompatActivity {
         loginResponseCall.enqueue(new Callback<LoginResponse>() {
             @Override
             public void onResponse(Call<LoginResponse> call, Response<LoginResponse> response) {
-                Log.d("error", response.toString());
                 if (response.isSuccessful()) {
                     Toast.makeText(LoginActivity.this, "Login Successful", Toast.LENGTH_LONG).show();
                     LoginResponse loginResponse = response.body();
