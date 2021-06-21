@@ -81,6 +81,7 @@ public class RegisterActivity extends AppCompatActivity {
                                 Intent intent = new Intent(RegisterActivity.this, HomePage.class);
                                 intent.putExtra("username", registerResponse.getName());
                                 intent.putExtra("emailID", registerResponse.getEmail());
+                                sharedPref.edit().putString("usernaam" , userName).apply();
                                 sharedPref.edit().putBoolean(getString(R.string.isLoggedIn), true).apply();
                                 sharedPref.edit().putBoolean(getString(R.string.firstTime), false).apply();
                                 sharedPref.edit().putString("Username",userName).apply();

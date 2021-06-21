@@ -34,7 +34,7 @@ public class LoginActivity extends AppCompatActivity {
     SharedPreferences mypref;
 
     public static final String FileName = "login";
-    public static final String Username = "username";
+    public static final String Useremail = "useremail";
     public static final String Pass = "password";
 
 
@@ -112,7 +112,7 @@ public class LoginActivity extends AppCompatActivity {
                             intent.putExtra("username",userName);
                             intent.putExtra("emailID",emailID);
                             SharedPreferences.Editor editor = mypref.edit();
-                            editor.putString(Username , email.getText().toString());
+                            editor.putString(Useremail , email.getText().toString());
                             editor.putString(Pass , password.getText().toString());
                             editor.commit();
 

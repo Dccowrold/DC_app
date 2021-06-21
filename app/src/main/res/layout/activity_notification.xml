@@ -4,8 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
+    android:background="@color/black"
     android:gravity="center"
+    android:backgroundTint="bl"
     android:orientation="vertical"
     android:padding="10dp"
     tools:context=".NotificationActivity">
@@ -16,15 +17,34 @@
         android:layout_height="30dp"
         android:layout_marginLeft="10dp"
         android:layout_gravity="top"
-        android:layout_marginBottom="100dp"
         android:src="@drawable/leftarrow"
-        app:tint="@color/black" />
+        app:tint="@color/white" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="70dp"
+        android:src="@drawable/logo"
+
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Derive Capitals Daily Updates"
+        android:textColor="@color/green"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:textSize="22sp"
+        android:textStyle="bold" />
 
     <EditText
         android:id="@+id/message"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Notification Text" />
+        android:textColor="@color/white"
+        android:paddingLeft="20dp"
+        android:textColorHint="@color/white"
+        android:hint="Enter Notification Text" />
 
     <TimePicker
         android:id="@+id/timePicker"

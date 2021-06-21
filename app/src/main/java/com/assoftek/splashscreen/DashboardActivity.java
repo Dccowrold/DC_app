@@ -21,8 +21,9 @@ public class DashboardActivity extends AppCompatActivity {
     public static SharedPreferences sharedPref;
     SharedPreferences mypref;
 
+
     public static final String FileName = "login";
-    public static final String Username = "username";
+    public static final String Useremail = "useremail";
 
 
     @Override
@@ -38,7 +39,7 @@ public class DashboardActivity extends AppCompatActivity {
 //            Toast.makeText(this, "Done", Toast.LENGTH_SHORT).show();
 //        }
 
-        binding.profileName.setText(getIntent().getStringExtra("username"));
+        binding.profileName.setText(sharedPref.getString("usernaam" , null));
 
         binding.wealth.setOnClickListener(new View.OnClickListener() {
             @Override
