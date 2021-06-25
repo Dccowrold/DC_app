@@ -9,7 +9,7 @@ import androidx.room.Query;
 public interface DetailsDao {
 
     @Insert
-    void insertUser(Details details);
+    void insertDetails(Details details);
 
     @Delete
     void delete(Details details);

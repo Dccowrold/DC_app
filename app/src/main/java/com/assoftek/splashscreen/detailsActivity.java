@@ -268,7 +268,7 @@ public class detailsActivity extends AppCompatActivity {
         details.RiskWillingness = RiskWillingness;
         details.Liquidity = Liquidity;
 
-        db.detailsDao().insertUser(details);
+        db.detailsDao().insertDetails(details);
         Details currentUserData = db.detailsDao().findUserFromEmail(email);
         Log.d("Email",currentUserData.name);
     }

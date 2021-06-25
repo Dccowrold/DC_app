@@ -15,6 +15,8 @@ import com.assoftek.splashscreen.LoginActivity;
 import com.assoftek.splashscreen.R;
 import com.assoftek.splashscreen.RegisterActivity;
 import com.assoftek.splashscreen.databinding.ActivityOnBoardingScreenBinding;
+import com.assoftek.splashscreen.db.AppDatabase;
+import com.assoftek.splashscreen.db.User;
 
 import java.util.Objects;
 
